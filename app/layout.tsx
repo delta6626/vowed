@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { ThemeProvider } from "@/components/ThemeProvider";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import "./globals.css";
 
 export default function RootLayout({
