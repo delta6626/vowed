@@ -1,13 +1,17 @@
+import { ReactNode } from "react";
+import { ThemeProvider } from "@/components/ThemeProvider";
 import "./globals.css";
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body className="">{children}</body>
+      <body className="">
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
     </html>
   );
 }
