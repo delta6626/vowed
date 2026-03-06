@@ -5,6 +5,7 @@ export const useTheme = () => {
   // Load existing theme preference
 
   const [theme, setTheme] = useState<AppTheme>(() => {
+    if (typeof window === "undefined") return "system";
     const existingThemePreference = localStorage.getItem("theme");
 
     if (existingThemePreference === null) {
@@ -28,7 +29,9 @@ export const useTheme = () => {
       root.setAttribute("data-theme", theme);
     }
 
-    localStorage.setItem("theme", theme);
+    if (typeof window !== "undefined") {
+      localStorage.setItem("theme", theme);
+    }
   }, [theme]);
 
   return { theme, setTheme };
