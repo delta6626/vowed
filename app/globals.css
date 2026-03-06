@@ -7,6 +7,10 @@
   --font-body: "DM Sans", sans-serif;
 }
 
+@utility btn {
+  @apply active:scale-95 transition-all ease-in-out duration-200 font-body shadow-none;
+}
+
 @plugin "daisyui" {
   themes: light, dark;
 }
