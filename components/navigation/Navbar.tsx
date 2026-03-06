@@ -1,7 +1,14 @@
+import Logo from "./Logo";
+
 export default function Navbar() {
   return (
-    <div className="w-full py-4 paddingContainer border-b border-accent">
-      Hi
+    <div className="font-body flex w-full justify-between py-4 paddingContainer border-b border-accent">
+      <Logo />
+
+      <div className="flex gap-2">
+        <button className="btn btn-ghost">Sign in</button>
+        <button className="btn btn-primary">Make a vow</button>
+      </div>
     </div>
   );
 }
