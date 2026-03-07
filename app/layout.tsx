@@ -6,6 +6,7 @@ import "./globals.css";
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  style: ["normal", "italic"],
 });
 
 const dmSans = DM_Sans({
