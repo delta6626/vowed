@@ -7,7 +7,7 @@ export default function Navbar() {
     >
       <Logo />
 
-      <div className="flex gap-2">
+      <div className="flex">
         <button className="btn btn-ghost">Sign in</button>
         <button className="btn btn-primary">Make a vow</button>
       </div>
