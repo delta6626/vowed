@@ -1,5 +1,5 @@
 import { AppTheme } from "@/types/AppTheme";
-import { useEffect, useState } from "react";
+import { useLayoutEffect, useState } from "react";
 
 export const useTheme = () => {
   // Load existing theme preference
@@ -17,7 +17,7 @@ export const useTheme = () => {
 
   // Apply desired theme before the DOM is painted
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const root = document.documentElement;
 
     if (theme === "system") {
