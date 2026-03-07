@@ -3,7 +3,7 @@ import Logo from "./Logo";
 export default function Navbar() {
   return (
     <div
-      className={`font-body flex w-full justify-between py-4 paddingContainer border-b border-accent`}
+      className={`font-body flex w-full justify-between py-4 paddingContainer border-b border-base-300`}
     >
       <Logo />
 
