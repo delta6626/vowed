@@ -1,3 +1,4 @@
+import ThemeChanger from "../theme/ThemeChanger";
 import Logo from "./Logo";
 
 export default function Navbar() {
@@ -10,6 +11,7 @@ export default function Navbar() {
       <div className="flex">
         <button className="btn btn-ghost">Sign in</button>
         <button className="btn btn-primary">Make a vow</button>
+        <ThemeChanger />
       </div>
     </div>
   );
