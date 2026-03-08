@@ -1,5 +1,5 @@
 import Navbar from "@/components/navigation/Navbar";
-import HeroCTA from "@/components/sections/HeroCTA";
+import HeroCTA from "@/components/landing/HeroCTA";
 
 export default function Home() {
   return (
