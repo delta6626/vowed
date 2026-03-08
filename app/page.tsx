@@ -17,6 +17,11 @@ export default function Home() {
             Set a deadline. Share the link. <br />
             The world is watching.
           </h3>
+
+          <div className="w-full flex justify-center gap-4">
+            <button className="btn btn-primary">Make your first vow</button>
+            <button className="btn">See how it works</button>
+          </div>
         </div>
       </div>
     </div>
