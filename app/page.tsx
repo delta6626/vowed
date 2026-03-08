@@ -1,4 +1,5 @@
 import Navbar from "@/components/navigation/Navbar";
+import HeroCTA from "@/components/sections/HeroCTA";
 
 export default function Home() {
   return (
@@ -18,10 +19,7 @@ export default function Home() {
             The world is watching.
           </h3>
 
-          <div className="w-full flex justify-center gap-4">
-            <button className="btn btn-primary">Make your first vow</button>
-            <button className="btn">See how it works</button>
-          </div>
+          <HeroCTA />
         </div>
       </div>
     </div>
