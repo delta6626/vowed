@@ -1,12 +1,23 @@
 import Navbar from "@/components/navigation/Navbar";
 import HeroCTA from "@/components/landing/HeroCTA";
+import Pill from "@/components/generic/Pill";
+import { Dot } from "lucide-react";
 
 export default function Home() {
   return (
     <div className="">
       <Navbar />
 
-      <div className="w-full text-center paddingContainer">
+      <div className="w-full text-center paddingContainer font-body">
+        <div className="w-full flex justify-center mt-16">
+          <Pill
+            variant="generic"
+            icon={<div className="w-2 h-2 rounded-full bg-primary"></div>}
+            text={"Public commitment platform"}
+            className="uppercase"
+          />
+        </div>
+
         <div className="font-display flex flex-col gap-8 mt-16">
           <h1 className="text-7xl leading-[1.1]">
             You <span className="text-primary italic">vowed</span> it.
