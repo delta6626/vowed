@@ -6,7 +6,7 @@ export default function Navbar() {
     <header
       className={`font-body flex w-full justify-between py-4 paddingContainer border-b border-base-300`}
     >
-      <Logo />
+      <Logo className="text-3xl" />
 
       <div className="flex">
         <button className="btn btn-ghost">Sign in</button>
