@@ -16,7 +16,7 @@ export default function Pill({ text, variant, icon, className }: PillProps) {
   switch (variant) {
     case "generic":
       style =
-        "px-4 py-2 bg-base-200 w-fit rounded-full text-accent font-bold border border-base-300";
+        "px-4 py-2 bg-base-200 w-fit rounded-full text-accent text-sm font-semibold border border-base-300";
       break;
     case "waiting":
       style = "";
