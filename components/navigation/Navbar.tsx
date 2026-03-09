@@ -3,7 +3,7 @@ import Logo from "./Logo";
 
 export default function Navbar() {
   return (
-    <div
+    <header
       className={`font-body flex w-full justify-between py-4 paddingContainer border-b border-base-300`}
     >
       <Logo />
@@ -13,6 +13,6 @@ export default function Navbar() {
         <button className="btn btn-primary">Make a vow</button>
         <ThemeChanger />
       </div>
-    </div>
+    </header>
   );
 }
