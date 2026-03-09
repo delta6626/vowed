@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <body>
+      <body className="font-body">
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

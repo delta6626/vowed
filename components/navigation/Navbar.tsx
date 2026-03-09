@@ -4,7 +4,7 @@ import Logo from "./Logo";
 export default function Navbar() {
   return (
     <header
-      className={`font-body flex w-full justify-between py-4 paddingContainer border-b border-base-300`}
+      className={`flex w-full justify-between py-4 paddingContainer border-b border-base-300`}
     >
       <Logo className="text-3xl" />
 

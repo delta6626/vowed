@@ -7,7 +7,7 @@ export default function ThemeChanger() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <div className="font-body dropdown dropdown-end">
+    <div className="dropdown dropdown-end">
       <button tabIndex={0} className="btn btn-ghost">
         {theme === "light" ? (
           <Sun size={20} />

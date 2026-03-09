@@ -9,7 +9,7 @@ export default function Home() {
       <div className="flex flex-col flex-1">
         <Navbar />
 
-        <div className="w-full text-center paddingContainer font-body">
+        <div className="w-full text-center paddingContainer">
           <div className="w-full flex justify-center mt-16">
             <Pill
               variant="generic"
