@@ -1,3 +1,4 @@
+import { Show, SignInButton, SignUpButton } from "@clerk/nextjs";
 import ThemeChanger from "../theme/ThemeChanger";
 import Logo from "./Logo";
 
@@ -9,8 +10,14 @@ export default function Navbar() {
       <Logo className="text-3xl" />
 
       <div className="flex">
-        <button className="btn btn-ghost">Sign in</button>
-        <button className="btn btn-primary">Make a vow</button>
+        <Show when={"signed-out"}>
+          <SignInButton>
+            <button className="btn btn-ghost">Sign in</button>
+          </SignInButton>
+          <SignUpButton>
+            <button className="btn btn-primary">Make a vow</button>
+          </SignUpButton>
+        </Show>
         <ThemeChanger />
       </div>
     </header>
