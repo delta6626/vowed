@@ -4,7 +4,7 @@ import SideSectionContent from "./SideSectionContent";
 
 export default function SideSection() {
   return (
-    <div className="flex flex-col justify-between paddingContainer py-4 w-full h-screen bg-base-300">
+    <div className="flex flex-col justify-between paddingContainer py-4 w-full h-screen bg-base-100 authPageSideSectionBackground">
       <Logo className="text-3xl" />
       <SideSectionContent />
 

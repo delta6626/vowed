@@ -2,26 +2,31 @@ import BasicVowContainer from "../generic/BasicVowContainer";
 
 export default function SideSectionContent() {
   return (
-    <div className="font-display">
-      <h1 className="text-4xl leading-[1.1]">
-        Make it <span className="text-primary italic">public.</span>
-      </h1>
-      <h1 className="text-4xl leading-[1.1]">
-        Make it <span className="text-primary italic">count.</span>
-      </h1>
+    <div className="flex flex-col gap-16">
+      <div className="font-display text-4xl leading-[1.1]">
+        <h1>
+          Make it <span className="text-primary italic">public.</span>
+        </h1>
+        <h1>
+          Make it <span className="text-primary italic">count.</span>
+        </h1>
+      </div>
 
-      <div className="">
+      <div className="flex flex-col gap-4">
         <BasicVowContainer
           vowText={"Ship our MVP before the Series A"}
           vowStatus={"waiting"}
+          className="w-xl bg-base-200/60"
         />
         <BasicVowContainer
           vowText={"Run a marathon before turning 30"}
           vowStatus={"fulfilled"}
+          className="w-xl bg-base-200/60"
         />
         <BasicVowContainer
           vowText={"Finish my essay before its due"}
           vowStatus={"not-fulfilled"}
+          className="w-xl bg-base-200/60"
         />
       </div>
     </div>
