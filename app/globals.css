@@ -34,7 +34,7 @@
   --color-success: oklch(0.6271 0.1699 149.21);
   --color-success-content: oklch(98% 0.018 155.826);
 
-  --color-error: oklch(0.5771 0.2152 27.33);
+  --color-error: oklch(0.7771 0.2152 27.33);
   --color-error-content: oklch(97% 0.013 17.38);
 
   --radius-selector: 0.5rem;
@@ -68,7 +68,7 @@
   --color-success: oklch(0.6271 0.1699 149.21);
   --color-success-content: oklch(98% 0.018 155.826);
 
-  --color-error: oklch(0.5771 0.2152 27.33);
+  --color-error: oklch(0.7771 0.2152 27.33);
   --color-error-content: oklch(97% 0.013 17.38);
 
   --radius-selector: 0.5rem;
