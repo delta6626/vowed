@@ -11,7 +11,7 @@ export default function SideSection() {
       <div className="flex items-center">
         <Logo className="text-lg" />
         <Dot className="text-accent" size={20} />
-        <p className="text-accent">
+        <p className="text-accent font-display">
           Public commitments - permanently on record.
         </p>
       </div>
