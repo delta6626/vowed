@@ -17,16 +17,20 @@ export default function Pill({ text, variant, icon, className }: PillProps) {
         "px-4 py-2 bg-base-200 w-fit rounded-full text-accent text-sm font-semibold border border-base-300";
       break;
     case "waiting":
-      style = "";
+      style =
+        "px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary";
       break;
     case "moment-of-truth":
-      style = "";
+      style =
+        "px-4 py-2 bg-secondary/20 rounded-full text-sm font-semibold text-secondary";
       break;
     case "fulfilled":
-      style = "";
+      style =
+        "px-4 py-2 bg-success/20 rounded-full text-sm font-semibold text-success";
       break;
     case "not-fulfilled":
-      style = "";
+      style =
+        "px-4 py-2 bg-error/20 rounded-full text-sm font-semibold text-error";
       break;
   }
 
