@@ -15,9 +15,9 @@ export default function BasicVowContainer({
 }: BasicVowContainerProps) {
   return (
     <div
-      className={`font-body border border-base-300 bg-base-200 p-4 ${className}`}
+      className={`font-body flex items-center justify-between px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
-      <p>{vowText}</p>
+      <p className="text-base-content/70">{vowText}</p>
       <Pill text={vowStatusToDisplayText(vowStatus)} variant={vowStatus} />
     </div>
   );
