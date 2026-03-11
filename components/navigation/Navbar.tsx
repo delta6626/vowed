@@ -1,4 +1,4 @@
-import { Show, SignInButton, SignUpButton } from "@clerk/nextjs";
+import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import ThemeChanger from "../theme/ThemeChanger";
 import Logo from "./Logo";
 
@@ -17,6 +17,10 @@ export default function Navbar() {
           <SignUpButton>
             <button className="btn btn-primary">Make a vow</button>
           </SignUpButton>
+        </Show>
+
+        <Show when={"signed-in"}>
+          <UserButton />
         </Show>
         <ThemeChanger />
       </div>
