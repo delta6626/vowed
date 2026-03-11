@@ -1,5 +1,3 @@
-"use client";
-
 import { VowStatus } from "@/types/VowStatus";
 import { ReactNode } from "react";
 
