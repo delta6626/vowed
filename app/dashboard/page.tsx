@@ -8,7 +8,7 @@ export default async function Dashboard() {
   return (
     <div className="w-screen h-screen">
       <Navbar />
-      <div className="paddingContainer mt-16">
+      <div className="doublePaddingContainer mt-16">
         <h1 className="font-display text-4xl">
           {getGreeting() + ", "}
           <span className="text-primary italic">{user.firstName}.</span>
