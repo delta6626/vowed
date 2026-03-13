@@ -1,6 +1,6 @@
 import { VowStatus } from "@/types/VowStatus";
 
-export const vowStatusToDisplayText = (vowStatus: VowStatus) => {
+export const getFormattedVowStatusName = (vowStatus: VowStatus) => {
   switch (vowStatus) {
     case "waiting":
       return "Waiting";
