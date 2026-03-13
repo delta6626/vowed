@@ -82,7 +82,7 @@
 }
 
 .doublePaddingContainer {
-  @apply px-16 sm:px-24 md:px-32 lg:px-40 xl:px-48 2xl:px-56;
+  @apply px-8 sm:px-12 md:px-16 lg:px-40 xl:px-72 2xl:px-112;
 }
 
 .paddingContainer {
