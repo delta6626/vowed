@@ -1,6 +1,6 @@
 import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
-import { vowStatusToDisplayText } from "@/utils/functions/vowStatusToDisplayText";
+import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
 
 export interface BasicVowContainerProps {
   vowText: string;
@@ -18,7 +18,7 @@ export default function BasicVowContainer({
       className={`font-body flex items-center justify-between px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
       <p className="text-base-content/70">{vowText}</p>
-      <Pill text={vowStatusToDisplayText(vowStatus)} variant={vowStatus} />
+      <Pill text={getFormattedVowStatusName(vowStatus)} variant={vowStatus} />
     </div>
   );
 }
