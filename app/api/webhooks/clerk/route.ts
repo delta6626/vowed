@@ -27,4 +27,6 @@ export async function POST(req: Request) {
     case "user.deleted":
       break;
   }
+
+  return new Response("OK", { status: 200 });
 }
