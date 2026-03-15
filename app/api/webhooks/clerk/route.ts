@@ -1,3 +1,6 @@
+import { Plan } from "@/types/Plan";
+import { User } from "@/types/User";
+import { adminDb } from "@/utils/firebase/admin";
 import { WebhookEvent } from "@clerk/nextjs/server";
 import { headers } from "next/headers";
 import { Webhook } from "svix";
@@ -20,13 +23,23 @@ export async function POST(req: Request) {
   }
 
   switch (event.type) {
-    case "user.created":
-      const userId = event.data.id;
-      const displayName = event.data.first_name + " " + event.data.last_name;
-      const avatarURL = event.data.image_url;
+    case "user.created": {
+      const user: User = {
+        clerkId: event.data.id,
+        displayName: event.data.first_name + " " + event.data.last_name,
+        avatarURL: event.data.image_url,
+        plan: "basic",
+        vowsCreated: 0,
+        vowsFulfilled: 0,
+      };
+
+      await adminDb.collection("users").doc(event.data.id).set(user);
       break;
+    }
+
     case "user.updated":
       break;
+
     case "user.deleted":
       break;
   }
