@@ -21,6 +21,9 @@ export async function POST(req: Request) {
 
   switch (event.type) {
     case "user.created":
+      const userId = event.data.id;
+      const displayName = event.data.first_name + " " + event.data.last_name;
+      const avatarURL = event.data.image_url;
       break;
     case "user.updated":
       break;
