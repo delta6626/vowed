@@ -3,7 +3,7 @@ import { headers } from "next/headers";
 import { Webhook } from "svix";
 
 export async function POST(req: Request) {
-  const payload = req.json();
+  const payload = await req.json();
   const headersList = await headers();
 
   const webhook = new Webhook(process.env.CLERK_USER_MODIFIED_WEBHOOK_SECRET!);
