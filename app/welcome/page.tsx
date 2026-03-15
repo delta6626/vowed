@@ -1,8 +1,27 @@
 "use client";
 
 import Navbar from "@/components/navigation/Navbar";
+import { checkUserRecordExists } from "../actions/checkUserRecordExists";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Welcome() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const checkUserExistsInterval = setInterval(async () => {
+      const userExists = await checkUserRecordExists();
+      if (userExists) {
+        clearInterval(checkUserExistsInterval);
+        setTimeout(() => {
+          router.push("/dashboard");
+        }, 1000);
+      }
+    }, 2000);
+
+    return () => clearInterval(checkUserExistsInterval);
+  }, []);
+
   return (
     <div className="flex flex-col w-screen h-screen">
       <Navbar />
