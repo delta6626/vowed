@@ -1,7 +1,6 @@
 "use client";
 
 import Navbar from "@/components/navigation/Navbar";
-import { checkUserRecordExists } from "../actions/checkUserRecordExists";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 
@@ -10,8 +9,10 @@ export default function Welcome() {
 
   useEffect(() => {
     const checkUserExistsInterval = setInterval(async () => {
-      const userExists = await checkUserRecordExists();
-      if (userExists) {
+      const res = await fetch("/api/checkUser");
+      const data = await res.json();
+
+      if (data.exists) {
         clearInterval(checkUserExistsInterval);
         setTimeout(() => {
           router.push("/dashboard");
