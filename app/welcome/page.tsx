@@ -3,6 +3,7 @@
 import Navbar from "@/components/navigation/Navbar";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { LoaderCircle } from "lucide-react";
 
 export default function Welcome() {
   const router = useRouter();
@@ -28,11 +29,14 @@ export default function Welcome() {
       <Navbar />
 
       <div className="w-full flex flex-col flex-1 items-center justify-center">
-        <h1 className="font-display">Welcome to Vowed.</h1>
-        <p className="font-body text-accent">
-          We're setting things up for you.
-          <span className="text-base-content loading loading-spinner"></span>
-        </p>
+        <h1 className="font-display text-4xl">Hi, welcome to Vowed.</h1>
+        <div className="font-body flex items-center gap-2 mt-2">
+          <p className="text-accent text-xl">
+            We're setting things up for you.
+          </p>
+
+          <LoaderCircle className="text-accent animate-spin" size={20} />
+        </div>
       </div>
     </div>
   );
