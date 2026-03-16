@@ -10,7 +10,7 @@ export default function Welcome() {
 
   useEffect(() => {
     const checkUserExistsInterval = setInterval(async () => {
-      const res = await fetch("/api/checkUser");
+      const res = await fetch("/api/user/check-existence");
       const data = await res.json();
 
       if (data.exists) {
