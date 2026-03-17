@@ -3,7 +3,7 @@ import { getFormattedStatBoxName } from "@/utils/functions/getFormattedStatBoxNa
 
 export interface DashboardStatBoxProps {
   statBoxType: StatBoxType;
-  mainText: string;
+  mainText: string | number;
 }
 
 export default function DashboardStatBox({

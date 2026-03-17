@@ -1,13 +1,17 @@
-import { NEXT_TAGS } from "@/constants/NEXT_TAGS";
+import { getActiveVowCount } from "@/utils/data/vows";
 import DashboardStatBox from "../generic/DashboardStatBox";
+import { currentUser } from "@clerk/nextjs/server";
 
 export default async function ActiveVowsContainer() {
-  const req = await fetch("api/user/vow-count", {
-    next: { tags: [NEXT_TAGS.DASHBOARD_STATS] },
-  });
-  const res = await req.json();
+  const user = (await currentUser())!;
 
-  const activeVows = res.activeVowCount;
+  let activeVowCount = 0;
 
-  return <DashboardStatBox statBoxType="active" mainText={activeVows} />;
+  try {
+    activeVowCount = await getActiveVowCount(user.id);
+  } catch (error) {
+    console.error(error);
+  }
+
+  return <DashboardStatBox statBoxType="active" mainText={activeVowCount} />;
 }

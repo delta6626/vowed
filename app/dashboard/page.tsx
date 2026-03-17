@@ -1,3 +1,4 @@
+import ActiveVowsContainer from "@/components/dashboard/ActiveVowsContainer";
 import DashboardStatBox from "@/components/generic/DashboardStatBox";
 import Navbar from "@/components/navigation/Navbar";
 import { getGreeting } from "@/utils/functions/getGreeting";
@@ -22,7 +23,7 @@ export default async function Dashboard() {
         </div>
 
         <div className="flex gap-4 mt-8">
-          <DashboardStatBox statBoxType="active" mainText="7" />
+          <ActiveVowsContainer />
           <DashboardStatBox statBoxType="fulfillment" mainText="92%" />
           <DashboardStatBox statBoxType="total" mainText="17" />
         </div>
