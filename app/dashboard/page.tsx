@@ -1,4 +1,5 @@
 import ActiveVowsContainer from "@/components/dashboard/ActiveVowsContainer";
+import FulfillmentRateContainer from "@/components/dashboard/FulfillmentRateContainer";
 import DashboardStatBox from "@/components/generic/DashboardStatBox";
 import Navbar from "@/components/navigation/Navbar";
 import { getGreeting } from "@/utils/functions/getGreeting";
@@ -24,7 +25,7 @@ export default async function Dashboard() {
 
         <div className="flex gap-4 mt-8">
           <ActiveVowsContainer />
-          <DashboardStatBox statBoxType="fulfillment" mainText="92%" />
+          <FulfillmentRateContainer />
           <DashboardStatBox statBoxType="total" mainText="17" />
         </div>
       </div>
