@@ -19,7 +19,7 @@ export default function Error({
           <AlertCircle size={20} className="text-error" /> Something went wrong.
         </p>
 
-        <p className="text-accent">
+        <p className="text-accent text-center">
           An error occured while trying to load your profile.
           <br></br>
           {error.message}
