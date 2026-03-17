@@ -8,7 +8,7 @@ export default async function ActiveVowsContainer() {
   let activeVowCount = 0;
 
   try {
-    activeVowCount = await getActiveVowCount(user.id);
+    activeVowCount = await getActiveVowCount(user.id)();
   } catch (error) {
     console.error(error);
   }
