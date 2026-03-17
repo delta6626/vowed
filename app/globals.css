@@ -104,7 +104,7 @@
 }
 
 .skeleton {
-  --animation-duration: 1.5s;
+  --animation-duration: 1.2s;
   --animation-direction: normal;
   --pseudo-element-display: block; /* Enable animation */
 
