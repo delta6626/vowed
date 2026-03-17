@@ -18,7 +18,7 @@
   color-scheme: "light";
 
   --color-base-100: oklch(98% 0.002 247.839);
-  --color-base-200: oklch(0.9676 0.0057 84.57);
+  --color-base-200: oklch(0.95 0 0);
   --color-base-300: oklch(0.8428 0 0);
   --color-base-content: oklch(12% 0.042 264.695);
 
@@ -95,4 +95,52 @@
     rgba(196, 98, 45, 0.2) 0%,
     transparent 65%
   );
+}
+
+@keyframes loading-skeleton {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton {
+  --animation-duration: 1.5s;
+  --animation-direction: normal;
+  --pseudo-element-display: block; /* Enable animation */
+
+  background-image: none;
+  background-color: var(--color-base-200);
+
+  width: 100%;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  line-height: 1;
+
+  position: relative;
+  user-select: none;
+  overflow: hidden;
+}
+
+.skeleton::after {
+  content: " ";
+  display: var(--pseudo-element-display);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(
+    90deg,
+    var(--color-base-200) 0%,
+    var(--color-base-300) 50%,
+    var(--color-base-200) 100%
+  );
+  transform: translateX(-100%);
+
+  animation-name: loading-skeleton;
+  animation-direction: var(--animation-direction);
+  animation-duration: var(--animation-duration);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
 }
