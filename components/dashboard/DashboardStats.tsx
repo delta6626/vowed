@@ -26,7 +26,7 @@ export const DashboardStats = async () => {
       <DashboardStatBox statBoxType={"active"} mainText={activeVowCount} />
       <DashboardStatBox
         statBoxType={"fulfillment"}
-        mainText={fulfillmentRate}
+        mainText={`${fulfillmentRate}%`}
       />
       <DashboardStatBox statBoxType={"total"} mainText={totalVows} />
     </div>
