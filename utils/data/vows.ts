@@ -40,7 +40,7 @@ export const getFulfillmentRate = (userId: string) =>
     { tags: [`${NEXT_TAGS.DASHBOARD_STATS}-${userId}`] },
   );
 
-export const getTotalVows = async (userId: string) =>
+export const getTotalVows = (userId: string) =>
   unstable_cache(
     async () => {
       const snapshot = await adminDb.collection("users").doc(userId).get();
