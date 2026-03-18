@@ -8,7 +8,7 @@ export default function ThemeChanger() {
 
   return (
     <div className="dropdown dropdown-end">
-      <button tabIndex={0} className="btn btn-ghost">
+      <button tabIndex={0} className="btn btn-square btn-ghost">
         {theme === "light" ? (
           <Sun size={20} />
         ) : theme === "dark" ? (
