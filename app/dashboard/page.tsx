@@ -3,6 +3,7 @@ import Navbar from "@/components/navigation/Navbar";
 import { getGreeting } from "@/utils/functions/getGreeting";
 import { currentUser } from "@clerk/nextjs/server";
 import { Plus } from "lucide-react";
+import Link from "next/link";
 
 export default async function Dashboard() {
   const user = (await currentUser())!;
@@ -23,10 +24,10 @@ export default async function Dashboard() {
             </p>
           </div>
 
-          <button className="btn btn-primary">
+          <Link className="btn btn-primary" href={"/create"}>
             <Plus size={20} />
             New vow
-          </button>
+          </Link>
         </div>
 
         <DashboardStats />
