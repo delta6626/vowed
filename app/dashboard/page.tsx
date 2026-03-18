@@ -1,6 +1,4 @@
-import ActiveVowsContainer from "@/components/dashboard/ActiveVowsContainer";
-import FulfillmentRateContainer from "@/components/dashboard/FulfillmentRateContainer";
-import DashboardStatBox from "@/components/generic/DashboardStatBox";
+import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import Navbar from "@/components/navigation/Navbar";
 import { getGreeting } from "@/utils/functions/getGreeting";
 import { currentUser } from "@clerk/nextjs/server";
@@ -23,11 +21,7 @@ export default async function Dashboard() {
           </p>
         </div>
 
-        <div className="flex gap-4 mt-8">
-          <ActiveVowsContainer />
-          <FulfillmentRateContainer />
-          <DashboardStatBox statBoxType="total" mainText="17" />
-        </div>
+        <DashboardStats />
       </div>
     </div>
   );
