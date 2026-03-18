@@ -17,7 +17,7 @@ export default async function Dashboard() {
           </h1>
 
           <p className="font-body text-accent text-xl mt-2">
-            Here's where your vows stand today.
+            {" Here's where your vows stand today."}
           </p>
         </div>
 
