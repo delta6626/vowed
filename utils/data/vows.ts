@@ -39,3 +39,16 @@ export const getFulfillmentRate = (userId: string) =>
     [CACHE_KEYS.FULFILLMENT_RATE, userId],
     { tags: [`${NEXT_TAGS.DASHBOARD_STATS}-${userId}`] },
   );
+
+export const getTotalVows = async (userId: string) =>
+  unstable_cache(
+    async () => {
+      const snapshot = await adminDb.collection("users").doc(userId).get();
+      const userRecord = snapshot.data() as User;
+      return userRecord.vowsCreated;
+    },
+    [CACHE_KEYS.TOTAL_VOWS, userId],
+    {
+      tags: [`${NEXT_TAGS.DASHBOARD_STATS}-${userId}`],
+    },
+  );
