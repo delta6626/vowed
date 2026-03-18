@@ -2,6 +2,7 @@ import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import Navbar from "@/components/navigation/Navbar";
 import { getGreeting } from "@/utils/functions/getGreeting";
 import { currentUser } from "@clerk/nextjs/server";
+import { Plus } from "lucide-react";
 
 export default async function Dashboard() {
   const user = (await currentUser())!;
@@ -10,15 +11,22 @@ export default async function Dashboard() {
     <div className="w-screen h-screen">
       <Navbar />
       <div className="doublePaddingContainer">
-        <div className="mt-16">
-          <h1 className="font-display text-4xl">
-            {getGreeting() + ", "}
-            <span className="text-primary italic">{user.firstName}.</span>
-          </h1>
+        <div className="flex items-center justify-between mt-16">
+          <div>
+            <h1 className="font-display text-4xl">
+              {getGreeting() + ", "}
+              <span className="text-primary italic">{user.firstName}.</span>
+            </h1>
 
-          <p className="font-body text-accent text-xl mt-2">
-            {" Here's where your vows stand today."}
-          </p>
+            <p className="font-body text-accent text-xl mt-2">
+              {" Here's where your vows stand today."}
+            </p>
+          </div>
+
+          <button className="btn btn-primary">
+            <Plus size={20} />
+            New vow
+          </button>
         </div>
 
         <DashboardStats />
