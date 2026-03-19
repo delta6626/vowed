@@ -13,7 +13,9 @@ export default function Home() {
           <div className="w-full flex justify-center mt-16">
             <Pill
               variant="generic"
-              icon={<div className="w-2 h-2 rounded-full bg-primary"></div>}
+              icon={
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+              }
               text={"Public commitment platform"}
               className="uppercase"
             />
