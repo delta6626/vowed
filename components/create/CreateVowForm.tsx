@@ -25,6 +25,30 @@ export const CreateVowForm = () => {
           <input type={"time"} />
         </div>
       </div>
+
+      <div>
+        <p className="">Visibility</p>
+        <div>
+          <div>
+            <p>Public</p>
+            <p>Visible on your profile</p>
+          </div>
+          <div>
+            <p>Unlisted</p>
+            <p>Accessible with link only</p>
+          </div>
+          <div>
+            <p>Private</p>
+            <p>Accessible to you only</p>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <div>
+        <p>Preview</p>
+      </div>
     </form>
   );
 };
