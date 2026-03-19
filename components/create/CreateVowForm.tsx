@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
 
 export const CreateVowForm = () => {
   return (
@@ -23,33 +23,53 @@ export const CreateVowForm = () => {
         />
       </div>
 
-      <div className="">
-        <p className="">Deadline</p>
-        <div className="">
-          <input type={"date"} />
-          <input type={"time"} />
+      <div className="flex flex-col gap-2">
+        <p className="text-base-content/80">Deadline</p>
+        <div className="flex gap-2">
+          <input
+            type={"date"}
+            className="input px-4 py-8 bg-base-200 w-full rounded-xl"
+          />
+          <input
+            type={"time"}
+            className="input px-4 py-8 bg-base-200 w-full rounded-xl"
+          />
         </div>
       </div>
 
-      <div>
-        <p className="">Visibility</p>
-        <div>
-          <div>
-            <p>Public</p>
-            <p>Visible on your profile</p>
+      <div className="flex flex-col gap-2">
+        <p className="text-base-content/80">Visibility</p>
+        <div className="flex gap-2">
+          <div className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300">
+            <Globe size={20} />
+            <p>
+              Public
+              <br />
+              <span className="text-accent">Visible on your profile</span>
+            </p>
           </div>
-          <div>
-            <p>Unlisted</p>
-            <p>Accessible with link only</p>
+
+          <div className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300">
+            <Link size={20} />
+            <p>
+              Unlisted
+              <br />
+              <span className="text-accent">Accessible with link only</span>
+            </p>
           </div>
-          <div>
-            <p>Private</p>
-            <p>Accessible to you only</p>
+
+          <div className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300">
+            <GlobeLock size={20} />
+            <p>
+              Private
+              <br />
+              <span className="text-accent">Visible to you only</span>
+            </p>
           </div>
         </div>
       </div>
 
-      <hr />
+      <div className="border-b border-base-300"></div>
 
       <div>
         <p>Preview</p>
