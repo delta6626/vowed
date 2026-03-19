@@ -28,11 +28,11 @@ export const CreateVowForm = () => {
         <div className="flex gap-2">
           <input
             type={"date"}
-            className="input px-4 py-8 bg-base-200 w-full rounded-xl"
+            className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
           />
           <input
             type={"time"}
-            className="input px-4 py-8 bg-base-200 w-full rounded-xl"
+            className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
           />
         </div>
       </div>
@@ -72,19 +72,19 @@ export const CreateVowForm = () => {
       <div className="border-b border-base-300"></div>
 
       <div>
-        <p>Preview</p>
-      </div>
+        <p className="text-accent">Preview</p>
 
-      <div>
-        <p>
-          Once submitted, this vow is <span className="">permanent.</span>
-          <br />
-          There is no delete - only resolution.
-        </p>
+        <div className="flex w-full items-center justify-between">
+          <p>
+            Once submitted, this vow is <span className="">permanent.</span>
+            <br />
+            There is no delete - only resolution.
+          </p>
 
-        <button>
-          Publish vow <ArrowRight size={20} />
-        </button>
+          <button className="btn btn-primary">
+            Publish vow <ArrowRight size={20} />
+          </button>
+        </div>
       </div>
     </form>
   );
