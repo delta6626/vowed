@@ -1,3 +1,5 @@
+import { ArrowRight } from "lucide-react";
+
 export const CreateVowForm = () => {
   return (
     <form>
@@ -48,6 +50,18 @@ export const CreateVowForm = () => {
 
       <div>
         <p>Preview</p>
+      </div>
+
+      <div>
+        <p>
+          Once submitted, this vow is <span className="">permanent.</span>
+          <br />
+          There is no delete - only resolution.
+        </p>
+
+        <button>
+          Publish vow <ArrowRight size={20} />
+        </button>
       </div>
     </form>
   );
