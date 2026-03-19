@@ -1,5 +1,6 @@
 "use client";
 
+import { CreateVowForm } from "@/components/create/CreateVowForm";
 import Navbar from "@/components/navigation/Navbar";
 
 export default function Create() {
@@ -19,6 +20,8 @@ export default function Create() {
             The world will be watching.
           </p>
         </div>
+
+        <CreateVowForm />
       </div>
     </div>
   );
