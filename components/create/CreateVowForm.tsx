@@ -16,7 +16,7 @@ export const CreateVowForm = () => {
           Description <span className="text-accent text-xs">(Optional)</span>
         </p>
         <textarea
-          className="textarea w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
+          className="textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
           placeholder={
             "Add context, stakes or other relevant details. Viewers will see this."
           }
