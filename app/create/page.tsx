@@ -8,8 +8,8 @@ export default function Create() {
     <div className="w-screen h-screen overflow-x-hidden">
       <Navbar />
 
-      <div className="doublePaddingContainer">
-        <div className="mt-16">
+      <div className="doublePaddingContainer my-16">
+        <div>
           <h1 className="font-display text-4xl">
             Make your <span className="text-primary">vow.</span>
           </h1>
