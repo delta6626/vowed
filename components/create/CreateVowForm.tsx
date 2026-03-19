@@ -2,18 +2,21 @@ import { ArrowRight } from "lucide-react";
 
 export const CreateVowForm = () => {
   return (
-    <form>
-      <div className="">
-        <p className="">What do you vow?</p>
-        <input className="" placeholder={"I will..."} />
+    <form className="flex flex-col gap-12">
+      <div className="flex flex-col gap-2">
+        <p className="text-base-content/80">What do you vow?</p>
+        <input
+          className="input text-xl px-4 py-8 font-display w-full bg-base-200 rounded-xl border border-base-300"
+          placeholder={"I will..."}
+        />
       </div>
 
-      <div className="">
-        <p className="">
-          Description <span className="">optional</span>
+      <div className="flex flex-col gap-2">
+        <p className="text-base-content/80">
+          Description <span className="text-accent text-xs">(Optional)</span>
         </p>
-        <input
-          className=""
+        <textarea
+          className="textarea w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
           placeholder={
             "Add context, stakes or other relevant details. Viewers will see this."
           }

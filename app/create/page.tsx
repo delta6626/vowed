@@ -21,7 +21,9 @@ export default function Create() {
           </p>
         </div>
 
-        <CreateVowForm />
+        <div className="mt-16">
+          <CreateVowForm />
+        </div>
       </div>
     </div>
   );
