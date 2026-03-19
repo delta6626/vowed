@@ -6,6 +6,7 @@ export const CreateVowForm = () => {
       <div className="flex flex-col gap-2">
         <p className="text-base-content/80">What do you vow?</p>
         <input
+          required={true}
           className="input text-xl px-4 py-8 font-display w-full bg-base-200 rounded-xl border border-base-300"
           placeholder={"I will..."}
         />
@@ -27,10 +28,12 @@ export const CreateVowForm = () => {
         <p className="text-base-content/80">Deadline</p>
         <div className="flex gap-2">
           <input
+            required={true}
             type={"date"}
             className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
           />
           <input
+            required={true}
             type={"time"}
             className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
           />
