@@ -43,6 +43,7 @@ export const CreateVowForm = () => {
           className="input text-xl px-4 py-8 font-display w-full bg-base-200 rounded-xl border border-base-300"
           placeholder={"I will..."}
         />
+        <p className="text-right text-accent">{`${vowTitle.length}/120`}</p>
       </div>
 
       <div className="flex flex-col gap-2">
@@ -59,6 +60,7 @@ export const CreateVowForm = () => {
             "Add context, stakes or other relevant details. Viewers will see this."
           }
         />
+        <p className="text-right text-accent">{`${vowDescription.length}/300`}</p>
       </div>
 
       <div className="flex flex-col gap-2">
