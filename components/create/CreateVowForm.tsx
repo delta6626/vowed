@@ -1,6 +1,14 @@
+import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
+import { useState } from "react";
 
 export const CreateVowForm = () => {
+  const [vowTitle, setVowTitle] = useState<string>("");
+  const [vowDescription, setVowDescription] = useState<string>("");
+  const [vowDeadlineDate, setVowDeadlineDate] = useState<string>("");
+  const [vowDeadlineTime, setVowDeadlineTime] = useState<string>("");
+  const [vowVisibility, setVowVisibility] = useState<VowVisibility>("public");
+
   return (
     <form className="w-2xl flex flex-col gap-12">
       <div className="flex flex-col gap-2">
