@@ -37,6 +37,8 @@ export const CreateVowForm = () => {
         <input
           required={true}
           value={vowTitle}
+          maxLength={120}
+          minLength={3}
           onChange={handleVowTitleChange}
           className="input text-xl px-4 py-8 font-display w-full bg-base-200 rounded-xl border border-base-300"
           placeholder={"I will..."}
@@ -50,6 +52,8 @@ export const CreateVowForm = () => {
         <textarea
           value={vowDescription}
           onChange={handleVowDescriptionChange}
+          maxLength={300}
+          minLength={0}
           className="textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
           placeholder={
             "Add context, stakes or other relevant details. Viewers will see this."
