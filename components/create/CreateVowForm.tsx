@@ -1,7 +1,7 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
-import { ChangeEvent, SubmitEvent, useState } from "react";
+import { ChangeEvent, SubmitEvent, useEffect, useState } from "react";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -9,6 +9,7 @@ export const CreateVowForm = () => {
   const [vowDeadlineDate, setVowDeadlineDate] = useState<string>("");
   const [vowDeadlineTime, setVowDeadlineTime] = useState<string>("");
   const [vowVisibility, setVowVisibility] = useState<VowVisibility>("public");
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const title = e.target.value.trim();
@@ -34,6 +35,17 @@ export const CreateVowForm = () => {
     e.preventDefault();
     // console.log(vowTitle, vowDescription, vowDeadlineDate, vowDeadlineTime, vowVisibility)
   };
+
+  const minDate = `${currentTime.getFullYear()}-${(currentTime.getMonth() + 1).toString().padStart(2, "0")}-${currentTime.getDate().toString().padStart(2, "0")}`;
+  const minTime = `${currentTime.getHours().toString().padStart(2, "0")}:${currentTime.getMinutes().toString().padStart(2, "0")}`;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000 * 60); // every minute
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <form className="w-2xl flex flex-col gap-12" onSubmit={handleFormSubmit}>
@@ -73,6 +85,7 @@ export const CreateVowForm = () => {
         <div className="flex gap-2">
           <input
             required={true}
+            min={minDate}
             value={vowDeadlineDate}
             onChange={handleVowDeadlineDateChange}
             type={"date"}
@@ -80,6 +93,7 @@ export const CreateVowForm = () => {
           />
           <input
             required={true}
+            min={vowDeadlineDate === minDate ? minTime : undefined}
             value={vowDeadlineTime}
             onChange={handleVowDeadlineTimeChange}
             type={"time"}
