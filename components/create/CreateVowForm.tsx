@@ -12,13 +12,13 @@ export const CreateVowForm = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    const title = e.target.value.trim();
+    const title = e.target.value;
     if (title.length > CREATE_VOW.MAX_VOW_TITLE_LENGTH) return;
     setVowTitle(title);
   };
 
   const handleVowDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    const description = e.target.value.trim();
+    const description = e.target.value;
     if (description.length > CREATE_VOW.MAX_VOW_DESCRIPTION_LENGTH) return;
     setVowDescription(description);
   };
