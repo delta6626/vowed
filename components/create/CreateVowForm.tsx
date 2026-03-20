@@ -1,6 +1,6 @@
 import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -9,12 +9,32 @@ export const CreateVowForm = () => {
   const [vowDeadlineTime, setVowDeadlineTime] = useState<string>("");
   const [vowVisibility, setVowVisibility] = useState<VowVisibility>("public");
 
+  const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setVowTitle(e.target.value);
+  };
+
+  const handleVowDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setVowDescription(e.target.value);
+  };
+
+  const handleVowDeadlineDateChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setVowDeadlineDate(e.target.value);
+  };
+
+  const handleVowDeadlineTimeChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setVowDeadlineTime(e.target.value);
+  };
+
+  const handleVowVisibilityChange = () => {};
+
   return (
     <form className="w-2xl flex flex-col gap-12">
       <div className="flex flex-col gap-2">
         <p className="text-base-content/80">What do you vow?</p>
         <input
           required={true}
+          value={vowTitle}
+          onChange={handleVowTitleChange}
           className="input text-xl px-4 py-8 font-display w-full bg-base-200 rounded-xl border border-base-300"
           placeholder={"I will..."}
         />
@@ -25,6 +45,8 @@ export const CreateVowForm = () => {
           Description <span className="text-accent text-xs">(Optional)</span>
         </p>
         <textarea
+          value={vowDescription}
+          onChange={handleVowDescriptionChange}
           className="textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
           placeholder={
             "Add context, stakes or other relevant details. Viewers will see this."
@@ -37,11 +59,15 @@ export const CreateVowForm = () => {
         <div className="flex gap-2">
           <input
             required={true}
+            value={vowDeadlineDate}
+            onChange={handleVowDeadlineDateChange}
             type={"date"}
             className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
           />
           <input
             required={true}
+            value={vowDeadlineTime}
+            onChange={handleVowDeadlineTimeChange}
             type={"time"}
             className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
           />
