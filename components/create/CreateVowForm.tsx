@@ -11,11 +11,15 @@ export const CreateVowForm = () => {
   const [vowVisibility, setVowVisibility] = useState<VowVisibility>("public");
 
   const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setVowTitle(e.target.value);
+    const title = e.target.value.trim();
+    if (title.length > CREATE_VOW.MAX_VOW_TITLE_LENGTH) return;
+    setVowTitle(title);
   };
 
   const handleVowDescriptionChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-    setVowDescription(e.target.value);
+    const description = e.target.value.trim();
+    if (description.length > CREATE_VOW.MAX_VOW_DESCRIPTION_LENGTH) return;
+    setVowDescription(description);
   };
 
   const handleVowDeadlineDateChange = (e: ChangeEvent<HTMLInputElement>) => {
