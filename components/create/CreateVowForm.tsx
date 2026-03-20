@@ -77,32 +77,32 @@ export const CreateVowForm = () => {
       <div className="flex flex-col gap-2">
         <p className="text-base-content/80">Visibility</p>
         <div className="flex gap-2">
-          <div className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300">
+          <button className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300 text-left">
             <Globe size={20} />
             <p>
               Public
               <br />
               <span className="text-accent">Visible to all</span>
             </p>
-          </div>
+          </button>
 
-          <div className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300">
+          <button className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300 text-left">
             <Link size={20} />
             <p>
               Unlisted
               <br />
               <span className="text-accent">Link access only</span>
             </p>
-          </div>
+          </button>
 
-          <div className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300">
+          <button className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300 text-left">
             <GlobeLock size={20} />
             <p>
               Private
               <br />
               <span className="text-accent">Only you</span>
             </p>
-          </div>
+          </button>
         </div>
       </div>
 
