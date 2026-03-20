@@ -1,144 +1,152 @@
 @import "tailwindcss";
 
 @theme {
-  --font-display: var(--font-playfair);
-  --font-body: var(--font-dm-sans);
+    --font-display: var(--font-playfair);
+    --font-body: var(--font-dm-sans);
 }
 
 @utility btn {
-  @apply active:scale-95 transition-all ease-in-out duration-200 font-body shadow-none;
+    @apply active:scale-95 transition-all ease-in-out duration-200 font-body shadow-none;
+}
+
+@utility input {
+    @apply focus:outline-1 focus:outline-offset-0 focus:outline-primary/20;
+}
+
+@utility textarea {
+    @apply focus:outline-1 focus:outline-offset-0 focus:outline-primary/20;
 }
 
 @plugin "daisyui" {
-  themes: light, dark;
+    themes: light, dark;
 }
 
 @plugin "daisyui/theme" {
-  name: "light";
-  color-scheme: "light";
+    name: "light";
+    color-scheme: "light";
 
-  --color-base-100: oklch(98% 0.002 247.839);
-  --color-base-200: oklch(0.95 0 0);
-  --color-base-300: oklch(0.8428 0 0);
-  --color-base-content: oklch(12% 0.042 264.695);
+    --color-base-100: oklch(98% 0.002 247.839);
+    --color-base-200: oklch(0.95 0 0);
+    --color-base-300: oklch(0.8428 0 0);
+    --color-base-content: oklch(12% 0.042 264.695);
 
-  --color-primary: oklch(0.6045 0.1414 46.33);
-  --color-primary-content: oklch(97% 0.014 343.198);
+    --color-primary: oklch(0.6045 0.1414 46.33);
+    --color-primary-content: oklch(97% 0.014 343.198);
 
-  --color-secondary: oklch(0.6927 0.142 77.75);
-  --color-secondary-content: oklch(98% 0.019 200.873);
+    --color-secondary: oklch(0.6927 0.142 77.75);
+    --color-secondary-content: oklch(98% 0.019 200.873);
 
-  --color-accent: oklch(0.7128 0 0);
-  --color-accent-content: oklch(96% 0.018 272.314);
+    --color-accent: oklch(0.7128 0 0);
+    --color-accent-content: oklch(96% 0.018 272.314);
 
-  --color-success: oklch(0.6271 0.1699 149.21);
-  --color-success-content: oklch(98% 0.018 155.826);
+    --color-success: oklch(0.6271 0.1699 149.21);
+    --color-success-content: oklch(98% 0.018 155.826);
 
-  --color-error: oklch(0.7771 0.2152 27.33);
-  --color-error-content: oklch(97% 0.013 17.38);
+    --color-error: oklch(0.7771 0.2152 27.33);
+    --color-error-content: oklch(97% 0.013 17.38);
 
-  --radius-selector: 0.5rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 0.5px;
-  --depth: 0;
-  --noise: 0;
+    --radius-selector: 0.5rem;
+    --radius-field: 0.5rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 0.5px;
+    --depth: 0;
+    --noise: 0;
 }
 
 @plugin "daisyui/theme" {
-  name: "dark";
-  color-scheme: "dark";
+    name: "dark";
+    color-scheme: "dark";
 
-  --color-base-100: oklch(0.1772 0.002 106.6);
-  --color-base-200: oklch(0.2339 0.0056 106.83);
-  --color-base-300: oklch(0.2828 0 0);
-  --color-base-content: oklch(98% 0.003 247.858);
+    --color-base-100: oklch(0.1772 0.002 106.6);
+    --color-base-200: oklch(0.2339 0.0056 106.83);
+    --color-base-300: oklch(0.2828 0 0);
+    --color-base-content: oklch(98% 0.003 247.858);
 
-  --color-primary: oklch(0.6045 0.1414 46.33);
-  --color-primary-content: oklch(97% 0.014 343.198);
+    --color-primary: oklch(0.6045 0.1414 46.33);
+    --color-primary-content: oklch(97% 0.014 343.198);
 
-  --color-secondary: oklch(0.6927 0.142 77.75);
-  --color-secondary-content: oklch(98% 0.019 200.873);
+    --color-secondary: oklch(0.6927 0.142 77.75);
+    --color-secondary-content: oklch(98% 0.019 200.873);
 
-  --color-accent: oklch(0.4128 0 0);
-  --color-accent-content: oklch(96% 0.018 272.314);
+    --color-accent: oklch(0.4128 0 0);
+    --color-accent-content: oklch(96% 0.018 272.314);
 
-  --color-success: oklch(0.6271 0.1699 149.21);
-  --color-success-content: oklch(98% 0.018 155.826);
+    --color-success: oklch(0.6271 0.1699 149.21);
+    --color-success-content: oklch(98% 0.018 155.826);
 
-  --color-error: oklch(0.7771 0.2152 27.33);
-  --color-error-content: oklch(97% 0.013 17.38);
+    --color-error: oklch(0.7771 0.2152 27.33);
+    --color-error-content: oklch(97% 0.013 17.38);
 
-  --radius-selector: 0.5rem;
-  --radius-field: 0.5rem;
-  --radius-box: 0.5rem;
-  --size-selector: 0.25rem;
-  --size-field: 0.25rem;
-  --border: 0.5px;
-  --depth: 0;
-  --noise: 0;
+    --radius-selector: 0.5rem;
+    --radius-field: 0.5rem;
+    --radius-box: 0.5rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 0.5px;
+    --depth: 0;
+    --noise: 0;
 }
 
 .doublePaddingContainer {
-  @apply px-8 sm:px-12 md:px-16 lg:px-40 xl:px-72 2xl:px-112;
+    @apply px-8 sm:px-12 md:px-16 lg:px-40 xl:px-72 2xl:px-112;
 }
 
 .paddingContainer {
-  @apply px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-28;
+    @apply px-8 sm:px-12 md:px-16 lg:px-20 xl:px-24 2xl:px-28;
 }
 
 .authPageSideSectionBackground {
-  background: radial-gradient(
-    ellipse 120% 100% at 20% 80%,
-    rgba(196, 98, 45, 0.2) 0%,
-    transparent 65%
-  );
+    background: radial-gradient(
+        ellipse 120% 100% at 20% 80%,
+        rgba(196, 98, 45, 0.2) 0%,
+        transparent 65%
+    );
 }
 
 @keyframes loading-skeleton {
-  100% {
-    transform: translateX(100%);
-  }
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 .skeleton {
-  --animation-duration: 1.2s;
-  --animation-direction: normal;
-  --pseudo-element-display: block; /* Enable animation */
+    --animation-duration: 1.2s;
+    --animation-direction: normal;
+    --pseudo-element-display: block; /* Enable animation */
 
-  background-image: none;
-  background-color: var(--color-base-200);
+    background-image: none;
+    background-color: var(--color-base-200);
 
-  display: inline-flex;
-  line-height: 1;
+    display: inline-flex;
+    line-height: 1;
 
-  position: relative;
-  user-select: none;
-  overflow: hidden;
+    position: relative;
+    user-select: none;
+    overflow: hidden;
 }
 
 .skeleton::after {
-  content: " ";
-  display: var(--pseudo-element-display);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  background-repeat: no-repeat;
-  background-image: linear-gradient(
-    90deg,
-    var(--color-base-200) 0%,
-    var(--color-base-300) 50%,
-    var(--color-base-200) 100%
-  );
-  transform: translateX(-100%);
+    content: " ";
+    display: var(--pseudo-element-display);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(
+        90deg,
+        var(--color-base-200) 0%,
+        var(--color-base-300) 50%,
+        var(--color-base-200) 100%
+    );
+    transform: translateX(-100%);
 
-  animation-name: loading-skeleton;
-  animation-direction: var(--animation-direction);
-  animation-duration: var(--animation-duration);
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
+    animation-name: loading-skeleton;
+    animation-direction: var(--animation-direction);
+    animation-duration: var(--animation-duration);
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
 }
