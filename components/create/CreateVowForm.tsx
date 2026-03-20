@@ -1,3 +1,4 @@
+import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
 import { ChangeEvent, SubmitEvent, useState } from "react";
@@ -37,13 +38,13 @@ export const CreateVowForm = () => {
         <input
           required={true}
           value={vowTitle}
-          maxLength={120}
-          minLength={3}
+          maxLength={CREATE_VOW.MAX_VOW_TITLE_LENGTH}
+          minLength={CREATE_VOW.MIN_VOW_TITLE_LENGTH}
           onChange={handleVowTitleChange}
           className="input text-xl px-4 py-8 font-display w-full bg-base-200 rounded-xl border border-base-300"
           placeholder={"I will..."}
         />
-        <p className="text-right text-accent">{`${vowTitle.length}/120`}</p>
+        <p className="text-right text-accent">{`${vowTitle.length}/${CREATE_VOW.MAX_VOW_TITLE_LENGTH}`}</p>
       </div>
 
       <div className="flex flex-col gap-2">
@@ -53,14 +54,14 @@ export const CreateVowForm = () => {
         <textarea
           value={vowDescription}
           onChange={handleVowDescriptionChange}
-          maxLength={300}
-          minLength={0}
+          maxLength={CREATE_VOW.MAX_VOW_DESCRIPTION_LENGTH}
+          minLength={CREATE_VOW.MIN_VOW_DESCRIPTION_LENGTH}
           className="textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
           placeholder={
             "Add context, stakes or other relevant details. Viewers will see this."
           }
         />
-        <p className="text-right text-accent">{`${vowDescription.length}/300`}</p>
+        <p className="text-right text-accent">{`${vowDescription.length}/${CREATE_VOW.MAX_VOW_DESCRIPTION_LENGTH}`}</p>
       </div>
 
       <div className="flex flex-col gap-2">
