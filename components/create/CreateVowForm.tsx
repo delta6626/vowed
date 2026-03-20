@@ -48,7 +48,7 @@ export const CreateVowForm = () => {
             <p>
               Public
               <br />
-              <span className="text-accent">Visible on your profile</span>
+              <span className="text-accent">Visible to all</span>
             </p>
           </div>
 
@@ -57,7 +57,7 @@ export const CreateVowForm = () => {
             <p>
               Unlisted
               <br />
-              <span className="text-accent">Accessible with link only</span>
+              <span className="text-accent">Link access only</span>
             </p>
           </div>
 
@@ -66,7 +66,7 @@ export const CreateVowForm = () => {
             <p>
               Private
               <br />
-              <span className="text-accent">Visible to you only</span>
+              <span className="text-accent">Only you</span>
             </p>
           </div>
         </div>
