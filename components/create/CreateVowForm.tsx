@@ -1,6 +1,6 @@
 import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, SubmitEvent, useState } from "react";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -25,10 +25,13 @@ export const CreateVowForm = () => {
     setVowDeadlineTime(e.target.value);
   };
 
-  const handleVowVisibilityChange = () => {};
+  const handleFormSubmit = (e: SubmitEvent) => {
+    e.preventDefault();
+    // console.log(vowTitle, vowDescription, vowDeadlineDate, vowDeadlineTime, vowVisibility)
+  };
 
   return (
-    <form className="w-2xl flex flex-col gap-12">
+    <form className="w-2xl flex flex-col gap-12" onSubmit={handleFormSubmit}>
       <div className="flex flex-col gap-2">
         <p className="text-base-content/80">What do you vow?</p>
         <input
@@ -77,7 +80,13 @@ export const CreateVowForm = () => {
       <div className="flex flex-col gap-2">
         <p className="text-base-content/80">Visibility</p>
         <div className="flex gap-2">
-          <button className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300 text-left">
+          <button
+            type={"button"}
+            className={`flex items-center gap-4 px-4 py-8 rounded-xl w-full border border-base-300 text-left hover:border hover:border-primary/20 ${vowVisibility === "public" ? "bg-primary/20 border border-primary/20" : "bg-base-200"}`}
+            onClick={() => {
+              setVowVisibility("public");
+            }}
+          >
             <Globe size={20} />
             <p>
               Public
@@ -86,7 +95,13 @@ export const CreateVowForm = () => {
             </p>
           </button>
 
-          <button className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300 text-left">
+          <button
+            type={"button"}
+            className={`flex items-center gap-4 px-4 py-8 rounded-xl w-full border border-base-300 text-left hover:border hover:border-primary/20 ${vowVisibility === "unlisted" ? "bg-primary/20 border border-primary/20" : "bg-base-200"}`}
+            onClick={() => {
+              setVowVisibility("unlisted");
+            }}
+          >
             <Link size={20} />
             <p>
               Unlisted
@@ -95,7 +110,13 @@ export const CreateVowForm = () => {
             </p>
           </button>
 
-          <button className="flex items-center gap-4 bg-base-200 px-4 py-8 rounded-xl w-full border border-base-300 text-left">
+          <button
+            type={"button"}
+            className={`flex items-center gap-4 px-4 py-8 rounded-xl w-full border border-base-300 text-left hover:border hover:border-primary/20 ${vowVisibility === "private" ? "bg-primary/20 border border-primary/20" : "bg-base-200"}`}
+            onClick={() => {
+              setVowVisibility("private");
+            }}
+          >
             <GlobeLock size={20} />
             <p>
               Private
@@ -119,7 +140,7 @@ export const CreateVowForm = () => {
             There is no delete - only resolution.
           </p>
 
-          <button className="btn btn-primary">
+          <button type={"submit"} className="btn btn-primary">
             Publish vow <ArrowRight size={20} />
           </button>
         </div>
