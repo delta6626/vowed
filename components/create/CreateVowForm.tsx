@@ -2,7 +2,7 @@ import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
 
 export const CreateVowForm = () => {
   return (
-    <form className="flex flex-col gap-12">
+    <form className="w-2xl flex flex-col gap-12">
       <div className="flex flex-col gap-2">
         <p className="text-base-content/80">What do you vow?</p>
         <input
