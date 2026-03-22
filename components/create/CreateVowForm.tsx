@@ -40,6 +40,9 @@ export const CreateVowForm = () => {
     try {
       const res = await fetch("/api/vow/create", {
         method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({
           title: vowTitle.trim(),
           description: vowDescription.trim(),
