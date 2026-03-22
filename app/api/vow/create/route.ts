@@ -1,4 +1,6 @@
+import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { Vow } from "@/types/Vow";
+import { currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
 export type ClientVowDetails = Pick<
@@ -7,19 +9,52 @@ export type ClientVowDetails = Pick<
 >;
 
 export async function POST(req: NextRequest) {
-  try {
-    const vowDetails = (await req.json()) as ClientVowDetails;
+  const user = (await currentUser())!;
 
-    if (
-      !vowDetails.title ||
-      !vowDetails.deadlineTimestampUTC ||
-      !vowDetails.visibility
-    ) {
+  try {
+    const { title, description, deadlineTimestampUTC, visibility } =
+      (await req.json()) as ClientVowDetails;
+    const currentTimestampUTC = Date.now();
+    const timeStampDifference = deadlineTimestampUTC - currentTimestampUTC;
+
+    if (!title || !deadlineTimestampUTC || !visibility) {
       return NextResponse.json(
         { error: "One or more vow attributes are missing." },
         { status: 400 },
       );
     }
+
+    if (
+      timeStampDifference <
+      CREATE_VOW.MNIMUM_DEADLINE_TIME_MINUTES * 60 * 1000
+    ) {
+      return NextResponse.json(
+        {
+          error: `Vow deadline must be ${CREATE_VOW.MNIMUM_DEADLINE_TIME_MINUTES} minutes in the future, at least.`,
+        },
+        { status: 400 },
+      );
+    }
+
+    const vow: Vow = {
+      authorId: user.id,
+      title: title,
+      description: description,
+      deadlineTimestampUTC: deadlineTimestampUTC,
+      visibility: visibility,
+      status: "waiting",
+      resolution: null,
+      viewCount: 0,
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    };
+
+    // TODO: Upload vow to firestore
+
+    return NextResponse.json(
+      { message: "Vow created successfully." },
+      { status: 201 },
+    );
   } catch (error) {
     return NextResponse.json(
       { error: "An error occured on the server." },
