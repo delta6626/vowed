@@ -6,7 +6,7 @@ export interface Vow {
   authorId: string;
   title: string;
   description: string | null;
-  deadline: Date;
+  deadlineTimestampUTC: number;
   visibility: VowVisibility;
   status: VowStatus;
   resolution: VowResolution | null; // null until deadline
