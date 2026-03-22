@@ -32,9 +32,27 @@ export const CreateVowForm = () => {
     setVowDeadlineTime(e.target.value);
   };
 
-  const handleFormSubmit = (e: SubmitEvent) => {
+  const handleFormSubmit = async (e: SubmitEvent) => {
     e.preventDefault();
-    // console.log(vowTitle, vowDescription, vowDeadlineDate, vowDeadlineTime, vowVisibility)
+    const dateTime = new Date(`${vowDeadlineDate}T${vowDeadlineTime}:00.000Z`);
+    const deadlineTimestampUTC = dateTime.getTime();
+
+    try {
+      const res = await fetch("/api/vow/create", {
+        method: "POST",
+        body: JSON.stringify({
+          title: vowTitle.trim(),
+          description: vowDescription.trim(),
+          deadlineTimestampUTC: deadlineTimestampUTC,
+          visibility: vowVisibility,
+        }),
+      });
+
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const minDate = `${currentTime.getFullYear()}-${(currentTime.getMonth() + 1).toString().padStart(2, "0")}-${currentTime.getDate().toString().padStart(2, "0")}`;
