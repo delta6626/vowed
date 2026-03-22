@@ -2,6 +2,7 @@ import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
 import { ChangeEvent, SubmitEvent, useEffect, useState } from "react";
+import { VowPreview } from "./VowPreview";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -166,6 +167,12 @@ export const CreateVowForm = () => {
 
       <div>
         <p className="text-accent">Preview</p>
+
+        <VowPreview
+          title={vowTitle}
+          deadlineDate={vowDeadlineDate}
+          deadlineTime={vowDeadlineTime}
+        />
 
         <div className="flex w-full items-center justify-between">
           <p className="text-accent">
