@@ -9,7 +9,11 @@ export type ClientVowDetails = Pick<
 >;
 
 export async function POST(req: NextRequest) {
-  const user = (await currentUser())!;
+  const user = await currentUser();
+
+  if (!user) {
+    return NextResponse.json({ error: "Not authenticated." }, { status: 401 });
+  }
 
   try {
     const { title, description, deadlineTimestampUTC, visibility } =
