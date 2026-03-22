@@ -1,7 +1,10 @@
 import { Vow } from "@/types/Vow";
 
-export type VowPreviewProps = Pick<Vow, "title" | "deadline">;
+export type VowPreviewProps = Pick<Vow, "title"> & {
+  deadlineDate: string;
+  deadlineTime: string;
+};
 
-export const VowPreview = ({ title, deadline }: VowPreviewProps) => {
+export const VowPreview = ({ title }: VowPreviewProps) => {
   return <div></div>;
 };
