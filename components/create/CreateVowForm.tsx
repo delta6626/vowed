@@ -166,7 +166,7 @@ export const CreateVowForm = () => {
       <div className="border-b border-base-300"></div>
 
       <div>
-        <p className="text-accent">Preview</p>
+        <p className="text-accent mb-4">Preview</p>
 
         <VowPreview
           title={vowTitle}
@@ -174,7 +174,7 @@ export const CreateVowForm = () => {
           deadlineTime={vowDeadlineTime}
         />
 
-        <div className="flex w-full items-center justify-between">
+        <div className="flex w-full items-center justify-between mt-8">
           <p className="text-accent">
             Once submitted, this vow is{" "}
             <span className="text-base-content/80">permanent.</span>
