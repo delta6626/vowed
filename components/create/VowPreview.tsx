@@ -28,7 +28,7 @@ export const VowPreview = ({
 
   return (
     <div className="w-full p-4 bg-base-200 rounded-xl flex items-end justify-between">
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 min-w-0">
         <Pill
           text="Waiting"
           variant="waiting"
@@ -39,14 +39,20 @@ export const VowPreview = ({
         ></Pill>
 
         <h1
-          className={`font-display text-lg italic ${!title ? "text-accent" : ""}`}
+          className={`font-display text-lg italic line-clamp-2 wrap-break-word ${!title ? "text-accent" : ""}`}
         >
           {title ? title : "Your vow will appear here.."}
         </h1>
 
         <p className="text-accent text-sm">
-          Due{" "}
-          <span className="font-semibold text-base-content/80">{`${formattedDate} at ${formattedTime}`}</span>
+          {deadlineDate && deadlineTime && (
+            <>
+              Due{" "}
+              <span className="font-semibold text-base-content/80">{`${formattedDate} at ${formattedTime}`}</span>
+            </>
+          )}
+
+          {(!deadlineDate || !deadlineTime) && "Set a deadline above"}
         </p>
       </div>
 
