@@ -11,6 +11,7 @@ export const CreateVowForm = () => {
   const [vowDeadlineTime, setVowDeadlineTime] = useState<string>("");
   const [vowVisibility, setVowVisibility] = useState<VowVisibility>("public");
   const [currentTime, setCurrentTime] = useState(new Date());
+  const [loading, setLoading] = useState<boolean>(false);
 
   const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const title = e.target.value;
@@ -38,6 +39,7 @@ export const CreateVowForm = () => {
     const deadlineTimestampUTC = dateTime.getTime();
 
     try {
+      setLoading(true);
       const res = await fetch("/api/vow/create", {
         method: "POST",
         headers: {
@@ -61,6 +63,7 @@ export const CreateVowForm = () => {
       setVowDeadlineDate("");
       setVowDeadlineTime("");
       setVowVisibility("public"); // Default
+      setLoading(false);
     }
   };
 
@@ -209,8 +212,15 @@ export const CreateVowForm = () => {
             There is no delete - only resolution.
           </p>
 
-          <button type={"submit"} className="btn btn-primary">
-            Publish vow <ArrowRight size={20} />
+          <button type={"submit"} className="btn btn-primary flex shrink-0">
+            Publish vow
+            <span className="w-5 h-5 flex items-center justify-center">
+              {loading ? (
+                <span className="loading loading-spinner loading-xs"></span>
+              ) : (
+                <ArrowRight size={20} />
+              )}
+            </span>
           </button>
         </div>
       </div>
