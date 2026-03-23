@@ -1,6 +1,12 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { VowVisibility } from "@/types/VowVisibility";
-import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
+import {
+  ArrowRight,
+  CheckCheckIcon,
+  Globe,
+  GlobeLock,
+  Link,
+} from "lucide-react";
 import { ChangeEvent, SubmitEvent, useEffect, useState } from "react";
 import { VowPreview } from "./VowPreview";
 import { CreateVowHeader } from "./CreateVowHeader";
@@ -136,6 +142,8 @@ export const CreateVowForm = () => {
     return (
       <div className="absolute w-screen h-screen inset-0">
         <div className="w-full h-full flex flex-col items-center justify-center">
+          <CheckCheckIcon size={70} className="text-primary" />
+
           <h1 className="text-4xl font-display text-center">
             Your vow is <span className="text-primary italic">live.</span>
           </h1>
@@ -145,7 +153,7 @@ export const CreateVowForm = () => {
             }
           </p>
 
-          <div className="mt-4 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between">
+          <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between">
             <kbd className="text-accent">{`vowed.cc/v/${vowId}`}</kbd>
             <button className="btn btn-primary">Copy</button>
           </div>
