@@ -1,12 +1,6 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { VowVisibility } from "@/types/VowVisibility";
-import {
-  ArrowRight,
-  CheckCheckIcon,
-  Globe,
-  GlobeLock,
-  Link,
-} from "lucide-react";
+import { ArrowRight, CheckCheckIcon } from "lucide-react";
 import { ChangeEvent, SubmitEvent, useEffect, useState } from "react";
 import { VowPreview } from "./VowPreview";
 import { CreateVowHeader } from "./CreateVowHeader";
@@ -14,6 +8,7 @@ import { CreateVowFormTitle } from "./CreateVowFormTitle";
 import { CreateVowFormDescription } from "./CreateVowFormDescription";
 import { CreateVowFormDeadline } from "./CreateVowFormDeadline";
 import { CreateVowFormVisibility } from "./CreateVowFormVisibility";
+import { motion } from "motion/react";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -142,7 +137,16 @@ export const CreateVowForm = () => {
     return (
       <div className="absolute w-screen h-screen inset-0">
         <div className="w-full h-full flex flex-col items-center justify-center">
-          <CheckCheckIcon size={70} className="text-primary" />
+          <motion.div
+            initial={{ scale: 0 }}
+            animate={{ scale: [0, 1.2, 1] }}
+            transition={{
+              duration: 0.6,
+              ease: "easeOut",
+            }}
+          >
+            <CheckCheckIcon size={70} className="text-primary" />
+          </motion.div>
 
           <h1 className="text-4xl font-display text-center">
             Your vow is <span className="text-primary italic">live.</span>
