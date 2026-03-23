@@ -6,6 +6,7 @@ import { VowPreview } from "./VowPreview";
 import { CreateVowHeader } from "./CreateVowHeader";
 import { CreateVowFormTitle } from "./CreateVowFormTitle";
 import { CreateVowFormDescription } from "./CreateVowFormDescription";
+import { CreateVowFormDeadline } from "./CreateVowFormDeadline";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -13,7 +14,6 @@ export const CreateVowForm = () => {
   const [vowDeadlineDate, setVowDeadlineDate] = useState<string>("");
   const [vowDeadlineTime, setVowDeadlineTime] = useState<string>("");
   const [vowVisibility, setVowVisibility] = useState<VowVisibility>("public");
-  const [currentTime, setCurrentTime] = useState(new Date());
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -70,21 +70,6 @@ export const CreateVowForm = () => {
     }
   };
 
-  const minDate = `${currentTime.getFullYear()}-${(currentTime.getMonth() + 1).toString().padStart(2, "0")}-${currentTime.getDate().toString().padStart(2, "0")}`;
-  const minTimeDate = new Date(
-    currentTime.getTime() +
-      CREATE_VOW.MINIMUM_DEADLINE_TIME_MINUTES * 60 * 1000,
-  ); // Push the time ahead by MIN_DEADLINE_TIME_MINUTES minutes;
-  const minTime = `${minTimeDate.getHours().toString().padStart(2, "0")}:${minTimeDate.getMinutes().toString().padStart(2, "0")}`;
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000 * 60); // every minute
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <>
       <CreateVowHeader />
@@ -102,34 +87,12 @@ export const CreateVowForm = () => {
           handleVowDescriptionChange={handleVowDescriptionChange}
         />
 
-        <div className="flex flex-col gap-2">
-          <p className="text-base-content/80">
-            Deadline
-            <span className="text-accent">
-              {" "}
-              - {CREATE_VOW.MINIMUM_DEADLINE_TIME_MINUTES} minutes from now, at
-              least
-            </span>
-          </p>
-          <div className="flex gap-2">
-            <input
-              required={true}
-              min={minDate}
-              value={vowDeadlineDate}
-              onChange={handleVowDeadlineDateChange}
-              type={"date"}
-              className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
-            />
-            <input
-              required={true}
-              min={vowDeadlineDate === minDate ? minTime : undefined}
-              value={vowDeadlineTime}
-              onChange={handleVowDeadlineTimeChange}
-              type={"time"}
-              className="input px-4 py-8 bg-base-200 w-full rounded-xl border border-base-300"
-            />
-          </div>
-        </div>
+        <CreateVowFormDeadline
+          vowDeadlineDate={vowDeadlineDate}
+          vowDeadlineTime={vowDeadlineTime}
+          handleVowDeadlineDateChange={handleVowDeadlineDateChange}
+          handleVowDeadlineTimeChange={handleVowDeadlineTimeChange}
+        />
 
         <div className="flex flex-col gap-2">
           <p className="text-base-content/80">Visibility</p>
