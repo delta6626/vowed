@@ -69,7 +69,8 @@ export const CreateVowForm = () => {
 
   const minDate = `${currentTime.getFullYear()}-${(currentTime.getMonth() + 1).toString().padStart(2, "0")}-${currentTime.getDate().toString().padStart(2, "0")}`;
   const minTimeDate = new Date(
-    currentTime.getTime() + CREATE_VOW.MNIMUM_DEADLINE_TIME_MINUTES * 60 * 1000,
+    currentTime.getTime() +
+      CREATE_VOW.MINIMUM_DEADLINE_TIME_MINUTES * 60 * 1000,
   ); // Push the time ahead by MIN_DEADLINE_TIME_MINUTES minutes;
   const minTime = `${minTimeDate.getHours().toString().padStart(2, "0")}:${minTimeDate.getMinutes().toString().padStart(2, "0")}`;
 
@@ -119,7 +120,7 @@ export const CreateVowForm = () => {
           Deadline
           <span className="text-accent">
             {" "}
-            - {CREATE_VOW.MNIMUM_DEADLINE_TIME_MINUTES} minutes from now, at
+            - {CREATE_VOW.MINIMUM_DEADLINE_TIME_MINUTES} minutes from now, at
             least
           </span>
         </p>

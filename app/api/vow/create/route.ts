@@ -31,11 +31,11 @@ export async function POST(req: NextRequest) {
 
     if (
       timeStampDifference <
-      CREATE_VOW.MNIMUM_DEADLINE_TIME_MINUTES * 60 * 1000
+      CREATE_VOW.MINIMUM_DEADLINE_TIME_MINUTES * 60 * 1000
     ) {
       return NextResponse.json(
         {
-          error: `Vow deadline must be ${CREATE_VOW.MNIMUM_DEADLINE_TIME_MINUTES} minutes in the future, at least.`,
+          error: `Vow deadline must be ${CREATE_VOW.MINIMUM_DEADLINE_TIME_MINUTES} minutes in the future, at least.`,
         },
         { status: 400 },
       );
@@ -54,10 +54,10 @@ export async function POST(req: NextRequest) {
       updatedAt: new Date(),
     };
 
-    await adminDb.collection("vows").add(vow);
+    const createdVow = await adminDb.collection("vows").add(vow);
 
     return NextResponse.json(
-      { message: "Vow created successfully." },
+      { message: "Vow created successfully.", vowId: createdVow.id },
       { status: 201 },
     );
   } catch (error) {
