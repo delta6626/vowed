@@ -1,7 +1,9 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
+import { NEXT_TAGS } from "@/constants/NEXT_TAGS";
 import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
 import { currentUser } from "@clerk/nextjs/server";
+import { revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 
 export type ClientVowDetails = Pick<
@@ -55,6 +57,7 @@ export async function POST(req: NextRequest) {
     };
 
     const createdVow = await adminDb.collection("vows").add(vow);
+    revalidateTag(`${NEXT_TAGS.DASHBOARD_STATS}-${user.id}`, "page");
 
     return NextResponse.json(
       { message: "Vow created successfully.", vowId: createdVow.id },
