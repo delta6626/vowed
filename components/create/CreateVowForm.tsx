@@ -15,7 +15,9 @@ export const CreateVowForm = () => {
   const [vowDeadlineDate, setVowDeadlineDate] = useState<string>("");
   const [vowDeadlineTime, setVowDeadlineTime] = useState<string>("");
   const [vowVisibility, setVowVisibility] = useState<VowVisibility>("public");
+
   const [loading, setLoading] = useState<boolean>(false);
+  const [vowId, setVowId] = useState<string>("");
 
   const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const title = e.target.value;
@@ -58,80 +60,99 @@ export const CreateVowForm = () => {
       });
 
       const data = await res.json();
-      console.log(data);
+      setVowId(data.vowId);
     } catch (error) {
       console.error(error);
     } finally {
-      setVowTitle("");
-      setVowDescription("");
-      setVowDeadlineDate("");
-      setVowDeadlineTime("");
-      setVowVisibility("public"); // Default
       setLoading(false);
     }
   };
 
-  return (
-    <>
-      <CreateVowHeader />
-      <form
-        className="mt-16 w-2xl flex flex-col gap-12"
-        onSubmit={handleFormSubmit}
-      >
-        <CreateVowFormTitle
-          vowTitle={vowTitle}
-          handleVowTitleChange={handleVowTitleChange}
-        />
-
-        <CreateVowFormDescription
-          vowDescription={vowDescription}
-          handleVowDescriptionChange={handleVowDescriptionChange}
-        />
-
-        <CreateVowFormDeadline
-          vowDeadlineDate={vowDeadlineDate}
-          vowDeadlineTime={vowDeadlineTime}
-          handleVowDeadlineDateChange={handleVowDeadlineDateChange}
-          handleVowDeadlineTimeChange={handleVowDeadlineTimeChange}
-        />
-
-        <CreateVowFormVisibility
-          vowVisibility={vowVisibility}
-          setVowVisibility={setVowVisibility}
-        />
-
-        <div className="border-b border-base-300"></div>
-
-        <div>
-          <p className="text-accent mb-4">Preview</p>
-
-          <VowPreview
-            title={vowTitle}
-            deadlineDate={vowDeadlineDate}
-            deadlineTime={vowDeadlineTime}
+  if (!vowId) {
+    return (
+      <>
+        <CreateVowHeader />
+        <form
+          className="mt-16 w-2xl flex flex-col gap-12"
+          onSubmit={handleFormSubmit}
+        >
+          <CreateVowFormTitle
+            vowTitle={vowTitle}
+            handleVowTitleChange={handleVowTitleChange}
           />
 
-          <div className="flex w-full items-center justify-between mt-8">
-            <p className="text-accent">
-              Once submitted, this vow is{" "}
-              <span className="text-base-content/80">permanent.</span>
-              <br />
-              There is no delete - only resolution.
-            </p>
+          <CreateVowFormDescription
+            vowDescription={vowDescription}
+            handleVowDescriptionChange={handleVowDescriptionChange}
+          />
 
-            <button type={"submit"} className="btn btn-primary flex shrink-0">
-              Publish vow
-              <span className="w-5 h-5 flex items-center justify-center">
-                {loading ? (
-                  <span className="loading loading-spinner loading-xs"></span>
-                ) : (
-                  <ArrowRight size={20} />
-                )}
-              </span>
+          <CreateVowFormDeadline
+            vowDeadlineDate={vowDeadlineDate}
+            vowDeadlineTime={vowDeadlineTime}
+            handleVowDeadlineDateChange={handleVowDeadlineDateChange}
+            handleVowDeadlineTimeChange={handleVowDeadlineTimeChange}
+          />
+
+          <CreateVowFormVisibility
+            vowVisibility={vowVisibility}
+            setVowVisibility={setVowVisibility}
+          />
+
+          <div className="border-b border-base-300"></div>
+
+          <div>
+            <p className="text-accent mb-4">Preview</p>
+
+            <VowPreview
+              title={vowTitle}
+              deadlineDate={vowDeadlineDate}
+              deadlineTime={vowDeadlineTime}
+            />
+
+            <div className="flex w-full items-center justify-between mt-8">
+              <p className="text-accent">
+                Once submitted, this vow is{" "}
+                <span className="text-base-content/80">permanent.</span>
+                <br />
+                There is no delete - only resolution.
+              </p>
+
+              <button type={"submit"} className="btn btn-primary flex shrink-0">
+                Publish vow
+                <span className="w-5 h-5 flex items-center justify-center">
+                  {loading ? (
+                    <span className="loading loading-spinner loading-xs"></span>
+                  ) : (
+                    <ArrowRight size={20} />
+                  )}
+                </span>
+              </button>
+            </div>
+          </div>
+        </form>
+      </>
+    );
+  } else {
+    return (
+      <div className="absolute w-screen h-screen inset-0">
+        <div className="w-full h-full flex flex-col items-center justify-center">
+          <h1 className="text-4xl font-display text-center">
+            Your vow is <span className="text-primary italic">live.</span>
+          </h1>
+          <p className="max-w-md text-center text-accent mt-2">
+            {
+              "Your vow is now public and on record. Share the link - the clock is ticking."
+            }
+          </p>
+
+          <div className="mt-4 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between">
+            <kbd className="text-accent">{`vowed.cc/v/${vowId}`}</kbd>
+            <button className="btn border border-base-300 text-accent">
+              Copy
             </button>
           </div>
         </div>
-      </form>
-    </>
-  );
+      </div>
+    );
+  }
 };
