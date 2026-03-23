@@ -3,7 +3,9 @@ import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, Globe, GlobeLock, Link } from "lucide-react";
 import { ChangeEvent, SubmitEvent, useEffect, useState } from "react";
 import { VowPreview } from "./VowPreview";
-import { VowCreateHeader } from "./VowCreateHeader";
+import { CreateVowHeader } from "./CreateVowHeader";
+import { CreateVowFormTitle } from "./CreateVowFormTitle";
+import { CreateVowFormDescription } from "./CreateVowFormDescription";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -85,41 +87,20 @@ export const CreateVowForm = () => {
 
   return (
     <>
-      <VowCreateHeader />
+      <CreateVowHeader />
       <form
         className="mt-16 w-2xl flex flex-col gap-12"
         onSubmit={handleFormSubmit}
       >
-        <div className="flex flex-col gap-2">
-          <p className="text-base-content/80">What do you vow?</p>
-          <input
-            required={true}
-            value={vowTitle}
-            maxLength={CREATE_VOW.MAX_VOW_TITLE_LENGTH}
-            minLength={CREATE_VOW.MIN_VOW_TITLE_LENGTH}
-            onChange={handleVowTitleChange}
-            className="input text-xl px-4 py-8 font-display w-full bg-base-200 rounded-xl border border-base-300"
-            placeholder={"I will..."}
-          />
-          <p className="text-right text-accent">{`${vowTitle.length}/${CREATE_VOW.MAX_VOW_TITLE_LENGTH}`}</p>
-        </div>
+        <CreateVowFormTitle
+          vowTitle={vowTitle}
+          handleVowTitleChange={handleVowTitleChange}
+        />
 
-        <div className="flex flex-col gap-2">
-          <p className="text-base-content/80">
-            Description <span className="text-accent">- Optional</span>
-          </p>
-          <textarea
-            value={vowDescription}
-            onChange={handleVowDescriptionChange}
-            maxLength={CREATE_VOW.MAX_VOW_DESCRIPTION_LENGTH}
-            minLength={CREATE_VOW.MIN_VOW_DESCRIPTION_LENGTH}
-            className="textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
-            placeholder={
-              "Add context, stakes or other relevant details. Viewers will see this."
-            }
-          />
-          <p className="text-right text-accent">{`${vowDescription.length}/${CREATE_VOW.MAX_VOW_DESCRIPTION_LENGTH}`}</p>
-        </div>
+        <CreateVowFormDescription
+          vowDescription={vowDescription}
+          handleVowDescriptionChange={handleVowDescriptionChange}
+        />
 
         <div className="flex flex-col gap-2">
           <p className="text-base-content/80">

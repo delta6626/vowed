@@ -1,4 +1,4 @@
-export const VowCreateHeader = () => {
+export const CreateVowHeader = () => {
   return (
     <div className="w-2xl">
       <h1 className="font-display text-4xl">
