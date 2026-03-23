@@ -55,6 +55,12 @@ export const CreateVowForm = () => {
       console.log(data);
     } catch (error) {
       console.error(error);
+    } finally {
+      setVowTitle("");
+      setVowDescription("");
+      setVowDeadlineDate("");
+      setVowDeadlineTime("");
+      setVowVisibility("public"); // Default
     }
   };
 
