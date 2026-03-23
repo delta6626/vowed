@@ -9,6 +9,7 @@ import { CreateVowFormDescription } from "./CreateVowFormDescription";
 import { CreateVowFormDeadline } from "./CreateVowFormDeadline";
 import { CreateVowFormVisibility } from "./CreateVowFormVisibility";
 import { motion } from "motion/react";
+import Link from "next/link";
 
 export const CreateVowForm = () => {
   const [vowTitle, setVowTitle] = useState<string>("");
@@ -38,6 +39,15 @@ export const CreateVowForm = () => {
 
   const handleVowDeadlineTimeChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVowDeadlineTime(e.target.value);
+  };
+
+  const handleCreateAnotherVowClick = () => {
+    setVowId("");
+    setVowTitle("");
+    setVowDescription("");
+    setVowDeadlineDate("");
+    setVowDeadlineTime("");
+    setVowVisibility("public"); // Default
   };
 
   const handleFormSubmit = async (e: SubmitEvent) => {
@@ -159,7 +169,22 @@ export const CreateVowForm = () => {
 
           <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between">
             <kbd className="text-accent">{`vowed.cc/v/${vowId}`}</kbd>
-            <button className="btn btn-primary">Copy</button>
+            <button type={"button"} className="btn btn-primary">
+              Copy
+            </button>
+          </div>
+
+          <div className="flex gap-2 mt-4">
+            <Link href={"/dashboard"} className="btn btn-primary">
+              Go to dashboard
+            </Link>
+            <button
+              type={"button"}
+              className="btn"
+              onClick={handleCreateAnotherVowClick}
+            >
+              Make another vow
+            </button>
           </div>
         </div>
       </div>
