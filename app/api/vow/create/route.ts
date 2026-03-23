@@ -1,5 +1,6 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { Vow } from "@/types/Vow";
+import { adminDb } from "@/utils/firebase/admin";
 import { currentUser } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -53,7 +54,7 @@ export async function POST(req: NextRequest) {
       updatedAt: new Date(),
     };
 
-    // TODO: Upload vow to firestore
+    await adminDb.collection("vows").add(vow);
 
     return NextResponse.json(
       { message: "Vow created successfully." },
