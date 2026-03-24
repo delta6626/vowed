@@ -22,6 +22,7 @@ export const CreateVowForm = () => {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [vowId, setVowId] = useState<string>("");
+  const [codeCopied, setCodeCopied] = useState<boolean>(false);
 
   const handleVowTitleChange = (e: ChangeEvent<HTMLInputElement>) => {
     const title = e.target.value;
@@ -74,8 +75,16 @@ export const CreateVowForm = () => {
 
   // Post vow-creation actions
 
-  const handleCopyButtonClick = () => {
-    navigator.clipboard.writeText(vowId);
+  const handleCopyButtonClick = async () => {
+    try {
+      await navigator.clipboard.writeText(`vowed.cc/v/${vowId}`);
+      setCodeCopied(true);
+      setTimeout(() => {
+        setCodeCopied(false);
+      }, 1000);
+    } catch (error) {
+      console.error("Copy failed.", error);
+    }
   };
 
   const handleDashboardButtonClick = () => {
@@ -183,11 +192,12 @@ export const CreateVowForm = () => {
           <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between">
             <kbd className="text-accent">{`vowed.cc/v/${vowId}`}</kbd>
             <button
+              disabled={codeCopied}
               type={"button"}
               className="btn btn-primary"
               onClick={handleCopyButtonClick}
             >
-              Copy
+              {codeCopied ? "Copied!" : "Copy"}
             </button>
           </div>
 
