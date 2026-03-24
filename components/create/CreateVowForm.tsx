@@ -9,9 +9,11 @@ import { CreateVowFormDescription } from "./CreateVowFormDescription";
 import { CreateVowFormDeadline } from "./CreateVowFormDeadline";
 import { CreateVowFormVisibility } from "./CreateVowFormVisibility";
 import { motion } from "motion/react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export const CreateVowForm = () => {
+  const router = useRouter();
+
   const [vowTitle, setVowTitle] = useState<string>("");
   const [vowDescription, setVowDescription] = useState<string>("");
   const [vowDeadlineDate, setVowDeadlineDate] = useState<string>("");
@@ -39,6 +41,11 @@ export const CreateVowForm = () => {
 
   const handleVowDeadlineTimeChange = (e: ChangeEvent<HTMLInputElement>) => {
     setVowDeadlineTime(e.target.value);
+  };
+
+  const handleDashboardButtonClick = () => {
+    router.push("/dashboard");
+    router.refresh();
   };
 
   const handleCreateAnotherVowClick = () => {
@@ -175,9 +182,12 @@ export const CreateVowForm = () => {
           </div>
 
           <div className="flex gap-2 mt-4">
-            <Link href={"/dashboard"} className="btn btn-primary">
+            <button
+              className="btn btn-primary"
+              onClick={handleDashboardButtonClick}
+            >
               Go to dashboard
-            </Link>
+            </button>
             <button
               type={"button"}
               className="btn"
