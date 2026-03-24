@@ -10,6 +10,7 @@ import { CreateVowFormDeadline } from "./CreateVowFormDeadline";
 import { CreateVowFormVisibility } from "./CreateVowFormVisibility";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
+import { animate } from "motion";
 
 export const CreateVowForm = () => {
   const router = useRouter();
@@ -167,12 +168,21 @@ export const CreateVowForm = () => {
     );
   } else {
     return (
-      <div className="absolute w-screen h-screen inset-0">
+      <motion.div
+        className="absolute w-screen h-screen inset-0 bg-base-100"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.5,
+          ease: "easeOut",
+        }}
+      >
         <div className="w-full h-full flex flex-col items-center justify-center">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: [0, 1.2, 1] }}
             transition={{
+              delay: 0.5,
               duration: 0.6,
               ease: "easeOut",
             }}
@@ -217,7 +227,7 @@ export const CreateVowForm = () => {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     );
   }
 };
