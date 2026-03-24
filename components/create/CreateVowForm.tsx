@@ -43,20 +43,6 @@ export const CreateVowForm = () => {
     setVowDeadlineTime(e.target.value);
   };
 
-  const handleDashboardButtonClick = () => {
-    router.push("/dashboard");
-    router.refresh();
-  };
-
-  const handleCreateAnotherVowClick = () => {
-    setVowId("");
-    setVowTitle("");
-    setVowDescription("");
-    setVowDeadlineDate("");
-    setVowDeadlineTime("");
-    setVowVisibility("public"); // Default
-  };
-
   const handleFormSubmit = async (e: SubmitEvent) => {
     e.preventDefault();
     const dateTime = new Date(`${vowDeadlineDate}T${vowDeadlineTime}:00.000Z`);
@@ -84,6 +70,26 @@ export const CreateVowForm = () => {
     } finally {
       setLoading(false);
     }
+  };
+
+  // Post vow-creation actions
+
+  const handleCopyButtonClick = () => {
+    navigator.clipboard.writeText(vowId);
+  };
+
+  const handleDashboardButtonClick = () => {
+    router.push("/dashboard");
+    router.refresh();
+  };
+
+  const handleCreateAnotherVowClick = () => {
+    setVowId("");
+    setVowTitle("");
+    setVowDescription("");
+    setVowDeadlineDate("");
+    setVowDeadlineTime("");
+    setVowVisibility("public"); // Default
   };
 
   if (!vowId) {
@@ -176,7 +182,11 @@ export const CreateVowForm = () => {
 
           <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between">
             <kbd className="text-accent">{`vowed.cc/v/${vowId}`}</kbd>
-            <button type={"button"} className="btn btn-primary">
+            <button
+              type={"button"}
+              className="btn btn-primary"
+              onClick={handleCopyButtonClick}
+            >
               Copy
             </button>
           </div>
