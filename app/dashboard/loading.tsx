@@ -1,3 +1,4 @@
+import { DashboardStatsLoading } from "@/components/dashboard/DashboardStatsLoading";
 import Navbar from "@/components/navigation/Navbar";
 
 export default function Loading() {
@@ -6,12 +7,7 @@ export default function Loading() {
       <Navbar />
       <div className="doublePaddingContainer py-16">
         <div className="skeleton w-full h-20 rounded-xl"></div>
-
-        <div className="flex gap-4 mt-8">
-          <div className="w-60 min-h-28 p-4 rounded-xl skeleton"></div>
-          <div className="w-60 min-h-28 p-4 rounded-xl skeleton"></div>
-          <div className="w-60 min-h-28 p-4 rounded-xl skeleton"></div>
-        </div>
+        <DashboardStatsLoading />
       </div>
     </>
   );

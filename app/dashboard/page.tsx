@@ -1,9 +1,11 @@
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
+import { DashboardStatsLoading } from "@/components/dashboard/DashboardStatsLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { getGreeting } from "@/utils/functions/getGreeting";
 import { currentUser } from "@clerk/nextjs/server";
 import { Plus } from "lucide-react";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default async function Dashboard() {
   const user = (await currentUser())!;
@@ -30,7 +32,9 @@ export default async function Dashboard() {
           </Link>
         </div>
 
-        <DashboardStats />
+        <Suspense fallback={<DashboardStatsLoading />}>
+          <DashboardStats />
+        </Suspense>
       </div>
     </div>
   );
