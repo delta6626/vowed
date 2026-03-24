@@ -14,11 +14,17 @@ export const DashboardStats = async () => {
   let totalVows = 0;
 
   try {
-    activeVowCount = await getActiveVowCount(user.id)();
-    fulfillmentRate = await getFulfillmentRate(user.id)();
-    totalVows = await getTotalVows(user.id)();
+    const [activeCount, rate, total] = await Promise.all([
+      getActiveVowCount(user.id),
+      getFulfillmentRate(user.id),
+      getTotalVows(user.id),
+    ]);
+
+    activeVowCount = activeCount;
+    fulfillmentRate = rate;
+    totalVows = total;
   } catch (error) {
-    console.error(error);
+    console.error("Failed to fetch dashboard stats:", error);
   }
 
   return (
