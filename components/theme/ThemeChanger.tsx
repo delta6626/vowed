@@ -2,14 +2,22 @@
 
 import { useTheme } from "@/hooks/useTheme";
 import { Moon, Sun, SunMoon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function ThemeChanger() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState<boolean>(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <div className="dropdown dropdown-end">
       <button tabIndex={0} className="btn btn-square btn-ghost">
-        {theme === "light" ? (
+        {!mounted ? (
+          <SunMoon size={20} />
+        ) : theme === "light" ? (
           <Sun size={20} />
         ) : theme === "dark" ? (
           <Moon size={20} />
