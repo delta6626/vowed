@@ -1,9 +1,7 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
-import { NEXT_TAGS } from "@/constants/NEXT_TAGS";
 import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
 import { currentUser } from "@clerk/nextjs/server";
-import { revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
 import { FieldValue } from "firebase-admin/firestore";
 
@@ -62,8 +60,6 @@ export async function POST(req: NextRequest) {
       .collection("users")
       .doc(user.id)
       .update({ vowsCreated: FieldValue.increment(1) });
-
-    revalidateTag(`${NEXT_TAGS.DASHBOARD_STATS}-${user.id}`, "max");
 
     return NextResponse.json(
       { message: "Vow created successfully.", vowId: createdVow.id },
