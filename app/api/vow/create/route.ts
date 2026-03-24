@@ -63,7 +63,7 @@ export async function POST(req: NextRequest) {
       .doc(user.id)
       .update({ vowsCreated: FieldValue.increment(1) });
 
-    revalidateTag(`${NEXT_TAGS.DASHBOARD_STATS}-${user.id}`, "page");
+    revalidateTag(`${NEXT_TAGS.DASHBOARD_STATS}-${user.id}`, "max");
 
     return NextResponse.json(
       { message: "Vow created successfully.", vowId: createdVow.id },
