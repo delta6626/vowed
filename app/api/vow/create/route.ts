@@ -5,6 +5,7 @@ import { adminDb } from "@/utils/firebase/admin";
 import { currentUser } from "@clerk/nextjs/server";
 import { revalidateTag } from "next/cache";
 import { NextRequest, NextResponse } from "next/server";
+import { FieldValue } from "firebase-admin/firestore";
 
 export type ClientVowDetails = Pick<
   Vow,
@@ -57,6 +58,11 @@ export async function POST(req: NextRequest) {
     };
 
     const createdVow = await adminDb.collection("vows").add(vow);
+    await adminDb
+      .collection("users")
+      .doc(user.id)
+      .update({ vowsCreated: FieldValue.increment(1) });
+
     revalidateTag(`${NEXT_TAGS.DASHBOARD_STATS}-${user.id}`, "page");
 
     return NextResponse.json(
