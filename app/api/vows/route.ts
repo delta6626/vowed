@@ -10,6 +10,36 @@ export type ClientVowDetails = Pick<
   "title" | "description" | "deadlineTimestampUTC" | "visibility"
 >;
 
+export async function GET() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    return NextResponse.json({ error: "Not authenticated." }, { status: 401 });
+  }
+
+  try {
+    const snapshot = await adminDb
+      .collection("vows")
+      .where("authorId", "==", userId)
+      .get();
+
+    const allVows: Vow[] = snapshot.docs.map(
+      (doc) =>
+        ({
+          vowId: doc.id,
+          ...doc.data(),
+        }) as Vow,
+    );
+
+    return NextResponse.json({ vows: allVows }, { status: 200 });
+  } catch (error) {
+    return NextResponse.json({
+      error: "An error occured on the server",
+      status: 500,
+    });
+  }
+}
+
 export async function POST(req: NextRequest) {
   const { userId } = await auth();
 
