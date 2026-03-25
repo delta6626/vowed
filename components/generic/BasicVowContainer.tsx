@@ -5,6 +5,9 @@ import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStat
 export interface BasicVowContainerProps {
   vowText: string;
   vowStatus: VowStatus;
+  vowViewCount?: number;
+  vowCommentCount?: number;
+  vowDeadlineTimestampUTC?: number;
   className?: string;
 }
 
