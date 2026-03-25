@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { VowManagerTabs } from "./VowManagerTabs";
 import { Vow } from "@/types/Vow";
+import { VowList } from "./VowList";
 
 export const VowManager = () => {
   const [vows, setVows] = useState<Vow[]>();
@@ -21,10 +22,15 @@ export const VowManager = () => {
     fetchVows();
   }, []);
 
-  return (
-    <div>
-      <VowManagerTabs />
-      <div className="mt-8"></div>
-    </div>
-  );
+  if (!vows || vows.length === 0) {
+    return <div>No vows.</div>;
+  } else {
+    return (
+      <div>
+        <VowManagerTabs />
+        <div className="mt-8"></div>
+        <VowList vows={vows} />
+      </div>
+    );
+  }
 };
