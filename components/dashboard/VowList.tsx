@@ -19,7 +19,7 @@ export const VowList = ({ vows, activeTab }: VowListProps) => {
 
   if (activeTab === "active") {
     return (
-      <div>
+      <div className="flex flex-col gap-2">
         {activeVows.length != 0 &&
           activeVows.map((vow) => {
             return (
@@ -44,7 +44,7 @@ export const VowList = ({ vows, activeTab }: VowListProps) => {
 
   if (activeTab === "moment-of-truth") {
     return (
-      <div>
+      <div className="flex flex-col gap-2">
         {momentOfTruthVows.length != 0 &&
           momentOfTruthVows.map((vow) => {
             return (
@@ -69,7 +69,7 @@ export const VowList = ({ vows, activeTab }: VowListProps) => {
 
   if (activeTab === "resolved") {
     return (
-      <div>
+      <div className="flex flex-col gap-2">
         {resolvedVows.length != 0 &&
           resolvedVows.map((vow) => {
             return (
