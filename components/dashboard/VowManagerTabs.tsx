@@ -1,12 +1,16 @@
 "use client";
 
-import { useVowManagerTab } from "@/hooks/useVowManagerTab";
+import { VowManagerTab } from "./VowManager";
 
-export type VowManagerTab = "active" | "moment-of-truth" | "resolved";
+export interface VowManagerTabsProps {
+  activeTab: VowManagerTab;
+  setActiveTab: (tab: VowManagerTab) => void;
+}
 
-export const VowManagerTabs = () => {
-  const { activeTab, setActiveTab } = useVowManagerTab();
-
+export const VowManagerTabs = ({
+  activeTab,
+  setActiveTab,
+}: VowManagerTabsProps) => {
   return (
     <div className="bg-base-200 rounded-xl border border-base-300 w-fit p-2 flex gap-2">
       <button

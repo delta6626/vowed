@@ -1,14 +1,13 @@
-import { useVowManagerTab } from "@/hooks/useVowManagerTab";
 import { Vow } from "@/types/Vow";
 import BasicVowContainer from "../generic/BasicVowContainer";
+import { VowManagerTab } from "./VowManager";
 
 export interface VowListProps {
   vows: Vow[];
+  activeTab: VowManagerTab;
 }
 
-export const VowList = ({ vows }: VowListProps) => {
-  const { activeTab } = useVowManagerTab();
-
+export const VowList = ({ vows, activeTab }: VowListProps) => {
   const activeVows = vows.filter((vow) => vow.status === "waiting");
 
   const momentOfTruthVows = vows.filter(
