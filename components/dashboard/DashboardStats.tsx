@@ -3,11 +3,11 @@ import {
   getFulfillmentRate,
   getTotalVows,
 } from "@/utils/data/vows";
-import { currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import DashboardStatBox from "../generic/DashboardStatBox";
 
 export const DashboardStats = async () => {
-  const user = (await currentUser())!;
+  const { userId } = await auth();
 
   let activeVowCount = 0;
   let fulfillmentRate = 0;
@@ -15,9 +15,9 @@ export const DashboardStats = async () => {
 
   try {
     const [activeCount, rate, total] = await Promise.all([
-      getActiveVowCount(user.id),
-      getFulfillmentRate(user.id),
-      getTotalVows(user.id),
+      getActiveVowCount(userId!),
+      getFulfillmentRate(userId!),
+      getTotalVows(userId!),
     ]);
 
     activeVowCount = activeCount;
