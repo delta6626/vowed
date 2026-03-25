@@ -1,5 +1,6 @@
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import { DashboardStatsLoading } from "@/components/dashboard/DashboardStatsLoading";
+import { VowManager } from "@/components/dashboard/VowManager";
 import Navbar from "@/components/navigation/Navbar";
 import { getGreeting } from "@/utils/functions/getGreeting";
 import { currentUser } from "@clerk/nextjs/server";
@@ -35,6 +36,8 @@ export default async function Dashboard() {
         <Suspense fallback={<DashboardStatsLoading />}>
           <DashboardStats />
         </Suspense>
+
+        <VowManager />
       </div>
     </div>
   );

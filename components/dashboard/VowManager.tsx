@@ -1,3 +1,9 @@
+import { VowManagerTabs } from "./VowManagerTabs";
+
 export const VowManager = () => {
-  return <div></div>;
+  return (
+    <div>
+      <VowManagerTabs />
+    </div>
+  );
 };
