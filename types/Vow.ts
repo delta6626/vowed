@@ -3,6 +3,7 @@ import { VowStatus } from "./VowStatus";
 import { VowVisibility } from "./VowVisibility";
 
 export interface Vow {
+  vowId?: string;
   authorId: string;
   title: string;
   description: string | null;
