@@ -30,19 +30,17 @@ export default function BasicVowContainer({
       </div>
 
       <div className="mt-4">
-        {vowViewCount && vowCommentCount && (
-          <div className="flex gap-4 text-accent cursor-default">
-            <div className="flex gap-2 items-center">
-              <Eye size={20} />
-              <p>{vowViewCount}</p>
-            </div>
-
-            <div className="flex gap-2 items-center">
-              <MessageCircle size={20} />
-              <p>{vowCommentCount}</p>
-            </div>
+        <div className="flex gap-4 text-accent cursor-default">
+          <div className="flex gap-2 items-center">
+            <Eye size={20} />
+            <p>{vowViewCount ?? 0}</p>
           </div>
-        )}
+
+          <div className="flex gap-2 items-center">
+            <MessageCircle size={20} />
+            <p>{vowCommentCount ?? 0}</p>
+          </div>
+        </div>
       </div>
     </div>
   );
