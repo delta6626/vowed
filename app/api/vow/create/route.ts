@@ -1,7 +1,7 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
-import { currentUser } from "@clerk/nextjs/server";
+import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 import { FieldValue } from "firebase-admin/firestore";
 
@@ -11,9 +11,9 @@ export type ClientVowDetails = Pick<
 >;
 
 export async function POST(req: NextRequest) {
-  const user = await currentUser();
+  const { userId } = await auth();
 
-  if (!user) {
+  if (!userId) {
     return NextResponse.json({ error: "Not authenticated." }, { status: 401 });
   }
 
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
     }
 
     const vow: Vow = {
-      authorId: user.id,
+      authorId: userId,
       title: title,
       description: description,
       deadlineTimestampUTC: deadlineTimestampUTC,
@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
     const createdVow = await adminDb.collection("vows").add(vow);
     await adminDb
       .collection("users")
-      .doc(user.id)
+      .doc(userId)
       .update({ vowsCreated: FieldValue.increment(1) });
 
     return NextResponse.json(
