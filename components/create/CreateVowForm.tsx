@@ -1,7 +1,7 @@
 import { CREATE_VOW } from "@/constants/CREATE_VOW";
 import { VowVisibility } from "@/types/VowVisibility";
 import { ArrowRight, CheckCheckIcon } from "lucide-react";
-import { ChangeEvent, SubmitEvent, useEffect, useState } from "react";
+import { ChangeEvent, SubmitEvent, useState } from "react";
 import { VowPreview } from "./VowPreview";
 import { CreateVowHeader } from "./CreateVowHeader";
 import { CreateVowFormTitle } from "./CreateVowFormTitle";
@@ -10,7 +10,6 @@ import { CreateVowFormDeadline } from "./CreateVowFormDeadline";
 import { CreateVowFormVisibility } from "./CreateVowFormVisibility";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
-import { animate } from "motion";
 
 export const CreateVowForm = () => {
   const router = useRouter();
