@@ -37,7 +37,9 @@ export default async function Dashboard() {
           <DashboardStats />
         </Suspense>
 
-        <VowManager />
+        <div className="mt-8">
+          <VowManager />
+        </div>
       </div>
     </div>
   );
