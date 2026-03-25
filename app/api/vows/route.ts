@@ -51,6 +51,7 @@ export async function POST(req: NextRequest) {
       status: "waiting",
       resolution: null,
       viewCount: 0,
+      commentCount: 0,
       createdAt: new Date(),
       updatedAt: new Date(),
     };
