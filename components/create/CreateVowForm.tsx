@@ -52,7 +52,7 @@ export const CreateVowForm = () => {
 
     try {
       setLoading(true);
-      const res = await fetch("/api/vow/create", {
+      const res = await fetch("/api/vows", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
