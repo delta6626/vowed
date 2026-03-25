@@ -1,5 +1,6 @@
 import { useVowManagerTab } from "@/hooks/useVowManagerTab";
 import { Vow } from "@/types/Vow";
+import BasicVowContainer from "../generic/BasicVowContainer";
 
 export interface VowListProps {
   vows: Vow[];
@@ -17,7 +18,23 @@ export const VowList = ({ vows }: VowListProps) => {
     (vow) => vow.status === "fulfilled" || vow.status == "not-fulfilled",
   );
 
+  console.log(activeVows);
+
   if (activeTab === "active") {
-    return <div></div>;
+    return (
+      <div>
+        {activeVows.map((vow) => {
+          return (
+            <BasicVowContainer
+              key={vow.vowId}
+              vowText={vow.title}
+              vowStatus={vow.status}
+              vowViewCount={vow.viewCount}
+              vowCommentCount={vow.commentCount}
+            />
+          );
+        })}
+      </div>
+    );
   }
 };
