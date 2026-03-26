@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { VowManagerTabs } from "./VowManagerTabs";
 import { Vow } from "@/types/Vow";
 import { VowList } from "./VowList";
+import Link from "next/link";
 
 export type VowManagerTab = "active" | "moment-of-truth" | "resolved";
 
@@ -26,7 +27,14 @@ export const VowManager = () => {
   }, []);
 
   if (!vows || vows.length === 0) {
-    return <div>No vows.</div>;
+    return (
+      <div className="w-full text-center">
+        <p className="text-accent">You have not made any vows.</p>
+        <Link href={"/create"} className="btn btn-primary">
+          Make your first vow
+        </Link>
+      </div>
+    );
   } else {
     return (
       <div>
