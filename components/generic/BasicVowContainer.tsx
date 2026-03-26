@@ -1,7 +1,7 @@
 import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
 import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
-import { Eye, MessageCircle } from "lucide-react";
+import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 
 export interface BasicVowContainerProps {
   vowText: string;
@@ -26,7 +26,21 @@ export default function BasicVowContainer({
     >
       <div className="flex items-center justify-between">
         <p className="text-base-content/70">{vowText}</p>
-        <Pill text={getFormattedVowStatusName(vowStatus)} variant={vowStatus} />
+        <Pill
+          text={getFormattedVowStatusName(vowStatus)}
+          variant={vowStatus}
+          icon={
+            vowStatus === "waiting" ? (
+              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+            ) : vowStatus === "moment-of-truth" ? (
+              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+            ) : vowStatus === "fulfilled" ? (
+              <Check className="text-success" size={20} />
+            ) : (
+              <X className="text-error" size={20} />
+            )
+          }
+        />
       </div>
 
       <div className="mt-4">
