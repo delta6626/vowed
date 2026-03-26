@@ -5,6 +5,7 @@ import { VowManagerTabs } from "./VowManagerTabs";
 import { Vow } from "@/types/Vow";
 import { VowList } from "./VowList";
 import Link from "next/link";
+import { VowManagerLoading } from "./VowManagerLoading";
 
 export type VowManagerTab = "active" | "moment-of-truth" | "resolved";
 
@@ -26,7 +27,9 @@ export const VowManager = () => {
     fetchVows();
   }, []);
 
-  if (!vows || vows.length === 0) {
+  if (!vows) {
+    return <VowManagerLoading />;
+  } else if (vows.length === 0) {
     return (
       <div className="w-full text-center">
         <p className="text-accent">You have not made any vows.</p>
