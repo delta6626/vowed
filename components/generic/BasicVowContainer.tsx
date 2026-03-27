@@ -2,6 +2,9 @@ import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
 import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
 import { Check, Eye, MessageCircle, X } from "lucide-react";
+import { getCountdown } from "@/utils/functions/getCountdown";
+import { p } from "motion/react-m";
+import { count } from "node:console";
 
 export interface BasicVowContainerProps {
   vowText: string;
@@ -9,6 +12,7 @@ export interface BasicVowContainerProps {
   vowViewCount?: number;
   vowCommentCount?: number;
   vowDeadlineTimestampUTC?: number;
+  currentTimestampUTC?: number;
   className?: string;
 }
 
@@ -18,8 +22,14 @@ export default function BasicVowContainer({
   vowViewCount,
   vowCommentCount,
   vowDeadlineTimestampUTC,
+  currentTimestampUTC,
   className,
 }: BasicVowContainerProps) {
+  const countdown =
+    vowDeadlineTimestampUTC && currentTimestampUTC
+      ? getCountdown(vowDeadlineTimestampUTC, currentTimestampUTC)
+      : undefined;
+
   return (
     <div
       className={`flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
@@ -55,6 +65,10 @@ export default function BasicVowContainer({
             )
           }
         />
+
+        {typeof countdown != "string" && typeof countdown != "undefined" && (
+          <p>{`${countdown.years} y ${countdown.days} d ${countdown.hours} h ${countdown.minutes} m ${countdown.seconds} s`}</p>
+        )}
       </div>
     </div>
   );
