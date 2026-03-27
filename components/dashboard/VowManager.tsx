@@ -54,7 +54,11 @@ export const VowManager = () => {
       <div>
         <VowManagerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="mt-8"></div>
-        <VowList vows={vows} activeTab={activeTab} />
+        <VowList
+          vows={vows}
+          activeTab={activeTab}
+          currentTimestampUTC={currentTimestampUTC ?? 0}
+        />
       </div>
     );
   }
