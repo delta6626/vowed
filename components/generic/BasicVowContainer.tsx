@@ -22,10 +22,24 @@ export default function BasicVowContainer({
 }: BasicVowContainerProps) {
   return (
     <div
-      className={`font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
+      className={`flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col">
         <p className="text-base-content/70">{vowText}</p>
+        <div className="flex gap-4 items-center text-accent">
+          <div className="flex gap-2 items-center">
+            <Eye size={20} />
+            <p>{vowViewCount ?? 0}</p>
+          </div>
+
+          <div className="flex gap-2 items-center">
+            <MessageCircle size={20} />
+            <p>{vowCommentCount ?? 0}</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="">
         <Pill
           text={getFormattedVowStatusName(vowStatus)}
           variant={vowStatus}
@@ -41,20 +55,6 @@ export default function BasicVowContainer({
             )
           }
         />
-      </div>
-
-      <div className="mt-4">
-        <div className="flex gap-4 text-accent cursor-default">
-          <div className="flex gap-2 items-center">
-            <Eye size={20} />
-            <p>{vowViewCount ?? 0}</p>
-          </div>
-
-          <div className="flex gap-2 items-center">
-            <MessageCircle size={20} />
-            <p>{vowCommentCount ?? 0}</p>
-          </div>
-        </div>
       </div>
     </div>
   );
