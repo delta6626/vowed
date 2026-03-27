@@ -1,7 +1,7 @@
 import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
 import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
-import { Check, Eye, MessageCircle, X } from "lucide-react";
+import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { getCountdown } from "@/utils/functions/getCountdown";
 import { p } from "motion/react-m";
 import { count } from "node:console";
@@ -55,10 +55,8 @@ export default function BasicVowContainer({
           text={getFormattedVowStatusName(vowStatus)}
           variant={vowStatus}
           icon={
-            vowStatus === "waiting" ? (
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
-            ) : vowStatus === "moment-of-truth" ? (
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+            vowStatus === "waiting" || vowStatus === "moment-of-truth" ? (
+              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             ) : vowStatus === "fulfilled" ? (
               <Check className="text-success" size={20} />
             ) : (
@@ -67,8 +65,26 @@ export default function BasicVowContainer({
           }
         />
 
-        {typeof countdown != "string" && typeof countdown != "undefined" && (
-          <p>{`${countdown.years} y ${countdown.days} d ${countdown.hours} h ${countdown.minutes} m ${countdown.seconds} s`}</p>
+        {typeof countdown !== "string" && countdown && (
+          <p className="flex items-center justify-end gap-2 w-full text-base-content/70 font-mono tabular-nums">
+            {countdown.years !== 0 && (
+              <>
+                <span>{countdown.years}y</span>
+                <Dot />
+              </>
+            )}
+
+            <span>{countdown.days}d</span>
+            <Dot />
+
+            <span>{countdown.hours}h</span>
+            <Dot />
+
+            <span>{countdown.minutes}m</span>
+            <Dot />
+
+            <span>{countdown.seconds}s</span>
+          </p>
         )}
       </div>
     </div>
