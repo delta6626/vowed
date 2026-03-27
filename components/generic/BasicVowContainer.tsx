@@ -34,7 +34,7 @@ export default function BasicVowContainer({
     <div
       className={`flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
-      <div className="flex flex-col">
+      <div className="flex flex-col gap-4 justify-between">
         <p className="text-base-content/70">{vowText}</p>
         <div className="flex gap-4 items-center text-accent">
           <div className="flex gap-2 items-center">
@@ -49,8 +49,9 @@ export default function BasicVowContainer({
         </div>
       </div>
 
-      <div className="">
+      <div className="flex flex-col items-end gap-4">
         <Pill
+          className="w-fit"
           text={getFormattedVowStatusName(vowStatus)}
           variant={vowStatus}
           icon={
