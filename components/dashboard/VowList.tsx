@@ -5,6 +5,7 @@ import { VowManagerTab } from "./VowManager";
 export interface VowListProps {
   vows: Vow[];
   activeTab: VowManagerTab;
+  currentTimestampUTC: number;
 }
 
 export const VowList = ({ vows, activeTab }: VowListProps) => {
