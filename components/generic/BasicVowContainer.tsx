@@ -36,7 +36,7 @@ export default function BasicVowContainer({
     >
       <div className="flex flex-col gap-4 justify-between">
         <p className="text-base-content/70">{vowText}</p>
-        <div className="flex gap-4 items-center text-accent">
+        <div className="text-base flex gap-4 items-center text-accent">
           <div className="flex gap-2 items-center">
             <Eye size={20} />
             <p>{vowViewCount ?? 0}</p>
@@ -49,7 +49,7 @@ export default function BasicVowContainer({
         </div>
       </div>
 
-      <div className="flex flex-col items-end gap-4">
+      <div className="text-base flex flex-col items-end gap-4">
         <Pill
           className="w-fit"
           text={getFormattedVowStatusName(vowStatus)}
