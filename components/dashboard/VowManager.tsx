@@ -12,6 +12,7 @@ export type VowManagerTab = "active" | "moment-of-truth" | "resolved";
 export const VowManager = () => {
   const [activeTab, setActiveTab] = useState<VowManagerTab>("active");
   const [vows, setVows] = useState<Vow[]>();
+  const [currentTimestampUTC, setCurrentTimestampUTC] = useState<number>();
 
   useEffect(() => {
     const fetchVows = async () => {
@@ -19,6 +20,7 @@ export const VowManager = () => {
         const res = await fetch("/api/vows/");
         const data = await res.json();
         setVows(data.vows as Vow[]);
+        setCurrentTimestampUTC(data.currentTimestampUTC as number);
       } catch (error) {
         console.error(error);
       }
@@ -26,6 +28,15 @@ export const VowManager = () => {
 
     fetchVows();
   }, []);
+
+  useEffect(() => {
+    if (!currentTimestampUTC) return;
+    const timeSyncInterval = setInterval(() => {
+      setCurrentTimestampUTC((prev) => prev! + 1000);
+    }, 1000);
+
+    return () => clearInterval(timeSyncInterval);
+  }, [currentTimestampUTC === undefined]);
 
   if (!vows) {
     return <VowManagerLoading />;
