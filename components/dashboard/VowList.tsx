@@ -36,6 +36,7 @@ export const VowList = ({
                 vowCommentCount={vow.commentCount}
                 vowDeadlineTimestampUTC={vow.deadlineTimestampUTC}
                 currentTimestampUTC={currentTimestampUTC}
+                className="text-xl"
               />
             );
           })}
@@ -63,6 +64,7 @@ export const VowList = ({
                 vowCommentCount={vow.commentCount}
                 vowDeadlineTimestampUTC={vow.deadlineTimestampUTC}
                 currentTimestampUTC={currentTimestampUTC}
+                className="text-xl"
               />
             );
           })}
@@ -90,6 +92,7 @@ export const VowList = ({
                 vowCommentCount={vow.commentCount}
                 vowDeadlineTimestampUTC={vow.deadlineTimestampUTC}
                 currentTimestampUTC={currentTimestampUTC}
+                className="text-xl"
               />
             );
           })}
