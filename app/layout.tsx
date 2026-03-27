@@ -23,11 +23,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <Script
-        src="//unpkg.com/react-scan/dist/auto.global.js"
-        crossOrigin="anonymous"
-        strategy="beforeInteractive"
-      />
+      <head>
+        <Script
+          src="//unpkg.com/react-scan/dist/auto.global.js"
+          crossOrigin="anonymous"
+          strategy="beforeInteractive"
+        />
+      </head>
       <body className="font-body">
         <ClerkProvider>
           <ThemeProvider>{children}</ThemeProvider>
