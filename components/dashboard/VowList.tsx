@@ -8,7 +8,11 @@ export interface VowListProps {
   currentTimestampUTC: number;
 }
 
-export const VowList = ({ vows, activeTab }: VowListProps) => {
+export const VowList = ({
+  vows,
+  activeTab,
+  currentTimestampUTC,
+}: VowListProps) => {
   const activeVows = vows.filter((vow) => vow.status === "waiting");
 
   const momentOfTruthVows = vows.filter(
@@ -30,6 +34,8 @@ export const VowList = ({ vows, activeTab }: VowListProps) => {
                 vowStatus={vow.status}
                 vowViewCount={vow.viewCount}
                 vowCommentCount={vow.commentCount}
+                vowDeadlineTimestampUTC={vow.deadlineTimestampUTC}
+                currentTimestampUTC={currentTimestampUTC}
               />
             );
           })}
@@ -55,6 +61,8 @@ export const VowList = ({ vows, activeTab }: VowListProps) => {
                 vowStatus={vow.status}
                 vowViewCount={vow.viewCount}
                 vowCommentCount={vow.commentCount}
+                vowDeadlineTimestampUTC={vow.deadlineTimestampUTC}
+                currentTimestampUTC={currentTimestampUTC}
               />
             );
           })}
@@ -80,6 +88,8 @@ export const VowList = ({ vows, activeTab }: VowListProps) => {
                 vowStatus={vow.status}
                 vowViewCount={vow.viewCount}
                 vowCommentCount={vow.commentCount}
+                vowDeadlineTimestampUTC={vow.deadlineTimestampUTC}
+                currentTimestampUTC={currentTimestampUTC}
               />
             );
           })}
