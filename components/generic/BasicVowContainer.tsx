@@ -1,7 +1,7 @@
 import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
 import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
-import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
+import { Check, Eye, MessageCircle, X } from "lucide-react";
 
 export interface BasicVowContainerProps {
   vowText: string;
