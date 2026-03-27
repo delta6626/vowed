@@ -31,7 +31,12 @@ export async function GET() {
         }) as Vow,
     );
 
-    return NextResponse.json({ vows: allVows }, { status: 200 });
+    const currentTimestampUTC = Date.now();
+
+    return NextResponse.json(
+      { vows: allVows, currentTimestampUTC: currentTimestampUTC },
+      { status: 200 },
+    );
   } catch (error) {
     return NextResponse.json({
       error: "An error occured on the server",
