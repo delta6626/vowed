@@ -1,34 +1,31 @@
-import { VowStatus } from "@/types/VowStatus";
 import { ReactNode } from "react";
+
+export type PillVariant = "primary" | "secondary" | "success" | "error";
 
 export interface PillProps {
   text: string;
-  variant: "generic" | VowStatus;
   icon?: ReactNode;
   className?: string;
+  variant: PillVariant;
 }
 
-export default function Pill({ text, variant, icon, className }: PillProps) {
+export default function Pill({ text, icon, className, variant }: PillProps) {
   let style: string;
 
   switch (variant) {
-    case "generic":
-      style =
-        "px-4 py-2 bg-base-200 w-fit rounded-full text-accent text-sm font-semibold border border-base-300";
-      break;
-    case "waiting":
+    case "primary":
       style =
         "px-4 py-2 bg-primary/20 rounded-full text-sm font-semibold text-primary";
       break;
-    case "moment-of-truth":
+    case "secondary":
       style =
         "px-4 py-2 bg-secondary/20 rounded-full text-sm font-semibold text-secondary";
       break;
-    case "fulfilled":
+    case "success":
       style =
         "px-4 py-2 bg-success/20 rounded-full text-sm font-semibold text-success";
       break;
-    case "not-fulfilled":
+    case "error":
       style =
         "px-4 py-2 bg-error/20 rounded-full text-sm font-semibold text-error";
       break;
