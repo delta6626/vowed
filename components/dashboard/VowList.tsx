@@ -13,7 +13,11 @@ export const VowList = ({
   activeTab,
   currentTimestampUTC,
 }: VowListProps) => {
-  const activeVows = vows.filter((vow) => vow.status === "waiting");
+  const activeVows = vows.filter(
+    (vow) =>
+      vow.status === "waiting" &&
+      vow.deadlineTimestampUTC - currentTimestampUTC >= 0,
+  );
 
   const momentOfTruthVows = vows.filter(
     (vow) => vow.deadlineTimestampUTC - currentTimestampUTC < 0,
