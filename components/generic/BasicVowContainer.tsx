@@ -54,10 +54,19 @@ export default function BasicVowContainer({
       <div className="text-base flex flex-col items-end gap-4">
         <Pill
           className="w-fit"
-          text={getFormattedVowStatusName(vowStatus)}
-          variant={vowStatus}
+          text={getFormattedVowStatusName(vowStatus, "Moment of Truth")}
+          variant={
+            vowStatus === "waiting"
+              ? "primary"
+              : vowStatus === "fulfilled"
+                ? "success"
+                : vowStatus === "not-fulfilled"
+                  ? "error"
+                  : "secondary"
+          }
           icon={
-            vowStatus === "waiting" || vowStatus === "moment-of-truth" ? (
+            vowStatus === "waiting" ||
+            vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 ? (
               <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
             ) : vowStatus === "fulfilled" ? (
               <Check className="text-success" size={20} />
@@ -90,8 +99,6 @@ export default function BasicVowContainer({
               <span>{countdown.seconds}s</span>
             </p>
           )}
-
-        {vowStatus === "moment-of-truth" && <VowResolver />}
 
         {(vowStatus === "fulfilled" || vowStatus === "not-fulfilled") && (
           <p className="text-accent">{`Resolved`}</p>
