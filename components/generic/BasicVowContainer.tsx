@@ -115,7 +115,11 @@ export default function BasicVowContainer({
           vowResolution && (
             <p className="text-accent">{`Resolved on ${new Date(
               vowResolution.resolutionTimestamp,
-            ).toLocaleString("en-US")}`}</p>
+            ).toLocaleString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}`}</p>
           )}
 
         {vowDeadlineTimestampUTC &&
