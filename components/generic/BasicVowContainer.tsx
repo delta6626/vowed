@@ -1,6 +1,5 @@
 import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
-import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
 import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { getCountdown } from "@/utils/functions/getCountdown";
 import { VowResolver } from "../dashboard/VowResolver";
@@ -54,9 +53,19 @@ export default function BasicVowContainer({
       <div className="text-base flex flex-col items-end gap-4">
         <Pill
           className="w-fit"
-          text={getFormattedVowStatusName(vowStatus, "Moment of Truth")}
+          text={
+            vowStatus === "waiting" &&
+            vowDeadlineTimestampUTC! - currentTimestampUTC! >= 0
+              ? "Waiting"
+              : vowStatus === "fulfilled"
+                ? "Fulfilled"
+                : vowStatus === "not-fulfilled"
+                  ? "Not fulfilled"
+                  : "Moment of truth"
+          }
           variant={
-            vowStatus === "waiting"
+            vowStatus === "waiting" &&
+            vowDeadlineTimestampUTC! - currentTimestampUTC! >= 0
               ? "primary"
               : vowStatus === "fulfilled"
                 ? "success"
