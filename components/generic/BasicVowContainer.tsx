@@ -100,11 +100,15 @@ export default function BasicVowContainer({
             </p>
           )}
 
-        {(vowStatus === "fulfilled" || vowStatus === "not-fulfilled") && (
-          <p className="text-accent">{`Resolved`}</p>
-        )}
+        {(vowStatus === "fulfilled" || vowStatus === "not-fulfilled") &&
+          vowDeadlineTimestampUTC &&
+          currentTimestampUTC && <p className="text-accent">{`Resolved`}</p>}
 
-        {vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 && <VowResolver />}
+        {vowDeadlineTimestampUTC &&
+          currentTimestampUTC &&
+          vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 && (
+            <VowResolver />
+          )}
       </div>
     </div>
   );
