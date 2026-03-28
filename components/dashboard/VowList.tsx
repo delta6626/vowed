@@ -92,6 +92,7 @@ export const VowList = ({
                 vowCommentCount={vow.commentCount}
                 vowDeadlineTimestampUTC={vow.deadlineTimestampUTC}
                 currentTimestampUTC={currentTimestampUTC}
+                vowResolution={vow.resolution!}
                 className="text-xl"
               />
             );
