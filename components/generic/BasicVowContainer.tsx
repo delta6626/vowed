@@ -65,27 +65,29 @@ export default function BasicVowContainer({
           }
         />
 
-        {typeof countdown !== "string" && countdown && (
-          <p className="flex items-center justify-end gap-2 w-full text-base-content/70 font-mono tabular-nums">
-            {countdown.years !== 0 && (
-              <>
-                <span>{countdown.years}y</span>
-                <Dot />
-              </>
-            )}
+        {typeof countdown !== "string" &&
+          countdown &&
+          vowStatus === "waiting" && (
+            <p className="flex items-center justify-end gap-2 w-full text-base-content/70 font-mono tabular-nums">
+              {countdown.years !== 0 && (
+                <>
+                  <span>{countdown.years}y</span>
+                  <Dot />
+                </>
+              )}
 
-            <span>{countdown.days}d</span>
-            <Dot />
+              <span>{countdown.days}d</span>
+              <Dot />
 
-            <span>{countdown.hours}h</span>
-            <Dot />
+              <span>{countdown.hours}h</span>
+              <Dot />
 
-            <span>{countdown.minutes}m</span>
-            <Dot />
+              <span>{countdown.minutes}m</span>
+              <Dot />
 
-            <span>{countdown.seconds}s</span>
-          </p>
-        )}
+              <span>{countdown.seconds}s</span>
+            </p>
+          )}
       </div>
     </div>
   );
