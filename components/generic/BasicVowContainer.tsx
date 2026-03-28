@@ -9,8 +9,8 @@ import { VowResolution } from "@/types/VowResolution";
 export interface BasicVowContainerProps {
   vowText: string;
   vowStatus: VowStatus;
-  vowViewCount?: number;
-  vowCommentCount?: number;
+  vowViewCount: number;
+  vowCommentCount: number;
   vowDeadlineTimestampUTC?: number;
   currentTimestampUTC?: number;
   vowResolution?: VowResolution;
@@ -103,6 +103,8 @@ export default function BasicVowContainer({
         {(vowStatus === "fulfilled" || vowStatus === "not-fulfilled") && (
           <p className="text-accent">{`Resolved`}</p>
         )}
+
+        {vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 && <VowResolver />}
       </div>
     </div>
   );
