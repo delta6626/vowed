@@ -3,6 +3,7 @@ import Pill from "./Pill";
 import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
 import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { getCountdown } from "@/utils/functions/getCountdown";
+import { VowResolver } from "../dashboard/VowResolver";
 
 export interface BasicVowContainerProps {
   vowText: string;
@@ -86,6 +87,8 @@ export default function BasicVowContainer({
               <span>{countdown.seconds}s</span>
             </p>
           )}
+
+        {vowStatus === "moment-of-truth" && <VowResolver />}
       </div>
     </div>
   );
