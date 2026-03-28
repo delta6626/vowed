@@ -3,8 +3,6 @@ import Pill from "./Pill";
 import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStatusName";
 import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { getCountdown } from "@/utils/functions/getCountdown";
-import { p } from "motion/react-m";
-import { count } from "node:console";
 
 export interface BasicVowContainerProps {
   vowText: string;
