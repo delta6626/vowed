@@ -4,6 +4,7 @@ import { getFormattedVowStatusName } from "@/utils/functions/getFormattedVowStat
 import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { getCountdown } from "@/utils/functions/getCountdown";
 import { VowResolver } from "../dashboard/VowResolver";
+import { VowResolution } from "@/types/VowResolution";
 
 export interface BasicVowContainerProps {
   vowText: string;
@@ -12,6 +13,7 @@ export interface BasicVowContainerProps {
   vowCommentCount?: number;
   vowDeadlineTimestampUTC?: number;
   currentTimestampUTC?: number;
+  vowResolution?: VowResolution;
   className?: string;
 }
 
@@ -22,6 +24,7 @@ export default function BasicVowContainer({
   vowCommentCount,
   vowDeadlineTimestampUTC,
   currentTimestampUTC,
+  vowResolution,
   className,
 }: BasicVowContainerProps) {
   const countdown =
@@ -89,6 +92,10 @@ export default function BasicVowContainer({
           )}
 
         {vowStatus === "moment-of-truth" && <VowResolver />}
+
+        {(vowStatus === "fulfilled" || vowStatus === "not-fulfilled") && (
+          <p className="text-accent">{`Resolved`}</p>
+        )}
       </div>
     </div>
   );
