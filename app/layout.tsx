@@ -1,9 +1,8 @@
 import { ReactNode } from "react";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import { Playfair_Display, DM_Sans } from "next/font/google";
 import "./globals.css";
-import { ClerkProvider } from "@clerk/nextjs";
 import Script from "next/script";
+import Providers from "./providers";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -31,9 +30,7 @@ export default function RootLayout({
         />
       </head>
       <body className="font-body">
-        <ClerkProvider>
-          <ThemeProvider>{children}</ThemeProvider>
-        </ClerkProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
