@@ -41,6 +41,27 @@ export async function POST(req: Request) {
       break;
 
     case "user.deleted":
+      const batchSize = 500;
+
+      while (true) {
+        const snapshot = await adminDb
+          .collection("vows")
+          .where("authorId", "==", event.data.id!)
+          .limit(batchSize)
+          .get();
+
+        if (snapshot.empty) break;
+
+        const batch = adminDb.batch();
+
+        snapshot.docs.forEach((doc) => {
+          batch.delete(doc.ref);
+        });
+
+        await batch.commit();
+      }
+
+      await adminDb.collection("users").doc(event.data.id!).delete();
       break;
   }
 
