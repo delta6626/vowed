@@ -1,4 +1,3 @@
-import { Plan } from "@/types/Plan";
 import { User } from "@/types/User";
 import { adminDb } from "@/utils/firebase/admin";
 import { WebhookEvent } from "@clerk/nextjs/server";
