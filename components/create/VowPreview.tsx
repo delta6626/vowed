@@ -31,7 +31,7 @@ export const VowPreview = ({
       <div className="flex flex-col gap-2 min-w-0">
         <Pill
           text="Waiting"
-          variant="waiting"
+          variant="primary"
           className="w-fit"
           icon={
             <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
