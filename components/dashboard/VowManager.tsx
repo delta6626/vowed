@@ -44,7 +44,7 @@ export const VowManager = () => {
     return (
       <div className="w-full text-center">
         <p className="text-accent">You have not made any vows.</p>
-        <Link href={"/create"} className="btn btn-primary">
+        <Link href={"/create"} className="btn btn-primary mt-2">
           Make your first vow
         </Link>
       </div>
