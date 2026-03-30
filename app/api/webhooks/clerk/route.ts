@@ -37,6 +37,15 @@ export async function POST(req: Request) {
     }
 
     case "user.updated":
+      const updatedUserProperties: Partial<User> = {
+        displayName: event.data.first_name + " " + event.data.last_name,
+        avatarURL: event.data.image_url,
+      };
+
+      await adminDb
+        .collection("users")
+        .doc(event.data.id)
+        .update(updatedUserProperties);
       break;
 
     case "user.deleted":
