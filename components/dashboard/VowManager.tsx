@@ -17,7 +17,7 @@ export const VowManager = () => {
   useEffect(() => {
     const fetchVows = async () => {
       try {
-        const res = await fetch("/api/vows/");
+        const res = await fetch("/api/vows/", { cache: "no-store" });
         const data = await res.json();
         setVows(data.vows as Vow[]);
         setCurrentTimestampUTC(data.currentTimestampUTC as number);
