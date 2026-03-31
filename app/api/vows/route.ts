@@ -95,7 +95,10 @@ export async function POST(req: NextRequest) {
     await adminDb
       .collection("users")
       .doc(userId)
-      .update({ vowsCreated: FieldValue.increment(1) });
+      .update({
+        vowsWaiting: FieldValue.increment(1),
+        vowsCreated: FieldValue.increment(1),
+      });
 
     return NextResponse.json(
       { message: "Vow created successfully.", vowId: createdVow.id },

@@ -5,6 +5,7 @@ export interface User {
   displayName: string;
   avatarURL: string;
   plan: Plan;
+  vowsWaiting: number;
   vowsCreated: number;
   vowsFulfilled: number;
 }

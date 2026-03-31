@@ -28,6 +28,7 @@ export async function POST(req: Request) {
         displayName: event.data.first_name + " " + event.data.last_name,
         avatarURL: event.data.image_url,
         plan: "basic",
+        vowsWaiting: 0,
         vowsCreated: 0,
         vowsFulfilled: 0,
       };

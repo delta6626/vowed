@@ -71,6 +71,8 @@ export default function Dashboard() {
     );
   }
 
+  console.log(user);
+
   return (
     <div className="w-screen h-screen">
       <Navbar />
