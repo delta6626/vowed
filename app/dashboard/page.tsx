@@ -16,10 +16,11 @@ export default function Dashboard() {
     data: user,
     isLoading: userLoading,
     isError: userLoadingError,
+    refetch,
   } = useQuery({
     queryKey: [QUERY_KEYS.USER_PROFILE],
     queryFn: async () => {
-      const res = await fetch("/api/user1");
+      const res = await fetch("/api/user");
       if (!res.ok) {
         throw new Error("Failed to fetch user.");
       }
@@ -56,6 +57,15 @@ export default function Dashboard() {
             <br></br>
             {userLoadingError}
           </p>
+
+          <button
+            className="btn btn-primary mt-2"
+            onClick={() => {
+              refetch();
+            }}
+          >
+            Retry
+          </button>
         </div>
       </div>
     );
