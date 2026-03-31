@@ -6,28 +6,40 @@ import { Vow } from "@/types/Vow";
 import { VowList } from "./VowList";
 import Link from "next/link";
 import { VowManagerLoading } from "./VowManagerLoading";
+import { useQuery } from "@tanstack/react-query";
+import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 
 export type VowManagerTab = "active" | "moment-of-truth" | "resolved";
 
 export const VowManager = () => {
+  const {
+    data: vowDetails,
+    isError,
+    isLoading,
+  } = useQuery({
+    queryKey: [QUERY_KEYS.USER_VOWS],
+    queryFn: async () => {
+      const res = await fetch("/api/vows/");
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch vows.");
+      }
+
+      return res.json() as Promise<{
+        vows: Vow[];
+        currentTimestampUTC: number;
+      }>;
+    },
+  });
+
   const [activeTab, setActiveTab] = useState<VowManagerTab>("active");
-  const [vows, setVows] = useState<Vow[]>();
   const [currentTimestampUTC, setCurrentTimestampUTC] = useState<number>();
 
   useEffect(() => {
-    const fetchVows = async () => {
-      try {
-        const res = await fetch("/api/vows/", { cache: "no-store" });
-        const data = await res.json();
-        setVows(data.vows as Vow[]);
-        setCurrentTimestampUTC(data.currentTimestampUTC as number);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchVows();
-  }, []);
+    if (vowDetails?.currentTimestampUTC !== undefined) {
+      setCurrentTimestampUTC(vowDetails.currentTimestampUTC);
+    }
+  }, [vowDetails?.currentTimestampUTC]);
 
   useEffect(() => {
     if (!currentTimestampUTC) return;
@@ -38,11 +50,11 @@ export const VowManager = () => {
     return () => clearInterval(timeSyncInterval);
   }, [currentTimestampUTC === undefined]);
 
-  if (!vows) {
+  if (!vowDetails) {
     return <VowManagerLoading />;
-  } else if (vows.length === 0) {
+  } else if (vowDetails.vows.length === 0) {
     return (
-      <div className="w-full text-center">
+      <div className="w-full text-center mt-8">
         <p className="text-accent">You have not made any vows.</p>
         <Link href={"/create"} className="btn btn-primary mt-2">
           Make your first vow
@@ -55,7 +67,7 @@ export const VowManager = () => {
         <VowManagerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="mt-8"></div>
         <VowList
-          vows={vows}
+          vows={vowDetails.vows}
           activeTab={activeTab}
           currentTimestampUTC={currentTimestampUTC ?? 0}
         />

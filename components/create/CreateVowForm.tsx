@@ -10,9 +10,12 @@ import { CreateVowFormDeadline } from "./CreateVowFormDeadline";
 import { CreateVowFormVisibility } from "./CreateVowFormVisibility";
 import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
+import { useQueryClient } from "@tanstack/react-query";
+import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 
 export const CreateVowForm = () => {
   const router = useRouter();
+  const queryClient = useQueryClient();
 
   const [vowTitle, setVowTitle] = useState<string>("");
   const [vowDescription, setVowDescription] = useState<string>("");
@@ -70,6 +73,9 @@ export const CreateVowForm = () => {
       console.error(error);
     } finally {
       setLoading(false);
+      queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.USER_PROFILE, QUERY_KEYS.USER_VOWS],
+      });
     }
   };
 
