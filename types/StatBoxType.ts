@@ -1,1 +1,1 @@
-export type StatBoxType = "total" | "fulfillment" | "active";
+export type StatBoxType = "total" | "fulfillment" | "waiting";

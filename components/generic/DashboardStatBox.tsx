@@ -19,7 +19,7 @@ export default function DashboardStatBox({
     case "fulfillment":
       mainTextClassName = "";
       break;
-    case "active":
+    case "waiting":
       mainTextClassName = "";
       break;
   }
