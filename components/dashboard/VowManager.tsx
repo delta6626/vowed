@@ -63,7 +63,7 @@ export const VowManager = () => {
     );
   } else {
     return (
-      <div>
+      <div className="mt-8">
         <VowManagerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
         <div className="mt-8"></div>
         <VowList
