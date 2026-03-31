@@ -1,6 +1,6 @@
 import DashboardStatBox from "../generic/DashboardStatBox";
 
-export const DashboardStats = async () => {
+export const DashboardStats = () => {
   return (
     <div className="flex gap-4 mt-8">
       <DashboardStatBox statBoxType={"active"} mainText={0} />
