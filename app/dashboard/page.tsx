@@ -9,7 +9,6 @@ import { getGreeting } from "@/utils/functions/getGreeting";
 import { useQuery } from "@tanstack/react-query";
 import { AlertCircle, Plus } from "lucide-react";
 import Link from "next/link";
-import { Suspense } from "react";
 
 export default function Dashboard() {
   const {
@@ -100,6 +99,7 @@ export default function Dashboard() {
           vowsFulfilled={user.vowsFulfilled}
           vowsCreated={user.vowsCreated}
         />
+
         <VowManager />
       </div>
     </div>
