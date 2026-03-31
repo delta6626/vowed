@@ -1,15 +1,31 @@
+"use client";
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import { DashboardStatsLoading } from "@/components/dashboard/DashboardStatsLoading";
 import { VowManager } from "@/components/dashboard/VowManager";
 import Navbar from "@/components/navigation/Navbar";
+import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
+import { User } from "@/types/User";
 import { getGreeting } from "@/utils/functions/getGreeting";
-import { currentUser } from "@clerk/nextjs/server";
+import { useQuery } from "@tanstack/react-query";
 import { Plus } from "lucide-react";
 import Link from "next/link";
 import { Suspense } from "react";
 
-export default async function Dashboard() {
-  const user = (await currentUser())!;
+export default function Dashboard() {
+  const {
+    data: user,
+    isLoading: userLoading,
+    isError,
+  } = useQuery({
+    queryKey: [QUERY_KEYS.USER_PROFILE],
+    queryFn: async () => {
+      const res = await fetch("/api/user");
+      if (!res.ok) {
+        throw new Error("Failed to fetch user.");
+      }
+      return res.json() as Promise<User>;
+    },
+  });
 
   return (
     <div className="w-screen h-screen">
@@ -19,7 +35,9 @@ export default async function Dashboard() {
           <div>
             <h1 className="font-display text-4xl">
               {getGreeting() + ", "}
-              <span className="text-primary italic">{user.firstName}.</span>
+              <span className="text-primary italic">
+                {user?.displayName.split(" ")[0]}.
+              </span>
             </h1>
 
             <p className="font-body text-accent text-xl mt-2">
@@ -33,13 +51,8 @@ export default async function Dashboard() {
           </Link>
         </div>
 
-        <Suspense fallback={<DashboardStatsLoading />}>
-          <DashboardStats />
-        </Suspense>
-
-        <div className="mt-8">
-          <VowManager />
-        </div>
+        <DashboardStats />
+        <VowManager />
       </div>
     </div>
   );
