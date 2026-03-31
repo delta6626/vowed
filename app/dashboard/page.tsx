@@ -41,7 +41,7 @@ export default function Dashboard() {
     );
   }
 
-  if (userLoadingError) {
+  if (!user || userLoadingError) {
     return (
       <div className="w-screen h-screen flex flex-col">
         <Navbar />
@@ -71,8 +71,6 @@ export default function Dashboard() {
     );
   }
 
-  console.log(user);
-
   return (
     <div className="w-screen h-screen">
       <Navbar />
@@ -82,7 +80,7 @@ export default function Dashboard() {
             <h1 className="font-display text-4xl">
               {getGreeting() + ", "}
               <span className="text-primary italic">
-                {user?.displayName.split(" ")[0]}.
+                {user.displayName.split(" ")[0]}.
               </span>
             </h1>
 
@@ -97,7 +95,11 @@ export default function Dashboard() {
           </Link>
         </div>
 
-        <DashboardStats />
+        <DashboardStats
+          vowsWaiting={user.vowsWaiting}
+          vowsFulfilled={user.vowsFulfilled}
+          vowsCreated={user.vowsCreated}
+        />
         <VowManager />
       </div>
     </div>

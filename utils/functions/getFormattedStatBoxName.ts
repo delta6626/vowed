@@ -6,7 +6,7 @@ export const getFormattedStatBoxName = (statBoxType: StatBoxType) => {
       return "Total vows";
     case "fulfillment":
       return "Fulfillment rate";
-    case "active":
+    case "waiting":
       return "Open vows";
   }
 };
