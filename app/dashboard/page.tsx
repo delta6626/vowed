@@ -28,7 +28,6 @@ export default function Dashboard() {
       }
       return res.json() as Promise<User>;
     },
-    staleTime: 5 * 60 * 1000,
     retry: 3,
   });
 
@@ -50,6 +49,7 @@ export default function Dashboard() {
         currentTimestampUTC: number;
       }>;
     },
+    retry: 3,
   });
 
   if (userLoading || vowDetailsLoading) {
