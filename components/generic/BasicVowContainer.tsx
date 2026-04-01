@@ -96,8 +96,12 @@ export default function BasicVowContainer({
                 </>
               )}
 
-              <span>{countdown.days}d</span>
-              <Dot />
+              {countdown.days !== 0 && (
+                <>
+                  <span>{countdown.days}d</span>
+                  <Dot />
+                </>
+              )}
 
               <span>{countdown.hours}h</span>
               <Dot />
