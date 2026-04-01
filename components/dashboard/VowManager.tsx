@@ -10,36 +10,23 @@ import { useQuery } from "@tanstack/react-query";
 import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 
 export type VowManagerTab = "active" | "moment-of-truth" | "resolved";
+export interface VowManagerProps {
+  vows: Vow[];
+  initialCurrentTimestampUTC: number;
+}
 
-export const VowManager = () => {
-  const {
-    data: vowDetails,
-    isError,
-    isLoading,
-  } = useQuery({
-    queryKey: [QUERY_KEYS.USER_VOWS],
-    queryFn: async () => {
-      const res = await fetch("/api/vows/");
-
-      if (!res.ok) {
-        throw new Error("Failed to fetch vows.");
-      }
-
-      return res.json() as Promise<{
-        vows: Vow[];
-        currentTimestampUTC: number;
-      }>;
-    },
-  });
-
+export const VowManager = ({
+  vows,
+  initialCurrentTimestampUTC,
+}: VowManagerProps) => {
   const [activeTab, setActiveTab] = useState<VowManagerTab>("active");
   const [currentTimestampUTC, setCurrentTimestampUTC] = useState<number>();
 
   useEffect(() => {
-    if (vowDetails?.currentTimestampUTC !== undefined) {
-      setCurrentTimestampUTC(vowDetails.currentTimestampUTC);
+    if (initialCurrentTimestampUTC !== undefined) {
+      setCurrentTimestampUTC(initialCurrentTimestampUTC);
     }
-  }, [vowDetails?.currentTimestampUTC]);
+  }, [initialCurrentTimestampUTC]);
 
   useEffect(() => {
     if (!currentTimestampUTC) return;
@@ -50,28 +37,15 @@ export const VowManager = () => {
     return () => clearInterval(timeSyncInterval);
   }, [currentTimestampUTC === undefined]);
 
-  if (!vowDetails) {
-    return <VowManagerLoading />;
-  } else if (vowDetails.vows.length === 0) {
-    return (
-      <div className="w-full text-center mt-8">
-        <p className="text-accent">You have not made any vows.</p>
-        <Link href={"/create"} className="btn btn-primary mt-2">
-          Make your first vow
-        </Link>
-      </div>
-    );
-  } else {
-    return (
-      <div className="mt-8">
-        <VowManagerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
-        <div className="mt-8"></div>
-        <VowList
-          vows={vowDetails.vows}
-          activeTab={activeTab}
-          currentTimestampUTC={currentTimestampUTC ?? 0}
-        />
-      </div>
-    );
-  }
+  return (
+    <div className="mt-8">
+      <VowManagerTabs activeTab={activeTab} setActiveTab={setActiveTab} />
+      <div className="mt-8"></div>
+      <VowList
+        vows={vows}
+        activeTab={activeTab}
+        currentTimestampUTC={currentTimestampUTC ?? 0}
+      />
+    </div>
+  );
 };

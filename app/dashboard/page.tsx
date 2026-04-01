@@ -2,13 +2,16 @@
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import { DashboardStatsLoading } from "@/components/dashboard/DashboardStatsLoading";
 import { VowManager } from "@/components/dashboard/VowManager";
+import { VowManagerLoading } from "@/components/dashboard/VowManagerLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 import { User } from "@/types/User";
+import { Vow } from "@/types/Vow";
 import { getGreeting } from "@/utils/functions/getGreeting";
 import { useQuery } from "@tanstack/react-query";
 import { AlertCircle, Plus } from "lucide-react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 export default function Dashboard() {
   const {
@@ -29,19 +32,40 @@ export default function Dashboard() {
     retry: 3,
   });
 
-  if (userLoading) {
+  const {
+    data: vowDetails,
+    isError: vowDetailsError,
+    isLoading: vowDetailsLoading,
+  } = useQuery({
+    queryKey: [QUERY_KEYS.USER_VOWS],
+    queryFn: async () => {
+      const res = await fetch("/api/vows/");
+
+      if (!res.ok) {
+        throw new Error("Failed to fetch vows.");
+      }
+
+      return res.json() as Promise<{
+        vows: Vow[];
+        currentTimestampUTC: number;
+      }>;
+    },
+  });
+
+  if (userLoading || vowDetailsLoading) {
     return (
       <>
         <Navbar />
         <div className="doublePaddingContainer py-16">
           <div className="skeleton w-full h-20 rounded-xl"></div>
           <DashboardStatsLoading />
+          <VowManagerLoading />
         </div>
       </>
     );
   }
 
-  if (!user || userLoadingError) {
+  if (!user || !vowDetails || userLoadingError || vowDetailsError) {
     return (
       <div className="w-screen h-screen flex flex-col">
         <Navbar />
@@ -101,7 +125,10 @@ export default function Dashboard() {
           vowsCreated={user.vowsCreated}
         />
 
-        <VowManager />
+        <VowManager
+          vows={vowDetails.vows}
+          initialCurrentTimestampUTC={vowDetails.currentTimestampUTC}
+        />
       </div>
     </div>
   );
