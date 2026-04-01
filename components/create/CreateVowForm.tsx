@@ -49,7 +49,7 @@ export const CreateVowForm = () => {
 
   const handleFormSubmit = async (e: SubmitEvent) => {
     e.preventDefault();
-    const dateTime = new Date(`${vowDeadlineDate}T${vowDeadlineTime}:00.000Z`);
+    const dateTime = new Date(`${vowDeadlineDate}T${vowDeadlineTime}:00.000`);
     const deadlineTimestampUTC = dateTime.getTime();
 
     try {
