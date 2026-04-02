@@ -1,6 +1,7 @@
 "use client";
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import { DashboardStatsLoading } from "@/components/dashboard/DashboardStatsLoading";
+import { ResolveVowModal } from "@/components/dashboard/ResolveVowModal";
 import { VowManager } from "@/components/dashboard/VowManager";
 import { VowManagerLoading } from "@/components/dashboard/VowManagerLoading";
 import Navbar from "@/components/navigation/Navbar";
@@ -96,40 +97,43 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="w-screen h-screen overflow-x-hidden pb-16">
-      <Navbar />
-      <div className="doublePaddingContainer">
-        <div className="flex items-center justify-between mt-16">
-          <div>
-            <h1 className="font-display text-4xl">
-              {getGreeting() + ", "}
-              <span className="text-primary italic">
-                {user.displayName.split(" ")[0]}.
-              </span>
-            </h1>
+    <>
+      <ResolveVowModal />
+      <div className="w-screen h-screen overflow-x-hidden pb-16">
+        <Navbar />
+        <div className="doublePaddingContainer">
+          <div className="flex items-center justify-between mt-16">
+            <div>
+              <h1 className="font-display text-4xl">
+                {getGreeting() + ", "}
+                <span className="text-primary italic">
+                  {user.displayName.split(" ")[0]}.
+                </span>
+              </h1>
 
-            <p className="font-body text-accent text-xl mt-2">
-              {" Here's where your vows stand today."}
-            </p>
+              <p className="font-body text-accent text-xl mt-2">
+                {" Here's where your vows stand today."}
+              </p>
+            </div>
+
+            <Link className="btn btn-primary" href={"/create"}>
+              <Plus size={20} />
+              New vow
+            </Link>
           </div>
 
-          <Link className="btn btn-primary" href={"/create"}>
-            <Plus size={20} />
-            New vow
-          </Link>
+          <DashboardStats
+            vowsWaiting={user.vowsWaiting}
+            vowsFulfilled={user.vowsFulfilled}
+            vowsCreated={user.vowsCreated}
+          />
+
+          <VowManager
+            vows={vowDetails.vows}
+            initialCurrentTimestampUTC={vowDetails.currentTimestampUTC}
+          />
         </div>
-
-        <DashboardStats
-          vowsWaiting={user.vowsWaiting}
-          vowsFulfilled={user.vowsFulfilled}
-          vowsCreated={user.vowsCreated}
-        />
-
-        <VowManager
-          vows={vowDetails.vows}
-          initialCurrentTimestampUTC={vowDetails.currentTimestampUTC}
-        />
       </div>
-    </div>
+    </>
   );
 }
