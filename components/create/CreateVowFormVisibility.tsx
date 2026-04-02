@@ -1,5 +1,5 @@
 import { VowVisibility } from "@/types/VowVisibility";
-import { Globe, GlobeLock, Link } from "lucide-react";
+import { Globe, Link, Lock } from "lucide-react";
 
 export interface CreateVowFormVisibilityProps {
   vowVisibility: VowVisibility;
@@ -51,7 +51,7 @@ export const CreateVowFormVisibility = ({
             setVowVisibility("private");
           }}
         >
-          <GlobeLock size={20} />
+          <Lock size={20} />
           <p>
             Private
             <br />
