@@ -1,9 +1,19 @@
 import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
-import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
+import {
+  Check,
+  Dot,
+  Eye,
+  Globe,
+  Link,
+  Lock,
+  MessageCircle,
+  X,
+} from "lucide-react";
 import { getCountdown } from "@/utils/functions/getCountdown";
 import { VowResolver } from "../dashboard/VowResolver";
 import { VowResolution } from "@/types/VowResolution";
+import { VowVisibility } from "@/types/VowVisibility";
 
 export interface BasicVowContainerProps {
   vowText: string;
@@ -13,6 +23,7 @@ export interface BasicVowContainerProps {
   vowDeadlineTimestampUTC?: number;
   currentTimestampUTC?: number;
   vowResolution?: VowResolution;
+  vowVisibility?: VowVisibility;
   className?: string;
 }
 
@@ -24,6 +35,7 @@ export default function BasicVowContainer({
   vowDeadlineTimestampUTC,
   currentTimestampUTC,
   vowResolution,
+  vowVisibility,
   className,
 }: BasicVowContainerProps) {
   const countdown =
@@ -50,40 +62,50 @@ export default function BasicVowContainer({
         </div>
       </div>
 
-      <div className="text-base flex flex-col items-end gap-4">
-        <Pill
-          className="w-fit"
-          text={
-            vowStatus === "waiting" &&
-            vowDeadlineTimestampUTC! - currentTimestampUTC! >= 0
-              ? "Waiting"
-              : vowStatus === "fulfilled"
-                ? "Fulfilled"
-                : vowStatus === "not-fulfilled"
-                  ? "Not fulfilled"
-                  : "Moment of truth"
-          }
-          variant={
-            vowStatus === "waiting" &&
-            vowDeadlineTimestampUTC! - currentTimestampUTC! >= 0
-              ? "primary"
-              : vowStatus === "fulfilled"
-                ? "success"
-                : vowStatus === "not-fulfilled"
-                  ? "error"
-                  : "secondary"
-          }
-          icon={
-            vowStatus === "waiting" ||
-            vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 ? (
-              <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-            ) : vowStatus === "fulfilled" ? (
-              <Check className="text-success" size={20} />
-            ) : (
-              <X className="text-error" size={20} />
-            )
-          }
-        />
+      <div className="text-base flex flex-col justify-between items-end gap-4">
+        <div className="flex items-center gap-2">
+          {vowVisibility === "public" ? (
+            <Globe className="text-accent" size={20} />
+          ) : vowVisibility === "unlisted" ? (
+            <Link className="text-accent" size={20} />
+          ) : vowVisibility === "private" ? (
+            <Lock className="text-accent" size={20} />
+          ) : null}
+
+          <Pill
+            className="w-fit"
+            text={
+              vowStatus === "waiting" &&
+              vowDeadlineTimestampUTC! - currentTimestampUTC! >= 0
+                ? "Waiting"
+                : vowStatus === "fulfilled"
+                  ? "Fulfilled"
+                  : vowStatus === "not-fulfilled"
+                    ? "Not fulfilled"
+                    : "Moment of truth"
+            }
+            variant={
+              vowStatus === "waiting" &&
+              vowDeadlineTimestampUTC! - currentTimestampUTC! >= 0
+                ? "primary"
+                : vowStatus === "fulfilled"
+                  ? "success"
+                  : vowStatus === "not-fulfilled"
+                    ? "error"
+                    : "secondary"
+            }
+            icon={
+              vowStatus === "waiting" ||
+              vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 ? (
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              ) : vowStatus === "fulfilled" ? (
+                <Check className="text-success" size={20} />
+              ) : (
+                <X className="text-error" size={20} />
+              )
+            }
+          />
+        </div>
 
         {typeof countdown !== "string" &&
           countdown &&
