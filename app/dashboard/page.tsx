@@ -103,7 +103,7 @@ export default function Dashboard() {
           <div>
             <h1 className="font-display text-4xl">
               {getGreeting() + ", "}
-              <span className="text-prsimary italic">
+              <span className="text-primary italic">
                 {user.displayName.split(" ")[0]}.
               </span>
             </h1>
