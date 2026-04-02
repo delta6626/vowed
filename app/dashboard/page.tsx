@@ -12,7 +12,6 @@ import { getGreeting } from "@/utils/functions/getGreeting";
 import { useQuery } from "@tanstack/react-query";
 import { AlertCircle, Plus } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 
 export default function Dashboard() {
   const {
