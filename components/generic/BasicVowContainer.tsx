@@ -16,6 +16,7 @@ import { VowResolution } from "@/types/VowResolution";
 import { VowVisibility } from "@/types/VowVisibility";
 
 export interface BasicVowContainerProps {
+  vowId: string;
   vowText: string;
   vowStatus: VowStatus;
   vowViewCount: number;
@@ -28,6 +29,7 @@ export interface BasicVowContainerProps {
 }
 
 export default function BasicVowContainer({
+  vowId,
   vowText,
   vowStatus,
   vowViewCount,
@@ -151,7 +153,7 @@ export default function BasicVowContainer({
         {vowDeadlineTimestampUTC &&
           currentTimestampUTC &&
           vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 && (
-            <VowResolver />
+            <VowResolver vowId={vowId} />
           )}
       </div>
     </div>
