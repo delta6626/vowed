@@ -96,14 +96,14 @@ export default function Dashboard() {
   }
 
   return (
-    <div className="w-screen h-screen">
+    <div className="w-screen h-screen overflow-x-hidden pb-16">
       <Navbar />
       <div className="doublePaddingContainer">
         <div className="flex items-center justify-between mt-16">
           <div>
             <h1 className="font-display text-4xl">
               {getGreeting() + ", "}
-              <span className="text-primary italic">
+              <span className="text-prsimary italic">
                 {user.displayName.split(" ")[0]}.
               </span>
             </h1>
