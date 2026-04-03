@@ -10,8 +10,17 @@ export const ResolveVowModal = () => {
     useState<Extract<VowStatus, "fulfilled" | "not-fulfilled">>();
   const [vowResolutionNote, setVowResolutionNote] = useState<"string">();
 
+  const handleModalClose = () => {
+    setVowResolutionOutcome(undefined);
+    setVowResolutionNote(undefined);
+  };
+
   return (
-    <dialog id={MODALS.RESOLVE_VOW_MODAL.ID} className="modal">
+    <dialog
+      id={MODALS.RESOLVE_VOW_MODAL.ID}
+      className="modal"
+      onClose={handleModalClose}
+    >
       <div className="modal-box border border-base-300">
         <div className="">
           <h1 className="text-xl font-display stext-base-content/80">
