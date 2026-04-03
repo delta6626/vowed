@@ -14,21 +14,24 @@ export default function SideSectionContent() {
 
       <div className="flex flex-col gap-4">
         <BasicVowContainer
-          vowText={"Ship our MVP before the Series A"}
+          vowId=""
+          vowTitle={"Ship our MVP before the Series A"}
           vowStatus={"waiting"}
           className="w-xl bg-base-200/60"
           vowViewCount={12000}
           vowCommentCount={120}
         />
         <BasicVowContainer
-          vowText={"Run a marathon before turning 30"}
+          vowId=""
+          vowTitle={"Run a marathon before turning 30"}
           vowStatus={"fulfilled"}
           className="w-xl bg-base-200/60"
           vowViewCount={9000}
           vowCommentCount={70}
         />
         <BasicVowContainer
-          vowText={"Finish my essay before its due"}
+          vowId=""
+          vowTitle={"Finish my essay before its due"}
           vowStatus={"not-fulfilled"}
           className="w-xl bg-base-200/60"
           vowViewCount={1200}
