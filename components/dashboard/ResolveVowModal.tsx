@@ -2,17 +2,27 @@ import { MODALS } from "@/constants/MODALS";
 import { useSelectedVowStore } from "@/store/selectedVowStore";
 import { VowStatus } from "@/types/VowStatus";
 import { Check, X } from "lucide-react";
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 
 export const ResolveVowModal = () => {
   const { vowDetails } = useSelectedVowStore();
   const [vowResolutionOutcome, setVowResolutionOutcome] =
     useState<Extract<VowStatus, "fulfilled" | "not-fulfilled">>();
-  const [vowResolutionNote, setVowResolutionNote] = useState<"string">();
+  const [vowResolutionNote, setVowResolutionNote] = useState<string>();
+
+  const handleOutcomeChange = (
+    outcome: Extract<VowStatus, "fulfilled" | "not-fulfilled">,
+  ) => {
+    setVowResolutionOutcome(outcome);
+  };
+
+  const handleNoteChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
+    setVowResolutionNote(e.target.value);
+  };
 
   const handleModalClose = () => {
     setVowResolutionOutcome(undefined);
-    setVowResolutionNote(undefined);
+    setVowResolutionNote("");
   };
 
   return (
@@ -23,16 +33,16 @@ export const ResolveVowModal = () => {
     >
       <div className="modal-box border border-base-300">
         <div className="">
-          <h1 className="text-xl font-display stext-base-content/80">
+          <h1 className="text-xl font-display text-base-content/80">
             {MODALS.RESOLVE_VOW_MODAL.TITLE}
           </h1>
-          <p className="text-accent italic mt-2">{`"${vowDetails.vowTitle}"`}</p>
+          <p className="text-accent italic">{`"${vowDetails.vowTitle}"`}</p>
         </div>
 
         <div className="mt-4 flex flex-col gap-2">
           <button
             onClick={() => {
-              setVowResolutionOutcome("fulfilled");
+              handleOutcomeChange("fulfilled");
             }}
             className={`${vowResolutionOutcome === "fulfilled" ? "bg-success/20" : "bg-base-200"} rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-success/20`}
           >
@@ -47,7 +57,7 @@ export const ResolveVowModal = () => {
 
           <button
             onClick={() => {
-              setVowResolutionOutcome("not-fulfilled");
+              handleOutcomeChange("not-fulfilled");
             }}
             className={`${vowResolutionOutcome === "not-fulfilled" ? "bg-error/20" : "bg-base-200"} rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-error/20`}
           >
@@ -57,6 +67,22 @@ export const ResolveVowModal = () => {
               <p className="text-sm text-accent">This event did not happen.</p>
             </div>
           </button>
+        </div>
+
+        <div className="mt-4">
+          <p className="text-base-content/80">
+            Resolution note - <span className="text-accent">Optional</span>
+          </p>
+          <textarea
+            value={vowResolutionNote}
+            onChange={handleNoteChange}
+            maxLength={300}
+            minLength={0}
+            className="textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25 mt-2"
+            placeholder={
+              "Say something about the outcome. Viewers will see this."
+            }
+          />
         </div>
       </div>
     </dialog>
