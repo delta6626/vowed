@@ -1,13 +1,14 @@
 import { MODALS } from "@/constants/MODALS";
 import { useSelectedVowStore } from "@/store/selectedVowStore";
-import { VowResolution } from "@/types/VowResolution";
+import { VowStatus } from "@/types/VowStatus";
 import { Check, X } from "lucide-react";
 import { useState } from "react";
 
 export const ResolveVowModal = () => {
   const { vowDetails } = useSelectedVowStore();
-  const [vowResolution, setVowResolution] =
-    useState<Pick<VowResolution, "outcome" | "resolutionNote">>();
+  const [vowResolutionOutcome, setVowResolutionOutcome] =
+    useState<Extract<VowStatus, "fulfilled" | "not-fulfilled">>();
+  const [vowResolutionNote, setVowResolutionNote] = useState<"string">();
 
   return (
     <dialog id={MODALS.RESOLVE_VOW_MODAL.ID} className="modal">
@@ -20,7 +21,9 @@ export const ResolveVowModal = () => {
         </div>
 
         <div className="mt-4 flex flex-col gap-2">
-          <button className="bg-base-200 rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-success/20">
+          <button
+            className={`${vowResolutionOutcome === "fulfilled" ? "bg-success/20" : "bg-base-200"} rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-success/20`}
+          >
             <Check className="text-success" />
             <div className="flex flex-col items-start">
               <h1>Fulfilled</h1>
@@ -30,7 +33,9 @@ export const ResolveVowModal = () => {
             </div>
           </button>
 
-          <button className="bg-base-200 rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-error/20">
+          <button
+            className={`${vowResolutionOutcome === "not-fulfilled" ? "bg-error/20" : "bg-base-200"} rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-error/20`}
+          >
             <X className="text-error" />
             <div className="flex flex-col items-start">
               <h1>Not fulfilled</h1>
