@@ -32,7 +32,7 @@ export const ResolveVowModal = () => {
       className="modal"
       onClose={handleModalClose}
     >
-      <div className="modal-box border border-base-300">
+      <div className="modal-box border border-base-300 rounded-xl">
         <div className="">
           <h1 className="text-xl font-display text-base-content/80">
             {MODALS.RESOLVE_VOW_MODAL.TITLE}
