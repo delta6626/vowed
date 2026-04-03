@@ -1,13 +1,22 @@
 import { create } from "zustand";
 
-export interface SelectedVowStore {
+export interface VowDetails {
   vowId: string;
-  setVowId: (newVowId: string) => void;
+  vowTitle: string;
+}
+
+export interface SelectedVowStore {
+  vowDetails: VowDetails;
+  setVowDetails: (updatedVowDetails: VowDetails) => void;
 }
 
 export const useSelectedVowStore = create<SelectedVowStore>((set) => ({
-  vowId: "",
-  setVowId: (newVowId) => {
-    set({ vowId: newVowId });
+  vowDetails: {
+    vowId: "",
+    vowTitle: "",
+  },
+
+  setVowDetails: (updatedVowDetails) => {
+    set({ vowDetails: updatedVowDetails });
   },
 }));

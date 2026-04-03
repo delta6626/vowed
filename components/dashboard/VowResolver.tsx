@@ -1,5 +1,5 @@
 import { MODALS } from "@/constants/MODALS";
-import { useSelectedVowIdStore } from "@/store/selectedVowIdStore";
+import { useSelectedVowStore } from "@/store/selectedVowStore";
 import { openModal } from "@/utils/functions/modalActions";
 import { ArrowRight } from "lucide-react";
 
@@ -8,11 +8,11 @@ export interface VowResolverProps {
   vowTitle: string;
 }
 
-export const VowResolver = ({ vowId }: VowResolverProps) => {
-  const { setVowId } = useSelectedVowIdStore();
+export const VowResolver = ({ vowId, vowTitle }: VowResolverProps) => {
+  const { setVowDetails } = useSelectedVowStore();
 
   const handleResolveButtonClick = () => {
-    setVowId(vowId);
+    setVowDetails({ vowId: vowId, vowTitle: vowTitle });
     openModal(MODALS.RESOLVE_VOW_MODAL.ID);
   };
 
