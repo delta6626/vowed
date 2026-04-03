@@ -22,6 +22,9 @@ export const ResolveVowModal = () => {
 
         <div className="mt-4 flex flex-col gap-2">
           <button
+            onClick={() => {
+              setVowResolutionOutcome("fulfilled");
+            }}
             className={`${vowResolutionOutcome === "fulfilled" ? "bg-success/20" : "bg-base-200"} rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-success/20`}
           >
             <Check className="text-success" />
@@ -34,6 +37,9 @@ export const ResolveVowModal = () => {
           </button>
 
           <button
+            onClick={() => {
+              setVowResolutionOutcome("not-fulfilled");
+            }}
             className={`${vowResolutionOutcome === "not-fulfilled" ? "bg-error/20" : "bg-base-200"} rounded-xl w-full flex gap-4 items-center justify-start p-4 border border-base-300 hover:border-error/20`}
           >
             <X className="text-error" />
