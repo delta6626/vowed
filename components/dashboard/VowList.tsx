@@ -35,7 +35,7 @@ export const VowList = ({
               <BasicVowContainer
                 key={vow.vowId}
                 vowId={vow.vowId!}
-                vowText={vow.title}
+                vowTitle={vow.title}
                 vowStatus={vow.status}
                 vowViewCount={vow.viewCount}
                 vowCommentCount={vow.commentCount}
@@ -65,7 +65,7 @@ export const VowList = ({
               <BasicVowContainer
                 key={vow.vowId}
                 vowId={vow.vowId!}
-                vowText={vow.title}
+                vowTitle={vow.title}
                 vowStatus={vow.status}
                 vowViewCount={vow.viewCount}
                 vowCommentCount={vow.commentCount}
@@ -95,7 +95,7 @@ export const VowList = ({
               <BasicVowContainer
                 key={vow.vowId}
                 vowId={vow.vowId!}
-                vowText={vow.title}
+                vowTitle={vow.title}
                 vowStatus={vow.status}
                 vowViewCount={vow.viewCount}
                 vowCommentCount={vow.commentCount}

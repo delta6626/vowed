@@ -5,6 +5,7 @@ import { ArrowRight } from "lucide-react";
 
 export interface VowResolverProps {
   vowId: string;
+  vowTitle: string;
 }
 
 export const VowResolver = ({ vowId }: VowResolverProps) => {

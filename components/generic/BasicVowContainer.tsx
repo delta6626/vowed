@@ -17,7 +17,7 @@ import { VowVisibility } from "@/types/VowVisibility";
 
 export interface BasicVowContainerProps {
   vowId: string;
-  vowText: string;
+  vowTitle: string;
   vowStatus: VowStatus;
   vowViewCount: number;
   vowCommentCount: number;
@@ -30,7 +30,7 @@ export interface BasicVowContainerProps {
 
 export default function BasicVowContainer({
   vowId,
-  vowText,
+  vowTitle,
   vowStatus,
   vowViewCount,
   vowCommentCount,
@@ -50,7 +50,7 @@ export default function BasicVowContainer({
       className={`flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
       <div className="flex flex-col gap-4 justify-between">
-        <p className="text-base-content/70">{vowText}</p>
+        <p className="text-base-content/70">{vowTitle}</p>
         <div className="text-base flex gap-4 items-center text-accent">
           <div className="flex gap-2 items-center">
             <Eye size={20} />
@@ -153,7 +153,7 @@ export default function BasicVowContainer({
         {vowDeadlineTimestampUTC &&
           currentTimestampUTC &&
           vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 && (
-            <VowResolver vowId={vowId} />
+            <VowResolver vowId={vowId} vowTitle={vowTitle} />
           )}
       </div>
     </div>
