@@ -1,7 +1,8 @@
 import { MODALS } from "@/constants/MODALS";
 import { useSelectedVowStore } from "@/store/selectedVowStore";
 import { VowStatus } from "@/types/VowStatus";
-import { Check, X } from "lucide-react";
+import { closeModal } from "@/utils/functions/modalActions";
+import { ArrowRight, Check, X } from "lucide-react";
 import { ChangeEvent, useState } from "react";
 
 export const ResolveVowModal = () => {
@@ -83,6 +84,20 @@ export const ResolveVowModal = () => {
               "Say something about the outcome. Viewers will see this."
             }
           />
+        </div>
+
+        <div className="mt-4 w-full flex justify-end gap-2">
+          <button
+            className="btn"
+            onClick={() => {
+              closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
+            }}
+          >
+            Cancel
+          </button>
+          <button className="btn btn-primary">
+            Submit <ArrowRight size={20} />
+          </button>
         </div>
       </div>
     </dialog>
