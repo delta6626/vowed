@@ -131,10 +131,17 @@ export const ResolveVowModal = () => {
           </button>
           <button
             onClick={handleSubmitClick}
-            className="btn btn-primary"
-            disabled={vowResolutionOutcome === undefined}
+            className="btn btn-primary flex shrink-0"
+            disabled={vowResolutionOutcome === undefined || isPending}
           >
-            Submit <ArrowRight size={20} />
+            Submit
+            <span className="w-5 h-5 flex items-center justify-center">
+              {isPending ? (
+                <span className="loading loading-spinner loading-xs"></span>
+              ) : (
+                <ArrowRight size={20} />
+              )}
+            </span>
           </button>
         </div>
       </div>
