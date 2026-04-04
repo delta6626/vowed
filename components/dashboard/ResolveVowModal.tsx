@@ -95,7 +95,10 @@ export const ResolveVowModal = () => {
           >
             Cancel
           </button>
-          <button className="btn btn-primary">
+          <button
+            className="btn btn-primary"
+            disabled={vowResolutionOutcome === undefined}
+          >
             Submit <ArrowRight size={20} />
           </button>
         </div>
