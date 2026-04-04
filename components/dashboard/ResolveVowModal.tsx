@@ -37,7 +37,9 @@ export const ResolveVowModal = () => {
       return data;
     },
 
-    onSuccess: () => {},
+    onSuccess: () => {
+      closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
+    },
     onError: () => {},
   });
 
