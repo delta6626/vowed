@@ -1,6 +1,7 @@
 import { VowResolution } from "@/types/VowResolution";
 import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
+import { FieldPath, FieldValue } from "firebase-admin/firestore";
 import { NextRequest, NextResponse } from "next/server";
 
 export interface VowResolutionPayload {
@@ -30,8 +31,10 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    const userSnapshot = adminDb.collection("users").doc(userId);
     const vowSnapshot = adminDb.collection("vows").doc(vowId);
     const vowDocument = await vowSnapshot.get();
+    const updateData: any = {};
 
     if (!vowDocument.exists)
       return NextResponse.json(
@@ -39,13 +42,22 @@ export async function POST(req: NextRequest) {
         { status: 404 },
       );
 
+    if (vowResolutionOutcome === "fulfilled") {
+      updateData.vowsFulfilled = FieldValue.increment(1);
+    }
+
+    updateData.vowsWaiting = FieldValue.increment(-1);
+
     await vowSnapshot.update({
-      status: {
+      resolution: {
         outcome: vowResolutionOutcome,
         resolutionNote: vowResolutionNote,
         resolutionTimestamp: Date.now(),
       },
+      status: vowResolutionOutcome,
     });
+
+    await userSnapshot.update(updateData);
 
     return NextResponse.json(
       { message: "Vow resolved successfully." },
