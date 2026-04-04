@@ -36,6 +36,9 @@ export const ResolveVowModal = () => {
 
       return data;
     },
+
+    onSuccess: () => {},
+    onError: () => {},
   });
 
   const handleOutcomeChange = (
