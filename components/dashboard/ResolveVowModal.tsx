@@ -2,6 +2,7 @@ import { MODALS } from "@/constants/MODALS";
 import { useSelectedVowStore } from "@/store/selectedVowStore";
 import { VowStatus } from "@/types/VowStatus";
 import { closeModal } from "@/utils/functions/modalActions";
+import { useMutation } from "@tanstack/react-query";
 import { ArrowRight, Check, X } from "lucide-react";
 import { ChangeEvent, useState } from "react";
 
@@ -9,7 +10,33 @@ export const ResolveVowModal = () => {
   const { vowDetails } = useSelectedVowStore();
   const [vowResolutionOutcome, setVowResolutionOutcome] =
     useState<Extract<VowStatus, "fulfilled" | "not-fulfilled">>();
-  const [vowResolutionNote, setVowResolutionNote] = useState<string>();
+  const [vowResolutionNote, setVowResolutionNote] = useState<string>("");
+
+  const { isPending, mutate: submitResolution } = useMutation({
+    mutationFn: async () => {
+      const reqBody = {
+        vowId: vowDetails.vowId,
+        vowResolutionOutcome: vowResolutionOutcome,
+        vowResolutionNote: vowResolutionNote.trim(),
+      };
+
+      const res = await fetch("/api/vows/resolve", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reqBody),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to resolve vow.");
+      }
+
+      return data;
+    },
+  });
 
   const handleOutcomeChange = (
     outcome: Extract<VowStatus, "fulfilled" | "not-fulfilled">,
@@ -19,6 +46,10 @@ export const ResolveVowModal = () => {
 
   const handleNoteChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setVowResolutionNote(e.target.value);
+  };
+
+  const handleSubmitClick = () => {
+    submitResolution();
   };
 
   const handleModalClose = () => {
@@ -96,6 +127,7 @@ export const ResolveVowModal = () => {
             Cancel
           </button>
           <button
+            onClick={handleSubmitClick}
             className="btn btn-primary"
             disabled={vowResolutionOutcome === undefined}
           >
