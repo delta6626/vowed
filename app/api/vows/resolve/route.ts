@@ -5,8 +5,8 @@ import { NextRequest, NextResponse } from "next/server";
 
 export interface VowResolutionPayload {
   vowId: string;
-  vowResolutionOutcome: Pick<VowResolution, "outcome">;
-  vowResolutionNote: Pick<VowResolution, "resolutionNote">;
+  vowResolutionOutcome: VowResolution["outcome"];
+  vowResolutionNote: VowResolution["resolutionNote"];
 }
 
 export async function POST(req: NextRequest) {
@@ -22,8 +22,16 @@ export async function POST(req: NextRequest) {
   try {
     const { vowId, vowResolutionOutcome, vowResolutionNote } =
       (await req.json()) as VowResolutionPayload;
-    const vowSnaphot = await adminDb.collection("vows").doc(vowId);
-    const vowDocument = await vowSnaphot.get();
+
+    if (!vowId || !vowResolutionOutcome) {
+      return NextResponse.json(
+        { error: "Missing required fields." },
+        { status: 400 },
+      );
+    }
+
+    const vowSnapshot = adminDb.collection("vows").doc(vowId);
+    const vowDocument = await vowSnapshot.get();
 
     if (!vowDocument.exists)
       return NextResponse.json(
@@ -31,7 +39,7 @@ export async function POST(req: NextRequest) {
         { status: 404 },
       );
 
-    await vowSnaphot.update({
+    await vowSnapshot.update({
       status: {
         outcome: vowResolutionOutcome,
         resolutionNote: vowResolutionNote,
@@ -44,6 +52,7 @@ export async function POST(req: NextRequest) {
       { status: 200 },
     );
   } catch (error) {
+    console.error(error);
     return NextResponse.json(
       {
         error: "An error occured in the server.",
