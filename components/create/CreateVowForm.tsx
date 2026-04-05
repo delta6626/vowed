@@ -159,7 +159,11 @@ export const CreateVowForm = () => {
                 There is no delete - only resolution.
               </p>
 
-              <button type={"submit"} className="btn btn-primary flex shrink-0">
+              <button
+                type={"submit"}
+                className="btn btn-primary flex shrink-0"
+                disabled={loading}
+              >
                 Publish vow
                 <span className="w-5 h-5 flex items-center justify-center">
                   {loading ? (
