@@ -4,10 +4,6 @@ import { useEffect, useState } from "react";
 import { VowManagerTabs } from "./VowManagerTabs";
 import { Vow } from "@/types/Vow";
 import { VowList } from "./VowList";
-import Link from "next/link";
-import { VowManagerLoading } from "./VowManagerLoading";
-import { useQuery } from "@tanstack/react-query";
-import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 
 export type VowManagerTab = "active" | "moment-of-truth" | "resolved";
 export interface VowManagerProps {
