@@ -97,14 +97,14 @@ export default function BasicVowContainer({
                     : "secondary"
             }
             icon={
-              vowStatus === "waiting" ||
-              vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 ? (
-                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              vowStatus === "not-fulfilled" ? (
+                <X className="text-error" size={20} />
               ) : vowStatus === "fulfilled" ? (
                 <Check className="text-success" size={20} />
-              ) : (
-                <X className="text-error" size={20} />
-              )
+              ) : vowStatus === "waiting" ||
+                vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 ? (
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+              ) : null
             }
           />
         </div>
