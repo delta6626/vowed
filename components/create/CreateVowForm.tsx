@@ -74,7 +74,10 @@ export const CreateVowForm = () => {
     } finally {
       setLoading(false);
       queryClient.invalidateQueries({
-        queryKey: [QUERY_KEYS.USER_PROFILE, QUERY_KEYS.USER_VOWS],
+        queryKey: [QUERY_KEYS.USER_PROFILE],
+      });
+      queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.USER_VOWS],
       });
     }
   };

@@ -1,12 +1,15 @@
 import { MODALS } from "@/constants/MODALS";
+import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 import { useSelectedVowStore } from "@/store/selectedVowStore";
 import { VowStatus } from "@/types/VowStatus";
 import { closeModal } from "@/utils/functions/modalActions";
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, Check, X } from "lucide-react";
 import { ChangeEvent, useState } from "react";
 
 export const ResolveVowModal = () => {
+  const queryClient = useQueryClient();
+
   const { vowDetails } = useSelectedVowStore();
   const [vowResolutionOutcome, setVowResolutionOutcome] =
     useState<Extract<VowStatus, "fulfilled" | "not-fulfilled">>();
@@ -38,6 +41,13 @@ export const ResolveVowModal = () => {
     },
 
     onSuccess: () => {
+      queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.USER_PROFILE],
+      });
+      queryClient.invalidateQueries({
+        queryKey: [QUERY_KEYS.USER_VOWS],
+      });
+
       closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
     },
     onError: () => {},
