@@ -152,7 +152,8 @@ export default function BasicVowContainer({
 
         {vowDeadlineTimestampUTC &&
           currentTimestampUTC &&
-          vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 && (
+          vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 &&
+          vowStatus === "waiting" && (
             <VowResolver vowId={vowId} vowTitle={vowTitle} />
           )}
       </div>

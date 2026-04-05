@@ -20,7 +20,9 @@ export const VowList = ({
   );
 
   const momentOfTruthVows = vows.filter(
-    (vow) => vow.deadlineTimestampUTC - currentTimestampUTC < 0,
+    (vow) =>
+      vow.deadlineTimestampUTC - currentTimestampUTC < 0 &&
+      vow.status === "waiting",
   );
   const resolvedVows = vows.filter(
     (vow) => vow.status === "fulfilled" || vow.status == "not-fulfilled",
