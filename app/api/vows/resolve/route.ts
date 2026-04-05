@@ -1,7 +1,7 @@
 import { VowResolution } from "@/types/VowResolution";
 import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
-import { FieldPath, FieldValue } from "firebase-admin/firestore";
+import { FieldValue } from "firebase-admin/firestore";
 import { NextRequest, NextResponse } from "next/server";
 
 export interface VowResolutionPayload {
