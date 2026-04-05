@@ -11,7 +11,7 @@ export const DashboardStats = ({
       <DashboardStatBox statBoxType={"waiting"} mainText={vowsWaiting} />
       <DashboardStatBox
         statBoxType={"fulfillment"}
-        mainText={`${vowsCreated === 0 ? 0 : (vowsFulfilled / vowsCreated) * 100}%`}
+        mainText={`${vowsCreated === 0 ? 0 : Math.round((vowsFulfilled / vowsCreated) * 100)}%`}
       />
       <DashboardStatBox statBoxType={"total"} mainText={vowsCreated} />
     </div>
