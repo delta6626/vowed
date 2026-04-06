@@ -12,6 +12,7 @@ interface VowPageProps {
 
 export default async function Vow({ params }: VowPageProps) {
   const { id } = await params;
+
   const vowSnaphsot = await adminDb.collection("vows").doc(id).get();
 
   if (!vowSnaphsot.exists) {
