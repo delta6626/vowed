@@ -1,4 +1,5 @@
 import Navbar from "@/components/navigation/Navbar";
+import Link from "next/link";
 
 export default function NotFound() {
   return (
@@ -17,7 +18,9 @@ export default function NotFound() {
           You've wandered somewhere we haven't built yet.
         </p>
 
-        <button className="mt-8 btn btn-primary">Go to homepage</button>
+        <Link href={"/"} className="mt-8 btn btn-primary">
+          Go to homepage
+        </Link>
       </div>
     </div>
   );
