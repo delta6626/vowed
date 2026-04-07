@@ -2,9 +2,12 @@ import { GetVowResponse } from "@/types/GetVowRespsonse";
 import { User } from "@/types/User";
 import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
-export async function GET({ params }: { params: Promise<{ id: string }> }) {
+export async function GET(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> },
+) {
   // Note: Vows can be seen without being authenticated. Hence, no auth checks.
   const { id: vowId } = await params;
 
