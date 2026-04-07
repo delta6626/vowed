@@ -18,34 +18,27 @@ export async function GET({ params }: { params: Promise<{ id: string }> }) {
 
   const vowData = vowSnapshot.data() as Vow;
 
-  const vowCommentsSnapshot = await adminDb
-    .collection("vows")
-    .doc(vowId)
-    .collection("comments")
-    .get();
-
-  const vowCreator = await adminDb
-    .collection("users")
-    .doc(vowData.authorId)
-    .get();
+  const [vowCommentsSnapshot, vowCreator] = await Promise.all([
+    adminDb.collection("vows").doc(vowId).collection("comments").get(),
+    adminDb.collection("users").doc(vowData.authorId).get(),
+  ]);
 
   const vowCreatorData = vowCreator.data() as User;
-
   const now = Date.now();
 
-  let vowStatus;
+  let vowStatusFormatted;
 
-  if (vowData.status === "waiting" && vowData.deadlineTimestampUTC - now > 0) {
-    vowStatus = "Waiting";
+  if (vowData.status === "waiting" && now < vowData.deadlineTimestampUTC) {
+    vowStatusFormatted = "Waiting";
   } else if (
     vowData.status === "waiting" &&
-    vowData.deadlineTimestampUTC - now < 0
+    now >= vowData.deadlineTimestampUTC
   ) {
-    vowStatus = "Moment of truth";
+    vowStatusFormatted = "Moment of truth";
   } else if (vowData.status === "fulfilled") {
-    vowStatus = "Fulfilled";
+    vowStatusFormatted = "Fulfilled";
   } else {
-    vowStatus = "Not fulfilled";
+    vowStatusFormatted = "Not fulfilled";
   }
 
   const vowComments = vowCommentsSnapshot.empty
@@ -70,7 +63,8 @@ export async function GET({ params }: { params: Promise<{ id: string }> }) {
   const response = {
     vowId: vowId,
     currentTimestampUTC: now,
-    vowStatus: vowStatus,
+    vowStatus: vowData.status,
+    vowStatusFormatted: vowStatusFormatted,
     vowCreationDate: vowData.createdAt,
     vowTitle: vowData.title,
     vowDescription: vowData.description,
