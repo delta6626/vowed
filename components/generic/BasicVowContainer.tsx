@@ -1,11 +1,11 @@
 import { VowStatus } from "@/types/VowStatus";
 import Pill from "./Pill";
 import {
+  LinkIcon,
   Check,
   Dot,
   Eye,
   Globe,
-  Link,
   Lock,
   MessageCircle,
   X,
@@ -14,6 +14,7 @@ import { getCountdown } from "@/utils/functions/getCountdown";
 import { VowResolver } from "../dashboard/VowResolver";
 import { VowResolution } from "@/types/VowResolution";
 import { VowVisibility } from "@/types/VowVisibility";
+import Link from "next/link";
 
 export interface BasicVowContainerProps {
   vowId: string;
@@ -50,7 +51,9 @@ export default function BasicVowContainer({
       className={`flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
       <div className="flex flex-col gap-4 justify-between">
-        <p className="text-base-content/70">{vowTitle}</p>
+        <Link href={`/v/${vowId}`} className="text-base-content/70">
+          {vowTitle}
+        </Link>
         <div className="text-base flex gap-4 items-center text-accent">
           <div className="flex gap-2 items-center">
             <Eye size={20} />
@@ -69,7 +72,7 @@ export default function BasicVowContainer({
           {vowVisibility === "public" ? (
             <Globe className="text-accent" size={20} />
           ) : vowVisibility === "unlisted" ? (
-            <Link className="text-accent" size={20} />
+            <LinkIcon className="text-accent" size={20} />
           ) : vowVisibility === "private" ? (
             <Lock className="text-accent" size={20} />
           ) : null}
