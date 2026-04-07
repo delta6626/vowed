@@ -1,5 +1,6 @@
 "use client";
 
+import { VowLoading } from "@/components/loading-skeletons/VowLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { GetVowResponse } from "@/types/GetVowRespsonse";
 import type { Vow } from "@/types/Vow";
@@ -29,6 +30,15 @@ export default function Vow() {
     },
     retry: 3,
   });
+
+  if (isLoading) {
+    return (
+      <div className="w-screen h-screen flex flex-col">
+        <Navbar />
+        <VowLoading />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col w-screen h-screen">
