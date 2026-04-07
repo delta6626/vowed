@@ -79,5 +79,5 @@ export async function GET({ params }: { params: Promise<{ id: string }> }) {
     vowCreatorFulfillmentRate: vowCreatorFulfillmentRate,
   } as GetVowResponse;
 
-  return NextResponse.json(response);
+  return NextResponse.json(response, { status: 200 });
 }
