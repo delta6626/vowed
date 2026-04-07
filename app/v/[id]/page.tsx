@@ -89,13 +89,13 @@ export default function Vow() {
         </div>
 
         <div>
-          <h1 className="text-4xl mt-4 font-display">{vowResponse.vowTitle}</h1>
+          <h1 className="text-4xl mt-8 font-display">{vowResponse.vowTitle}</h1>
           <p className="text-lg text-base-content/80 mt-2">
             {vowResponse.vowDescription ?? "No description provided."}
           </p>
         </div>
 
-        <div className="flex gap-2 mt-4">
+        <div className="flex gap-2 mt-8">
           <img
             className="w-7 h-7 rounded-full"
             src={vowResponse.vowCreatorProfilePhoto}
