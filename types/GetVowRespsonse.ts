@@ -14,7 +14,7 @@ export interface GetVowResponse {
   vowDeadlineTimestampUTC: number;
   vowCommentCount: number;
   vowViewCount: number;
-  vowComments: VowComment[];
+  vowComments: VowComment[] | [];
   vowResolution: VowResolution | null;
 
   vowCreatorProfilePhoto: string;
