@@ -22,6 +22,13 @@ export async function GET(
 
   const vowData = vowSnapshot.data() as Vow;
 
+  if (vowData.visibility === "private") {
+    return NextResponse.json(
+      { error: "This vow is private and cannot be accessed." },
+      { status: 403 },
+    );
+  }
+
   const [vowCommentsSnapshot, vowCreator] = await Promise.all([
     adminDb.collection("vows").doc(vowId).collection("comments").get(),
     adminDb.collection("users").doc(vowData.authorId).get(),
