@@ -1,3 +1,4 @@
+import { GetVowResponse } from "@/types/GetVowRespsonse";
 import { User } from "@/types/User";
 import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
@@ -76,7 +77,7 @@ export async function GET({ params }: { params: Promise<{ id: string }> }) {
     vowCreatorProfilePhoto: vowCreatorData.avatarURL,
     vowCreatorName: vowCreatorData.displayName,
     vowCreatorFulfillmentRate: vowCreatorFulfillmentRate,
-  };
+  } as GetVowResponse;
 
   return NextResponse.json(response);
 }
