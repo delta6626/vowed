@@ -1,9 +1,9 @@
 "use client";
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
-import { DashboardStatsLoading } from "@/components/dashboard/DashboardStatsLoading";
+import { DashboardStatsLoading } from "@/components/loading-skeletons/DashboardStatsLoading";
 import { ResolveVowModal } from "@/components/dashboard/ResolveVowModal";
 import { VowManager } from "@/components/dashboard/VowManager";
-import { VowManagerLoading } from "@/components/dashboard/VowManagerLoading";
+import { VowManagerLoading } from "@/components/loading-skeletons/VowManagerLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 import { User } from "@/types/User";
