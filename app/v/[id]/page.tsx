@@ -1,17 +1,19 @@
 "use client";
 
+import Pill, { PillVariant } from "@/components/generic/Pill";
 import { VowLoading } from "@/components/loading-skeletons/VowLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { GetVowResponse } from "@/types/GetVowRespsonse";
 import type { Vow } from "@/types/Vow";
 import { useQuery } from "@tanstack/react-query";
+import { Check, Dot, X } from "lucide-react";
 import { useParams } from "next/navigation";
 
 export default function Vow() {
   const params = useParams();
 
   const {
-    data: getVowResponse,
+    data: vowResponse,
     isLoading,
     isError,
     error,
@@ -40,6 +42,26 @@ export default function Vow() {
     );
   }
 
+  if (isError || !vowResponse) {
+    return; // TO DO: Show error component
+  }
+
+  const vowStatus = vowResponse.vowStatus;
+  const pillVariant: PillVariant =
+    vowStatus === "waiting"
+      ? "primary"
+      : vowStatus === "fulfilled"
+        ? "success"
+        : "error";
+  const pillIcon =
+    vowStatus === "not-fulfilled" ? (
+      <X className="text-error" size={20} />
+    ) : vowStatus === "fulfilled" ? (
+      <Check className="text-success" size={20} />
+    ) : (
+      <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
+    );
+
   return (
     <div className="flex flex-col w-screen h-screen">
       <div className="flex flex-col flex-1">
@@ -47,7 +69,47 @@ export default function Vow() {
       </div>
 
       <div className="w-full h-full doublePaddingContainer mt-16">
-        <h1 className="font-display text-4xl">Title</h1>
+        <div className="flex items-center gap-4">
+          <Pill
+            variant={pillVariant}
+            text={vowResponse.vowStatusFormatted}
+            className="w-fit"
+            icon={pillIcon}
+          />
+
+          {vowStatus != "waiting" && (
+            <p className="text-accent">{`Resolved on ${new Date(
+              vowResponse.vowResolution!.resolutionTimestamp,
+            ).toLocaleString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}`}</p>
+          )}
+        </div>
+
+        <div>
+          <h1 className="text-4xl mt-4 font-display">{vowResponse.vowTitle}</h1>
+          <p className="text-lg text-base-content/80 mt-2">
+            {vowResponse.vowDescription ?? "No description provided."}
+          </p>
+        </div>
+
+        <div className="flex gap-2 mt-4">
+          <img
+            className="w-7 h-7 rounded-full"
+            src={vowResponse.vowCreatorProfilePhoto}
+            alt="Vow creator's profile photo"
+          />
+
+          <p className="font-medium flex items-center">
+            {vowResponse.vowCreatorName}{" "}
+            <Dot className="text-accent" size={20} />
+            <span className="text-accent">
+              {`${vowResponse.vowCreatorFulfillmentRate}% Fulfillment rate`}
+            </span>
+          </p>
+        </div>
       </div>
     </div>
   );
