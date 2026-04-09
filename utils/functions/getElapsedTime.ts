@@ -4,7 +4,7 @@ export const getElapsedTime = (
 ) => {
   const difference = currentTimestampUTC - deadlineTimestampUTC;
 
-  if (difference < 0) return undefined; // Not passed yet
+  if (difference < 0) return "DEADLINE_NOT_PASSED";
 
   const totalSeconds = Math.floor(difference / 1000);
 

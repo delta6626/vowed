@@ -19,9 +19,9 @@ export const VowWaiting = ({
     : undefined;
 
   const tPlus =
-    countdown === "DEADLINE_PASSED" && currentTimestampUTC
-      ? getElapsedTime(currentTimestampUTC, deadlineTimestampUTC)
-      : undefined;
+    countdown === "DEADLINE_PASSED" &&
+    currentTimestampUTC &&
+    getElapsedTime(currentTimestampUTC, deadlineTimestampUTC);
 
   useEffect(() => {
     if (initialCurrentTimestampUTC !== undefined) {
@@ -44,7 +44,49 @@ export const VowWaiting = ({
 
   if (countdown === "DEADLINE_PASSED") {
     return (
-      <div className="w-full h-20 border border-base-300 rounded-2xl"></div>
+      <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-primary/40 via-primary/20 to-base-200 to-90%">
+        <h1 className="text-center uppercase font-medium text-accent">
+          The deadline has passed.
+        </h1>
+
+        {tPlus != "DEADLINE_NOT_PASSED" && tPlus && (
+          <p className="mt-4 flex items-center gap-4 w-full justify-center text-3xl font-mono tabular-nums">
+            {tPlus.years !== 0 && (
+              <>
+                <span>{tPlus.years}y</span>
+                <Dot />
+              </>
+            )}
+
+            {tPlus.days !== 0 && (
+              <>
+                <span>{tPlus.days}d</span>
+                <Dot />
+              </>
+            )}
+
+            <span>{tPlus.hours}h</span>
+            <Dot />
+
+            <span>{tPlus.minutes}m</span>
+            <Dot />
+
+            <span>{tPlus.seconds}s</span>
+          </p>
+        )}
+
+        <p className="mt-4 text-base-content/80 text-center font-medium">
+          {`Due ${new Date(deadlineTimestampUTC).toLocaleString("en-US", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            hour: "numeric",
+            minute: "2-digit",
+            hour12: true,
+          })}`}
+        </p>
+      </div>
     );
   }
 
