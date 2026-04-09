@@ -110,6 +110,8 @@ export default function Vow() {
             </span>
           </p>
         </div>
+
+        <div className="mt-8"></div>
       </div>
     </div>
   );
