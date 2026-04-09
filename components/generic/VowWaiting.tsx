@@ -1,4 +1,5 @@
 import { getCountdown } from "@/utils/functions/getCountdown";
+import { getElapsedTime } from "@/utils/functions/getElapsedTime";
 import { Dot } from "lucide-react";
 import { useEffect, useState } from "react";
 
@@ -16,6 +17,11 @@ export const VowWaiting = ({
   const countdown = currentTimestampUTC
     ? getCountdown(deadlineTimestampUTC, currentTimestampUTC)
     : undefined;
+
+  const tPlus =
+    countdown === "DEADLINE_PASSED" && currentTimestampUTC
+      ? getElapsedTime(currentTimestampUTC, deadlineTimestampUTC)
+      : undefined;
 
   useEffect(() => {
     if (initialCurrentTimestampUTC !== undefined) {
