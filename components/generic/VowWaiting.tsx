@@ -43,7 +43,7 @@ export const VowWaiting = ({
   }
 
   return (
-    <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl">
+    <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-primary/40 to-base-200 to-90%">
       <h1 className="text-center uppercase font-medium text-accent">
         Time remaining
       </h1>
