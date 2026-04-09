@@ -114,7 +114,14 @@ export default function Vow() {
         </div>
 
         <div className="mt-8">
-          {vowStatus === "waiting" ? <VowWaiting /> : <VowResolved />}
+          {vowStatus === "waiting" ? (
+            <VowWaiting
+              initialCurrentTimestampUTC={vowResponse.currentTimestampUTC}
+              deadlineTimestampUTC={vowResponse.vowDeadlineTimestampUTC}
+            />
+          ) : (
+            <VowResolved />
+          )}
         </div>
       </div>
     </div>
