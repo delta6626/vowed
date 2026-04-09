@@ -1,6 +1,8 @@
 "use client";
 
 import Pill, { PillVariant } from "@/components/generic/Pill";
+import { VowResolved } from "@/components/generic/VowResolved";
+import { VowWaiting } from "@/components/generic/VowWaiting";
 import { VowLoading } from "@/components/loading-skeletons/VowLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { GetVowResponse } from "@/types/GetVowRespsonse";
@@ -111,7 +113,9 @@ export default function Vow() {
           </p>
         </div>
 
-        <div className="mt-8"></div>
+        <div className="mt-8">
+          {vowStatus === "waiting" ? <VowWaiting /> : <VowResolved />}
+        </div>
       </div>
     </div>
   );
