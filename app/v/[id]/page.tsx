@@ -124,7 +124,12 @@ export default function Vow() {
               deadlineTimestampUTC={vowResponse.vowDeadlineTimestampUTC}
             />
           ) : (
-            <VowResolved />
+            <VowResolved
+              resolutionTimestamp={
+                vowResponse.vowResolution!.resolutionTimestamp
+              }
+              resolutionNote={vowResponse.vowResolution!.resolutionNote}
+            />
           )}
         </div>
       </div>
