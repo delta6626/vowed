@@ -44,13 +44,13 @@ export const VowWaiting = ({
 
   if (countdown === "DEADLINE_PASSED") {
     return (
-      <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-primary/40 via-primary/20 to-base-200 to-90%">
-        <h1 className="text-center uppercase font-medium text-accent">
+      <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-secondary/50 via-secondary/20 to-secondary/10 to-90%">
+        <h1 className="text-center font-medium text-4xl font-display">
           The deadline has passed.
         </h1>
 
         {tPlus != "DEADLINE_NOT_PASSED" && tPlus && (
-          <p className="mt-4 flex items-center gap-4 w-full justify-center text-3xl font-mono tabular-nums">
+          <p className="mt-8 text-base-content/80 flex items-center gap-4 w-full justify-center text-xl font-mono tabular-nums">
             {tPlus.years !== 0 && (
               <>
                 <span>{tPlus.years}y</span>
@@ -72,26 +72,31 @@ export const VowWaiting = ({
             <Dot />
 
             <span>{tPlus.seconds}s</span>
+
+            <span className="">since deadline</span>
           </p>
         )}
 
-        <p className="mt-4 text-base-content/80 text-center font-medium">
-          {`Due ${new Date(deadlineTimestampUTC).toLocaleString("en-US", {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-            hour: "numeric",
-            minute: "2-digit",
-            hour12: true,
-          })}`}
+        <p className="text-base-content/80 text-center">
+          {`Was due on ${new Date(deadlineTimestampUTC).toLocaleString(
+            "en-US",
+            {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
+            },
+          )}`}
         </p>
       </div>
     );
   }
 
   return (
-    <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-primary/40 via-primary/20 to-base-200 to-90%">
+    <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-primary/50 via-primary/20 to-primary/10 to-90%">
       <h1 className="text-center uppercase font-medium text-accent">
         Time remaining
       </h1>
