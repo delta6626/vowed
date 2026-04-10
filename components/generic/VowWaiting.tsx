@@ -44,7 +44,7 @@ export const VowWaiting = ({
 
   if (countdown === "DEADLINE_PASSED") {
     return (
-      <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-secondary/50 via-secondary/20 to-secondary/10 to-90%">
+      <div className="bg-base-200 w-full p-8 border border-secondary/10 rounded-2xl bg-radial-[at_50%_75%] from-secondary/50 via-secondary/20 to-secondary/10 to-90%">
         <h1 className="text-center font-medium text-4xl font-display">
           The deadline has passed.
         </h1>
@@ -96,8 +96,8 @@ export const VowWaiting = ({
   }
 
   return (
-    <div className="bg-base-200 w-full p-8 border border-base-300 rounded-2xl bg-radial-[at_50%_75%] from-primary/50 via-primary/20 to-primary/10 to-90%">
-      <h1 className="text-center uppercase font-medium text-accent">
+    <div className="bg-base-200 w-full p-8 border border-primary/10 rounded-2xl bg-radial-[at_50%_75%] from-primary/50 via-primary/30 to-primary/10 to-90%">
+      <h1 className="text-center uppercase font-medium text-base-content/80">
         Time remaining
       </h1>
 
