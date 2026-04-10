@@ -51,7 +51,11 @@ export default function Vow() {
   const vowStatus = vowResponse.vowStatus;
   const pillVariant: PillVariant =
     vowStatus === "waiting"
-      ? "primary"
+      ? vowResponse.vowDeadlineTimestampUTC > vowResponse.currentTimestampUTC
+        ? "primary"
+        : vowResponse.vowDeadlineTimestampUTC < vowResponse.currentTimestampUTC
+          ? "secondary"
+          : "primary" // optional fallback if x === y
       : vowStatus === "fulfilled"
         ? "success"
         : "error";
