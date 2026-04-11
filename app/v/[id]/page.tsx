@@ -125,6 +125,7 @@ export default function Vow() {
             />
           ) : (
             <VowResolved
+              vowStatus={vowResponse.vowStatus}
               resolutionTimestamp={
                 vowResponse.vowResolution!.resolutionTimestamp
               }
