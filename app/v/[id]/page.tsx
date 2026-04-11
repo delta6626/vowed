@@ -32,6 +32,7 @@ export default function Vow() {
 
       return res.json() as Promise<GetVowResponse>;
     },
+    staleTime: 3 * 60 * 1000,
     retry: 3,
   });
 
