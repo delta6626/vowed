@@ -44,8 +44,13 @@ export const ResolveVowModal = () => {
       queryClient.invalidateQueries({
         queryKey: [QUERY_KEYS.USER_PROFILE],
       });
+
       queryClient.invalidateQueries({
         queryKey: [QUERY_KEYS.USER_VOWS],
+      });
+
+      queryClient.invalidateQueries({
+        queryKey: [`vow-${vowDetails.vowId}`],
       });
 
       closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
