@@ -50,7 +50,9 @@ export const ResolveVowModal = () => {
 
       closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
     },
-    onError: () => {},
+    onError: () => {
+      // TO DO
+    },
   });
 
   const handleOutcomeChange = (
