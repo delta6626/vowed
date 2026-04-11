@@ -8,7 +8,7 @@ import Navbar from "@/components/navigation/Navbar";
 import { GetVowResponse } from "@/types/GetVowRespsonse";
 import type { Vow } from "@/types/Vow";
 import { useQuery } from "@tanstack/react-query";
-import { Check, Dot, X } from "lucide-react";
+import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { useParams } from "next/navigation";
 
 export default function Vow() {
@@ -133,6 +133,26 @@ export default function Vow() {
               resolutionNote={vowResponse.vowResolution!.resolutionNote}
             />
           )}
+        </div>
+
+        <div className="flex items-center gap-8 justify-center rounded-2xl mt-4 bg-base-200 border border-base-300 w-full p-4">
+          <div className="text-accent flex items-center gap-2">
+            <Eye size={20} />
+            <span className="text-base-content/80 font-medium">
+              {vowResponse.vowViewCount}
+            </span>
+            viewers
+          </div>
+
+          <div className="h-6 border-[0.5px] border-base-300"></div>
+
+          <div className="text-accent flex items-center gap-2">
+            <MessageCircle size={20} />
+            <span className="text-base-content/80 font-medium">
+              {vowResponse.vowCommentCount}
+            </span>
+            comments
+          </div>
         </div>
       </div>
     </div>
