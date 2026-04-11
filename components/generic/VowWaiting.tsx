@@ -46,7 +46,7 @@ export const VowWaiting = ({
     return (
       <div className="bg-base-200 w-full p-8 border border-secondary/10 rounded-2xl bg-radial-[at_50%_75%] from-secondary/50 via-secondary/20 to-secondary/10 to-90%">
         <h1 className="text-center font-medium text-4xl font-display">
-          The deadline has passed.
+          The deadline has passed
         </h1>
 
         {tPlus != "DEADLINE_NOT_PASSED" && tPlus && (
