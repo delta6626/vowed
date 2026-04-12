@@ -1,5 +1,6 @@
 export interface VowComment {
-  commenterName: string;
+  commentId: string;
+  commentorId: string;
   commentText: string;
   commentCreationTimestamp: number;
 }
