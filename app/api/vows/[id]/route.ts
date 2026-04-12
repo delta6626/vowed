@@ -37,7 +37,12 @@ export async function GET(
   }
 
   const [vowCommentsSnapshot, vowCreator] = await Promise.all([
-    adminDb.collection("vows").doc(vowId).collection("comments").get(),
+    adminDb
+      .collection("vows")
+      .doc(vowId)
+      .collection("comments")
+      .orderBy("commentCreationTimestamp", "desc")
+      .get(),
     adminDb.collection("users").doc(vowData.authorId).get(),
   ]);
 
