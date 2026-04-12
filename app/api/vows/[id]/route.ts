@@ -2,6 +2,8 @@ import { GetVowResponse } from "@/types/GetVowRespsonse";
 import { User } from "@/types/User";
 import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
+import { auth } from "@clerk/nextjs/server";
+import { FieldValue } from "firebase-admin/firestore";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function GET(
@@ -10,8 +12,9 @@ export async function GET(
 ) {
   // Note: Vows can be seen without being authenticated. Hence, no auth checks.
   const { id: vowId } = await params;
-
-  const vowSnapshot = await adminDb.collection("vows").doc(vowId).get();
+  const { userId } = await auth();
+  const vowReference = await adminDb.collection("vows").doc(vowId);
+  const vowSnapshot = await vowReference.get();
 
   if (!vowSnapshot.exists) {
     return NextResponse.json(
@@ -27,6 +30,10 @@ export async function GET(
       { error: "This vow is private and cannot be accessed." },
       { status: 403 },
     );
+  }
+
+  if (vowData.authorId != userId) {
+    await vowReference.update({ viewCount: FieldValue.increment(1) });
   }
 
   const [vowCommentsSnapshot, vowCreator] = await Promise.all([
