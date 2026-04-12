@@ -13,7 +13,7 @@ export const VowCommentForm = () => {
 
   return (
     <>
-      <h1>Comments</h1>
+      <h1 className="font-medium text-accent">Comments</h1>
 
       <form onSubmit={handleSubmitComment}>
         <textarea
