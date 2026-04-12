@@ -11,8 +11,8 @@ export async function GET(
   { params }: { params: Promise<{ id: string }> },
 ) {
   // Note: Vows can be seen without being authenticated. Hence, no auth checks.
-  const { id: vowId } = await params;
-  const { userId } = await auth();
+
+  const [{ id: vowId }, { userId }] = await Promise.all([params, auth()]);
   const vowReference = await adminDb.collection("vows").doc(vowId);
   const vowSnapshot = await vowReference.get();
 
