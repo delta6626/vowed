@@ -1,6 +1,7 @@
 "use client";
 
 import Pill, { PillVariant } from "@/components/generic/Pill";
+import { VowCommentForm } from "@/components/generic/VowCommentForm";
 import { VowResolved } from "@/components/generic/VowResolved";
 import { VowWaiting } from "@/components/generic/VowWaiting";
 import { VowLoading } from "@/components/loading-skeletons/VowLoading";
@@ -153,6 +154,10 @@ export default function Vow() {
             </span>
             comments
           </div>
+        </div>
+
+        <div className="mt-8">
+          <VowCommentForm />
         </div>
       </div>
     </div>
