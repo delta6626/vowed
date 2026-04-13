@@ -158,7 +158,7 @@ export default function Vow() {
         </div>
 
         <div className="mt-8 flex flex-col gap-4">
-          <VowCommentForm />
+          <VowCommentForm vowId={vowResponse.vowId} />
           <VowCommentsCollection commentsCollection={vowResponse.vowComments} />
         </div>
       </div>

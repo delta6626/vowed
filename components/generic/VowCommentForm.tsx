@@ -1,6 +1,10 @@
 import { ChangeEvent, SubmitEvent, useState } from "react";
 
-export const VowCommentForm = () => {
+export interface VowCommentFormProps {
+  vowId: string;
+}
+
+export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
   const [comment, setComment] = useState<string>("");
 
   const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
