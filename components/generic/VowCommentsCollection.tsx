@@ -11,7 +11,9 @@ export const VowCommentsCollection = ({
   return (
     <>
       {commentsCollection.map((comment) => {
-        return <VowCommentContainer comment={comment} />;
+        return (
+          <VowCommentContainer key={comment.commentId} comment={comment} />
+        );
       })}
     </>
   );
