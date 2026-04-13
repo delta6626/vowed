@@ -1,3 +1,4 @@
+import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -6,6 +7,8 @@ export async function POST(
   { params }: { params: Promise<{ id: string }> },
 ) {
   const [{ id: vowId }, { userId }] = await Promise.all([params, auth()]);
+  const vowReference = await adminDb.collection("vows").doc(vowId);
+  const vowSnapshot = await vowReference.get();
 
   if (!userId) {
     return NextResponse.json(
@@ -18,6 +21,13 @@ export async function POST(
     return NextResponse.json(
       { error: "vowId is required to create a comment." },
       { status: 400 },
+    );
+  }
+
+  if (!vowSnapshot.exists) {
+    return NextResponse.json(
+      { error: "This vow does not exist." },
+      { status: 404 },
     );
   }
 }
