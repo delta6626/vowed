@@ -2,6 +2,7 @@
 
 import Pill, { PillVariant } from "@/components/generic/Pill";
 import { VowCommentForm } from "@/components/generic/VowCommentForm";
+import { VowCommentsCollection } from "@/components/generic/VowCommentsCollection";
 import { VowResolved } from "@/components/generic/VowResolved";
 import { VowWaiting } from "@/components/generic/VowWaiting";
 import { VowLoading } from "@/components/loading-skeletons/VowLoading";
@@ -156,8 +157,9 @@ export default function Vow() {
           </div>
         </div>
 
-        <div className="mt-8">
+        <div className="mt-8 flex flex-col gap-4">
           <VowCommentForm />
+          <VowCommentsCollection commentsCollection={vowResponse.vowComments} />
         </div>
       </div>
     </div>
