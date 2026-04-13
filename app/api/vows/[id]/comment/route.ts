@@ -13,4 +13,11 @@ export async function POST(
       { status: 401 },
     );
   }
+
+  if (!vowId) {
+    return NextResponse.json(
+      { error: "vowId is required to create a comment." },
+      { status: 400 },
+    );
+  }
 }
