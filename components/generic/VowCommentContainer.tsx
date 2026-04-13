@@ -5,5 +5,5 @@ export interface VowCommentContainerProps {
 }
 
 export const VowCommentContainer = ({ comment }: VowCommentContainerProps) => {
-  return <div className=""></div>;
+  return <div className="">{comment.commentText}</div>;
 };
