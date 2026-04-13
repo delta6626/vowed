@@ -6,7 +6,12 @@ export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const [{ id: vowId }, { userId }] = await Promise.all([params, auth()]);
+  const [
+    { id: vowId },
+    { userId },
+    { commenterId, commenterName, commentId, commentText },
+  ] = await Promise.all([params, auth(), request.json()]);
+
   const vowReference = await adminDb.collection("vows").doc(vowId);
   const vowSnapshot = await vowReference.get();
 
