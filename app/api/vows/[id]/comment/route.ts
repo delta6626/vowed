@@ -6,7 +6,7 @@ export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  const [{ id: vowId }, { userId }, { commenterName, commentId, commentText }] =
+  const [{ id: vowId }, { userId, sessionClaims }, { commentText }] =
     await Promise.all([params, auth(), request.json()]);
 
   const vowReference = await adminDb.collection("vows").doc(vowId);
@@ -30,6 +30,27 @@ export async function POST(
     return NextResponse.json(
       { error: "This vow does not exist." },
       { status: 404 },
+    );
+  }
+
+  const vowComment = {
+    commenterId: userId,
+    commenterName: sessionClaims.fullName, // Fetch froms session token. `fullName` is not a default property of the sessionClaims object. Set up required in Clerk dashboard.
+    commentText: commentText,
+    commentCreationTimestamp: Date.now(),
+  };
+
+  try {
+    await vowReference.collection("comments").add(vowComment);
+    return NextResponse.json(
+      { message: "Comment created successfully" },
+      { status: 201 },
+    );
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json(
+      { error: "An internal error occured." },
+      { status: 500 },
     );
   }
 }
