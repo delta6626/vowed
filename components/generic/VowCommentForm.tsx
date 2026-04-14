@@ -16,7 +16,7 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
         commentText: comment,
       };
 
-      const res = await fetch(`api/vows/${vowId}/comment`, {
+      const res = await fetch(`/api/vows/${vowId}/comment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
