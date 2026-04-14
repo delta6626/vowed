@@ -25,7 +25,9 @@ export const VowCommentContainer = ({ comment }: VowCommentContainerProps) => {
         </p>
       </div>
 
-      <p className="mt-2 text-base-content/80">{comment.commentText}</p>
+      <p className="mt-2 text-base-content/80 wrap-break-word">
+        {comment.commentText}
+      </p>
     </div>
   );
 };
