@@ -19,13 +19,6 @@ export async function POST(
   const vowReference = await adminDb.collection("vows").doc(vowId);
   const vowSnapshot = await vowReference.get();
 
-  if (!vowId) {
-    return NextResponse.json(
-      { error: "vowId is required to create a comment." },
-      { status: 400 },
-    );
-  }
-
   if (!vowSnapshot.exists) {
     return NextResponse.json(
       { error: "This vow does not exist." },
