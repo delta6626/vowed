@@ -1,5 +1,6 @@
 import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
+import { FieldValue } from "firebase-admin/firestore";
 import { NextRequest, NextResponse } from "next/server";
 
 export async function POST(
@@ -35,6 +36,8 @@ export async function POST(
 
   try {
     await vowReference.collection("comments").add(vowComment);
+    await vowReference.update({ commentCount: FieldValue.increment(1) });
+
     return NextResponse.json(
       { message: "Comment created successfully" },
       { status: 201 },
