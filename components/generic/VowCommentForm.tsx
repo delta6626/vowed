@@ -1,4 +1,5 @@
-import { useMutation } from "@tanstack/react-query";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { ArrowRight } from "lucide-react";
 import { ChangeEvent, SubmitEvent, useState } from "react";
 
 export interface VowCommentFormProps {
@@ -6,6 +7,7 @@ export interface VowCommentFormProps {
 }
 
 export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
+  const queryClient = useQueryClient();
   const [comment, setComment] = useState<string>("");
 
   const { isPending, mutate: submitComment } = useMutation({
@@ -30,7 +32,12 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
 
       return data;
     },
-    onSuccess: () => {},
+
+    onSuccess: () => {
+      setComment("");
+      queryClient.refetchQueries({ queryKey: [`vow-${vowId}`] });
+    },
+
     onError: () => {},
   });
 
@@ -40,6 +47,8 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
 
   const handleSubmitComment = (e: SubmitEvent) => {
     e.preventDefault();
+    if (!comment) return;
+    submitComment();
   };
 
   return (
@@ -61,10 +70,17 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
           </p>
           <button
             type={"submit"}
-            className="btn btn-primary"
-            disabled={!comment}
+            className="btn btn-primary flex shrink-0"
+            disabled={!comment || isPending}
           >
             Post comment
+            <span className="w-5 h-5 flex items-center justify-center">
+              {isPending ? (
+                <span className="loading loading-spinner loading-xs"></span>
+              ) : (
+                <ArrowRight size={20} />
+              )}
+            </span>
           </button>
         </div>
       </form>
