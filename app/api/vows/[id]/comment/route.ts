@@ -9,15 +9,15 @@ export async function POST(
   const [{ id: vowId }, { userId, sessionClaims }, { commentText }] =
     await Promise.all([params, auth(), request.json()]);
 
-  const vowReference = await adminDb.collection("vows").doc(vowId);
-  const vowSnapshot = await vowReference.get();
-
   if (!userId) {
     return NextResponse.json(
       { error: "User must be authenticated to leave a comment." },
       { status: 401 },
     );
   }
+
+  const vowReference = await adminDb.collection("vows").doc(vowId);
+  const vowSnapshot = await vowReference.get();
 
   if (!vowId) {
     return NextResponse.json(
