@@ -42,7 +42,7 @@ export async function POST(
   } catch (error) {
     console.log(error);
     return NextResponse.json(
-      { error: "An internal error occured." },
+      { error: "An internal error occurred." },
       { status: 500 },
     );
   }
