@@ -11,7 +11,7 @@ export const VowCommentContainer = ({ comment }: VowCommentContainerProps) => {
       <div className="flex items-center w-full justify-between">
         <Link
           href={`u/${comment.commenterId}`}
-          className="text-base-content/80 font-medium"
+          className="text-accent font-medium"
         >
           {comment.commenterName}
         </Link>
@@ -25,7 +25,7 @@ export const VowCommentContainer = ({ comment }: VowCommentContainerProps) => {
         </p>
       </div>
 
-      <p className="mt-2">{comment.commentText}</p>
+      <p className="mt-2 text-base-content/80">{comment.commentText}</p>
     </div>
   );
 };
