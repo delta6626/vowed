@@ -1,3 +1,4 @@
+import { useMutation } from "@tanstack/react-query";
 import { ChangeEvent, SubmitEvent, useState } from "react";
 
 export interface VowCommentFormProps {
@@ -6,6 +7,32 @@ export interface VowCommentFormProps {
 
 export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
   const [comment, setComment] = useState<string>("");
+
+  const { isPending, mutate: submitComment } = useMutation({
+    mutationFn: async () => {
+      const reqBody = {
+        commentText: comment,
+      };
+
+      const res = await fetch(`api/vows/${vowId}/comment`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(reqBody),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to comment.");
+      }
+
+      return data;
+    },
+    onSuccess: () => {},
+    onError: () => {},
+  });
 
   const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
     setComment(e.target.value);
