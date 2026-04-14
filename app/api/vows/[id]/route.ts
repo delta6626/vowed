@@ -67,7 +67,7 @@ export async function GET(
   const vowComments = vowCommentsSnapshot.empty
     ? []
     : vowCommentsSnapshot.docs.map((doc) => ({
-        id: doc.id,
+        commentId: doc.id,
         ...doc.data(),
       }));
 
