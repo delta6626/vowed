@@ -73,7 +73,7 @@ export default function Vow() {
     );
 
   return (
-    <div className="flex flex-col w-screen h-screen">
+    <div className="flex flex-col w-screen h-screen overflow-x-hidden">
       <div className="flex flex-col flex-1">
         <Navbar />
       </div>
