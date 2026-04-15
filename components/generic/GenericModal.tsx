@@ -23,7 +23,7 @@ export const GenericModal = () => {
 
         <p className="text-accent mt-2">{modalInformation?.modalText}</p>
 
-        <div className="mt-2 flex items-center justify-end gap-2">
+        <div className="mt-4 flex items-center justify-end gap-2">
           <button className="btn">
             {modalInformation?.secondaryButtonText}
           </button>
