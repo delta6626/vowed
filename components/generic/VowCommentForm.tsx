@@ -53,14 +53,12 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
 
   return (
     <>
-      <h1 className="font-medium text-accent">Comments</h1>
-
       <form onSubmit={handleSubmitComment}>
         <textarea
           value={comment}
           onChange={handleCommentChange}
           maxLength={300}
-          className="mt-4 textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
+          className="textarea resize-none w-full p-4 bg-base-200 rounded-xl border border-base-300 min-h-25 max-h-25"
           placeholder={"Leave a comment"}
         />
 
