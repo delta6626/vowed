@@ -1,5 +1,10 @@
+import { MODALS } from "@/constants/MODALS";
+import { useModalStore } from "@/store/modalStore";
+import { closeModal, openModal } from "@/utils/functions/modalActions";
+import { useAuth } from "@clerk/nextjs";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ArrowRight } from "lucide-react";
+import { useRouter } from "next/navigation";
 import { ChangeEvent, SubmitEvent, useState } from "react";
 
 export interface VowCommentFormProps {
@@ -7,6 +12,9 @@ export interface VowCommentFormProps {
 }
 
 export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
+  const router = useRouter();
+  const { userId } = useAuth();
+  const { setModalInformation } = useModalStore();
   const queryClient = useQueryClient();
   const [comment, setComment] = useState<string>("");
 
@@ -50,6 +58,22 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
   const handleSubmitComment = (e: SubmitEvent) => {
     e.preventDefault();
     if (!comment) return;
+    if (!userId) {
+      setModalInformation({
+        modalType: "alert",
+        modalTitle: "Sign up or Login",
+        modalText: "You need to sign up or login to publish your comment.",
+        onPrimaryButtonClick: () => {
+          router.push("/sign-in");
+        },
+        onSecondaryButtonClick: () => {
+          closeModal(MODALS.GENERIC_MODAL.ID);
+        },
+      });
+
+      openModal(MODALS.GENERIC_MODAL.ID);
+      return;
+    }
     submitComment();
   };
 
