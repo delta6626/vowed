@@ -5,7 +5,7 @@ import { AlertCircle, Check, XCircle } from "lucide-react";
 export const GenericModal = () => {
   const { modalInformation, setModalInformation } = useModalStore();
   return (
-    <dialog id={MODALS.RESOLVE_VOW_MODAL.ID} className="modal">
+    <dialog id={MODALS.GENERIC_MODAL.ID} className="modal">
       <div className="modal-box border border-base-300 rounded-xl">
         <div className="flex items-center gap-2">
           {modalInformation?.modalType === "alert" ? (

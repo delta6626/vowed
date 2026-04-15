@@ -12,6 +12,7 @@ import type { Vow } from "@/types/Vow";
 import { useQuery } from "@tanstack/react-query";
 import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { useParams } from "next/navigation";
+import { GenericModal } from "@/components/generic/GenericModal";
 
 export default function Vow() {
   const params = useParams();
@@ -74,6 +75,7 @@ export default function Vow() {
 
   return (
     <div className="flex flex-col w-screen h-screen overflow-x-hidden">
+      <GenericModal />
       <div className="flex flex-col flex-1">
         <Navbar />
       </div>
