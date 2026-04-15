@@ -6,6 +6,8 @@ export interface ModalInformation {
   modalType: ModalType;
   modalTitle: string;
   modalText: string;
+  primaryButtonText?: string;
+  secondaryButtonText?: string;
   onPrimaryButtonClick?: () => void;
   onSecondaryButtonClick?: () => void;
 }
