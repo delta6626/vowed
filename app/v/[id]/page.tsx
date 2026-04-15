@@ -1,8 +1,8 @@
 "use client";
 
 import Pill, { PillVariant } from "@/components/generic/Pill";
-import { VowCommentForm } from "@/components/generic/VowCommentForm";
-import { VowCommentsCollection } from "@/components/generic/VowCommentsCollection";
+import { VowCommentForm } from "@/components/vowComments/VowCommentForm";
+import { VowCommentsCollection } from "@/components/vowComments/VowCommentsCollection";
 import { VowResolved } from "@/components/generic/VowResolved";
 import { VowWaiting } from "@/components/generic/VowWaiting";
 import { VowLoading } from "@/components/loading-skeletons/VowLoading";
