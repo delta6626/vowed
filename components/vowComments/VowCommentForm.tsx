@@ -91,7 +91,7 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
         />
 
         <div className="mt-2 flex items-center justify-between">
-          <p className="text-accent">
+          <p className="text-accent max-w-[60%]">
             Comments must follow our community guidelines. Please be respectful.
           </p>
           <button
