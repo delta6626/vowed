@@ -64,6 +64,7 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
         modalTitle: "Sign up or Login",
         modalText: "You need to sign up or login to publish your comment.",
         primaryButtonText: "Login",
+        secondaryButtonText: "Cancel",
         onPrimaryButtonClick: () => {
           router.push("/sign-in");
         },
