@@ -16,9 +16,21 @@ export const GenericModal = () => {
             <Check className="text-success" size={20} />
           )}
 
-          <h1 className="text-xl font-display text-base-content/80">
+          <h1 className="text-base-content/80">
             {modalInformation?.modalTitle}
           </h1>
+        </div>
+
+        <p className="text-accent mt-2">{modalInformation?.modalText}</p>
+
+        <div className="mt-2 flex items-center justify-end gap-2">
+          <button className="btn">
+            {modalInformation?.secondaryButtonText}
+          </button>
+
+          <button className="btn btn-primary">
+            {modalInformation?.primaryButtonText}
+          </button>
         </div>
       </div>
     </dialog>
