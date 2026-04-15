@@ -38,7 +38,9 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
       queryClient.refetchQueries({ queryKey: [`vow-${vowId}`] });
     },
 
-    onError: () => {},
+    onError: () => {
+      // TO DO
+    },
   });
 
   const handleCommentChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
