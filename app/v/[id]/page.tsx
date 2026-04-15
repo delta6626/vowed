@@ -3,8 +3,8 @@
 import Pill, { PillVariant } from "@/components/generic/Pill";
 import { VowCommentForm } from "@/components/vowComments/VowCommentForm";
 import { VowCommentsCollection } from "@/components/vowComments/VowCommentsCollection";
-import { VowResolved } from "@/components/generic/VowResolved";
-import { VowWaiting } from "@/components/generic/VowWaiting";
+import { VowResolved } from "@/components/vowStates/VowResolved";
+import { VowWaiting } from "@/components/vowStates/VowWaiting";
 import { VowLoading } from "@/components/loading-skeletons/VowLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { GetVowResponse } from "@/types/GetVowRespsonse";
