@@ -10,7 +10,7 @@ export const VowCommentContainer = ({ comment }: VowCommentContainerProps) => {
     <div className="bg-base-200 p-4 rounded-xl">
       <div className="flex items-center w-full justify-between">
         <Link
-          href={`u/${comment.commenterId}`}
+          href={`../u/${comment.commenterId}`}
           className="text-accent font-medium"
         >
           {comment.commenterName}
