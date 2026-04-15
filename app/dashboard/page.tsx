@@ -1,7 +1,7 @@
 "use client";
 import { DashboardStats } from "@/components/dashboard/DashboardStats";
 import { DashboardStatsLoading } from "@/components/loading-skeletons/DashboardStatsLoading";
-import { ResolveVowModal } from "@/components/dashboard/ResolveVowModal";
+import { ResolveVowModal } from "@/components/modals/ResolveVowModal";
 import { VowManager } from "@/components/dashboard/VowManager";
 import { VowManagerLoading } from "@/components/loading-skeletons/VowManagerLoading";
 import Navbar from "@/components/navigation/Navbar";
