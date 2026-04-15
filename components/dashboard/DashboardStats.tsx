@@ -1,5 +1,5 @@
 import { User } from "@/types/User";
-import DashboardStatBox from "../generic/DashboardStatBox";
+import DashboardStatBox from "./DashboardStatBox";
 
 export const DashboardStats = ({
   vowsWaiting,
