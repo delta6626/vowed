@@ -96,6 +96,8 @@ export async function GET(
     vowViewCount: vowData.viewCount,
     vowComments: vowComments,
     vowResolution: vowResolution,
+
+    vowCreatorId: vowCreatorData.clerkId,
     vowCreatorProfilePhoto: vowCreatorData.avatarURL,
     vowCreatorName: vowCreatorData.displayName,
     vowCreatorFulfillmentRate: vowCreatorFulfillmentRate,

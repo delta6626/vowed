@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { useParams } from "next/navigation";
 import { GenericModal } from "@/components/generic/GenericModal";
+import Link from "next/link";
 
 export default function Vow() {
   const params = useParams();
@@ -107,7 +108,10 @@ export default function Vow() {
           </p>
         </div>
 
-        <div className="flex gap-2 mt-8">
+        <Link
+          href={`../u/${vowResponse.vowCreatorId}`}
+          className="flex gap-2 mt-8"
+        >
           <img
             className="w-7 h-7 rounded-full"
             src={vowResponse.vowCreatorProfilePhoto}
@@ -121,7 +125,7 @@ export default function Vow() {
               {`${vowResponse.vowCreatorFulfillmentRate}% Fulfillment rate`}
             </span>
           </p>
-        </div>
+        </Link>
 
         <div className="mt-8">
           {vowStatus === "waiting" ? (
