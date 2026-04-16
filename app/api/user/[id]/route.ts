@@ -1,3 +1,4 @@
+import { User } from "@/types/User";
 import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
@@ -29,4 +30,6 @@ export async function GET(
       { status: 404 },
     );
   }
+
+  const requestedUserData = requestedUserSnapshot.data() as User;
 }
