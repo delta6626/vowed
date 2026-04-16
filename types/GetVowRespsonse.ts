@@ -17,6 +17,7 @@ export interface GetVowResponse {
   vowComments: VowComment[] | [];
   vowResolution: VowResolution | null;
 
+  vowCreatorId: string;
   vowCreatorProfilePhoto: string;
   vowCreatorName: string;
   vowCreatorFulfillmentRate: number;
