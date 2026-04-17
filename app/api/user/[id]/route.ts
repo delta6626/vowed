@@ -1,3 +1,5 @@
+import { GetRequestedUserResponse } from "@/types/GetRequestedUserResponse";
+import { PublicVowResponse } from "@/types/PublicVowResponse";
 import { User } from "@/types/User";
 import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
@@ -39,14 +41,26 @@ export async function GET(
     .get();
 
   const requestedUserData = requestedUserSnapshot.data() as User;
-  const requestedUserPublicVowsData: Vow[] = requestedUserPublicVows.docs.map(
-    (doc) =>
-      ({
+  const requestedUserPublicVowsData: PublicVowResponse[] =
+    requestedUserPublicVows.docs.map((doc) => {
+      const vowData = doc.data() as Vow;
+      return {
         vowId: doc.id,
-        ...doc.data(),
-      }) as Vow,
-  );
+        title: vowData.title,
+        commentCount: vowData.commentCount,
+        viewCount: vowData.viewCount,
+        createdAt: vowData.createdAt,
+      } as PublicVowResponse;
+    });
 
-  const response = {};
+  const response = {
+    displayName: requestedUserData.displayName,
+    profilePhotoURL: requestedUserData.avatarURL,
+    totalVows: requestedUserData.vowsCreated,
+    fulfilledVows: requestedUserData.vowsFulfilled,
+    waitingVows: requestedUserData.vowsWaiting,
+    publicVows: requestedUserPublicVowsData,
+  } as GetRequestedUserResponse;
+
   return NextResponse.json(response, { status: 200 });
 }
