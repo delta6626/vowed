@@ -46,4 +46,7 @@ export async function GET(
         ...doc.data(),
       }) as Vow,
   );
+
+  const response = {};
+  return NextResponse.json(response, { status: 200 });
 }
