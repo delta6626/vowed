@@ -63,14 +63,14 @@ export async function GET(
       };
     });
 
-  const response = {
+  const response: GetRequestedUserResponse = {
     displayName: requestedUserData.displayName,
     profilePhotoURL: requestedUserData.avatarURL,
     totalVows: requestedUserData.vowsCreated,
     fulfilledVows: requestedUserData.vowsFulfilled,
     waitingVows: requestedUserData.vowsWaiting,
     publicVows: requestedUserPublicVowsData,
-  } as GetRequestedUserResponse;
+  };
 
   return NextResponse.json(response, { status: 200 });
 }
