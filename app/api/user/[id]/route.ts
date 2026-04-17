@@ -1,4 +1,5 @@
 import { User } from "@/types/User";
+import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
 import { NextRequest, NextResponse } from "next/server";
@@ -31,5 +32,18 @@ export async function GET(
     );
   }
 
+  const requestedUserPublicVows = await adminDb
+    .collection("vows")
+    .where("authorId", "==", requestedUserId)
+    .where("visibility", "==", "public")
+    .get();
+
   const requestedUserData = requestedUserSnapshot.data() as User;
+  const requestedUserPublicVowsData: Vow[] = requestedUserPublicVows.docs.map(
+    (doc) =>
+      ({
+        vowId: doc.id,
+        ...doc.data(),
+      }) as Vow,
+  );
 }
