@@ -44,13 +44,23 @@ export async function GET(
   const requestedUserPublicVowsData: PublicVowResponse[] =
     requestedUserPublicVows.docs.map((doc) => {
       const vowData = doc.data() as Vow;
+      const now = Date.now();
+      const vowStatusFormatted =
+        vowData.status === "waiting" && vowData.deadlineTimestampUTC > now
+          ? "Waiting"
+          : vowData.status === "waiting" && vowData.deadlineTimestampUTC < now
+            ? "Moment of truth"
+            : vowData.status === "fulfilled"
+              ? "Fulfilled"
+              : "Not fulfilled";
       return {
         vowId: doc.id,
         title: vowData.title,
+        statusFormatted: vowStatusFormatted,
         commentCount: vowData.commentCount,
         viewCount: vowData.viewCount,
         createdAt: vowData.createdAt,
-      } as PublicVowResponse;
+      };
     });
 
   const response = {
