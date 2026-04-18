@@ -31,6 +31,7 @@ export async function POST(req: Request) {
         vowsWaiting: 0,
         vowsCreated: 0,
         vowsFulfilled: 0,
+        creationTimestamp: event.data.created_at,
       };
 
       await adminDb.collection("users").doc(event.data.id).set(user);

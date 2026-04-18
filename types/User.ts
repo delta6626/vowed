@@ -8,4 +8,5 @@ export interface User {
   vowsWaiting: number;
   vowsCreated: number;
   vowsFulfilled: number;
+  creationTimestamp: number;
 }
