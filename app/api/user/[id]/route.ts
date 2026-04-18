@@ -69,6 +69,7 @@ export async function GET(
     totalVows: requestedUserData.vowsCreated,
     fulfilledVows: requestedUserData.vowsFulfilled,
     waitingVows: requestedUserData.vowsWaiting,
+    creationTimestamp: requestedUserData.creationTimestamp,
     publicVows: requestedUserPublicVowsData,
   };
 
