@@ -1,6 +1,31 @@
 import Navbar from "@/components/navigation/Navbar";
+import { GetRequestedUserResponse } from "@/types/GetRequestedUserResponse";
+import { useQuery } from "@tanstack/react-query";
+import { useParams } from "next/navigation";
 
 export default function UserProfile() {
+  const params = useParams();
+
+  const {
+    data: requestedUserResponse,
+    isLoading,
+    isError,
+    error,
+  } = useQuery({
+    queryKey: [`user-${params.id}`],
+    queryFn: async () => {
+      const res = await fetch(`/api/user/${params.id}`);
+
+      if (!res.ok) {
+        const error = new Error("Failed to fetch this vow.");
+        error.name = res.status.toString();
+        throw error;
+      }
+
+      return res.json() as Promise<GetRequestedUserResponse>;
+    },
+  });
+
   return (
     <div className="flex flex-col w-screen h-screen overflow-x-hidden">
       <div className="flex flex-col flex-1">
