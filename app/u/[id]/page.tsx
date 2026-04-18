@@ -1,5 +1,6 @@
 "use client";
 
+import { UserLoading } from "@/components/loading-skeletons/UserLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { GetRequestedUserResponse } from "@/types/GetRequestedUserResponse";
 import { useQuery } from "@tanstack/react-query";
@@ -30,6 +31,15 @@ export default function UserProfile() {
     refetchInterval: 60 * 60 * 1000,
     retry: 3,
   });
+
+  if (isLoading) {
+    return (
+      <div className="w-screen h-screen flex flex-col">
+        <Navbar />
+        <UserLoading />
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col w-screen h-screen overflow-x-hidden">
