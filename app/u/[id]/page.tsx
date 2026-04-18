@@ -41,13 +41,35 @@ export default function UserProfile() {
     );
   }
 
+  if (isError || !requestedUserResponse) {
+    return (
+      <div className="">
+        {
+          // TO DO
+        }
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col w-screen h-screen overflow-x-hidden">
       <div className="flex flex-col flex-1">
         <Navbar />
       </div>
 
-      <div className="w-full h-full doublePaddingContainer mt-16"></div>
+      <div className="w-full h-full doublePaddingContainer mt-16">
+        <div className="flex items-center gap-4">
+          <img
+            className="w-30 h-30 rounded-full"
+            src={requestedUserResponse.profilePhotoURL}
+            alt="User's profile photo"
+          />
+
+          <h1 className="text-3xl font-display">
+            {requestedUserResponse.displayName}
+          </h1>
+        </div>
+      </div>
     </div>
   );
 }
