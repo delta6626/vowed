@@ -1,3 +1,5 @@
+"use client";
+
 import Navbar from "@/components/navigation/Navbar";
 import { GetRequestedUserResponse } from "@/types/GetRequestedUserResponse";
 import { useQuery } from "@tanstack/react-query";
