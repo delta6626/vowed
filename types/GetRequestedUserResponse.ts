@@ -6,5 +6,6 @@ export interface GetRequestedUserResponse {
   totalVows: number;
   fulfilledVows: number;
   waitingVows: number;
+  creationTimestamp: number;
   publicVows: PublicVowResponse[];
 }
