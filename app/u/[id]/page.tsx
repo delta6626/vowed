@@ -60,14 +60,23 @@ export default function UserProfile() {
       <div className="w-full h-full doublePaddingContainer mt-16">
         <div className="flex items-center gap-4">
           <img
-            className="w-30 h-30 rounded-full"
+            className="w-20 h-20 rounded-full"
             src={requestedUserResponse.profilePhotoURL}
             alt="User's profile photo"
           />
 
-          <h1 className="text-3xl font-display">
-            {requestedUserResponse.displayName}
-          </h1>
+          <div className="">
+            <h1 className="text-3xl font-display">
+              {requestedUserResponse.displayName}
+            </h1>
+            <p className="text-accent">{`Member since ${new Date(
+              requestedUserResponse.creationTimestamp,
+            ).toLocaleString("en-US", {
+              month: "long",
+              day: "numeric",
+              year: "numeric",
+            })}`}</p>
+          </div>
         </div>
       </div>
     </div>
