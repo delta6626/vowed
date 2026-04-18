@@ -24,6 +24,9 @@ export default function UserProfile() {
 
       return res.json() as Promise<GetRequestedUserResponse>;
     },
+    staleTime: 10 * 60 * 1000,
+    refetchInterval: 60 * 60 * 1000,
+    retry: 3,
   });
 
   return (
