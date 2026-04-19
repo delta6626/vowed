@@ -25,7 +25,7 @@ export async function GET(
 
   const vowData = vowSnapshot.data() as Vow;
 
-  if (vowData.visibility === "private") {
+  if (vowData.visibility === "private" && userId != vowData.authorId) {
     return NextResponse.json(
       { error: "This vow is private and cannot be accessed." },
       { status: 403 },
