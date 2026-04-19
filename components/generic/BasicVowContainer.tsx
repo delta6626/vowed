@@ -51,7 +51,7 @@ export default function BasicVowContainer({
       className={`flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
       <div className="flex flex-col gap-4 justify-between">
-        <Link href={`/v/${vowId}`} className="text-base-content/70">
+        <Link href={`/v/${vowId}`} className="text-base-content/80">
           {vowTitle}
         </Link>
         <div className="text-base flex gap-4 items-center text-accent">
