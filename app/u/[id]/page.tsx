@@ -1,5 +1,6 @@
 "use client";
 
+import { PublicVowContainer } from "@/components/generic/PublicVowContainer";
 import { UserLoading } from "@/components/loading-skeletons/UserLoading";
 import Navbar from "@/components/navigation/Navbar";
 import { GetRequestedUserResponse } from "@/types/GetRequestedUserResponse";
@@ -115,6 +116,21 @@ export default function UserProfile() {
 
         <div className="w-full mt-8">
           <h1 className="text-xl text-base-content/80">Public vows</h1>
+
+          <div className="flex flex-col gap-2 mt-4">
+            {requestedUserResponse.publicVows.map((publicVow) => {
+              return (
+                <PublicVowContainer
+                  vowId={publicVow.vowId}
+                  statusFormatted={publicVow.statusFormatted}
+                  title={publicVow.title}
+                  commentCount={publicVow.commentCount}
+                  viewCount={publicVow.viewCount}
+                  createdAt={publicVow.createdAt}
+                />
+              );
+            })}
+          </div>
         </div>
       </div>
     </div>
