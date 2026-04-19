@@ -31,7 +31,7 @@ export const PublicVowContainer = ({
         </div>
       </div>
 
-      <div className="">
+      <div className="flex flex-col items-end gap-2">
         <Pill
           className="w-fit h-fit"
           text={statusFormatted}
@@ -56,6 +56,14 @@ export const PublicVowContainer = ({
             )
           }
         />
+
+        <p className="text-accent">{`Created ${new Date(
+          createdAt,
+        ).toLocaleString("en-US", {
+          month: "long",
+          day: "numeric",
+          year: "numeric",
+        })}`}</p>
       </div>
     </div>
   );
