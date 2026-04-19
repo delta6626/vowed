@@ -121,6 +121,7 @@ export default function UserProfile() {
             {requestedUserResponse.publicVows.map((publicVow) => {
               return (
                 <PublicVowContainer
+                  key={publicVow.vowId}
                   vowId={publicVow.vowId}
                   statusFormatted={publicVow.statusFormatted}
                   title={publicVow.title}
