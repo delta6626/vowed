@@ -88,7 +88,7 @@ export async function GET(
     currentTimestampUTC: now,
     vowStatus: vowData.status,
     vowStatusFormatted: vowStatusFormatted,
-    vowCreationDate: vowData.createdAt,
+    vowCreationTimestamp: vowData.createdAt,
     vowTitle: vowData.title,
     vowDescription: vowData.description,
     vowDeadlineTimestampUTC: vowData.deadlineTimestampUTC,
