@@ -104,8 +104,11 @@ export default function BasicVowContainer({
                 <X className="text-error" size={20} />
               ) : vowStatus === "fulfilled" ? (
                 <Check className="text-success" size={20} />
-              ) : vowStatus === "waiting" ||
+              ) : vowStatus === "waiting" &&
                 vowDeadlineTimestampUTC! - currentTimestampUTC! < 0 ? (
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse" />
+              ) : vowStatus === "waiting" &&
+                vowDeadlineTimestampUTC! - currentTimestampUTC! > 0 ? (
                 <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
               ) : null
             }
