@@ -57,7 +57,7 @@ export const PublicVowContainer = ({
           }
         />
 
-        <p className="text-accent">{`Created ${new Date(
+        <p className="text-accent">{`Vowed on ${new Date(
           createdAt,
         ).toLocaleString("en-US", {
           month: "long",
