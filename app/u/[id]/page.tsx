@@ -112,6 +112,10 @@ export default function UserProfile() {
             <p className="text-accent">Fulfillment rate</p>
           </div>
         </div>
+
+        <div className="w-full mt-8">
+          <h1 className="text-xl text-base-content/80">Public vows</h1>
+        </div>
       </div>
     </div>
   );
