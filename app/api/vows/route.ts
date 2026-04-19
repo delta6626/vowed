@@ -87,8 +87,8 @@ export async function POST(req: NextRequest) {
       resolution: null,
       viewCount: 0,
       commentCount: 0,
-      createdAt: new Date(),
-      updatedAt: new Date(),
+      createdAt: Date.now(),
+      updatedAt: Date.now(),
     };
 
     const createdVow = await adminDb.collection("vows").add(vow);

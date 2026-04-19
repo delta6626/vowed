@@ -8,7 +8,7 @@ export interface GetVowResponse {
   currentTimestampUTC: number;
   vowStatus: VowStatus;
   vowStatusFormatted: string;
-  vowCreationDate: Date;
+  vowCreationTimestamp: number;
   vowTitle: string;
   vowDescription: string;
   vowDeadlineTimestampUTC: number;

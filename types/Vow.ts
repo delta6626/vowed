@@ -13,6 +13,6 @@ export interface Vow {
   resolution: VowResolution | null; // null until deadline
   viewCount: number;
   commentCount: number;
-  createdAt: Date;
-  updatedAt: Date;
+  createdAt: number;
+  updatedAt: number;
 }
