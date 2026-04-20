@@ -13,7 +13,9 @@ export default function Create() {
         <CreateVowForm />
       </div>
 
-      <Footer />
+      <div className="flex grow items-end">
+        <Footer />
+      </div>
     </div>
   );
 }
