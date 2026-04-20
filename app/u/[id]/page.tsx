@@ -2,6 +2,7 @@
 
 import { PublicVowContainer } from "@/components/generic/PublicVowContainer";
 import { UserLoading } from "@/components/loading-skeletons/UserLoading";
+import Footer from "@/components/navigation/Footer";
 import Navbar from "@/components/navigation/Navbar";
 import { GetRequestedUserResponse } from "@/types/GetRequestedUserResponse";
 import { useQuery } from "@tanstack/react-query";
@@ -133,6 +134,10 @@ export default function UserProfile() {
             })}
           </div>
         </div>
+      </div>
+
+      <div className="flex grow items-end">
+        <Footer />
       </div>
     </div>
   );
