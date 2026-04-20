@@ -12,6 +12,7 @@ import { getGreeting } from "@/utils/functions/getGreeting";
 import { useQuery } from "@tanstack/react-query";
 import { AlertCircle, Plus } from "lucide-react";
 import Link from "next/link";
+import Footer from "@/components/navigation/Footer";
 
 export default function Dashboard() {
   const {
@@ -98,7 +99,7 @@ export default function Dashboard() {
   return (
     <>
       <ResolveVowModal />
-      <div className="w-screen h-screen overflow-x-hidden pb-16">
+      <div className="w-screen h-screen flex flex-col overflow-x-hidden">
         <Navbar />
         <div className="doublePaddingContainer">
           <div className="flex items-center justify-between mt-16">
@@ -131,6 +132,10 @@ export default function Dashboard() {
             vows={vowDetails.vows}
             initialCurrentTimestampUTC={vowDetails.currentTimestampUTC}
           />
+        </div>
+
+        <div className="flex grow items-end">
+          <Footer />
         </div>
       </div>
     </>
