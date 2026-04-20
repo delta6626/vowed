@@ -1,6 +1,7 @@
 "use client";
 
 import { CreateVowForm } from "@/components/create/CreateVowForm";
+import Footer from "@/components/navigation/Footer";
 import Navbar from "@/components/navigation/Navbar";
 
 export default function Create() {
@@ -11,6 +12,8 @@ export default function Create() {
       <div className="paddingContainer my-16 flex flex-col items-center justify-center">
         <CreateVowForm />
       </div>
+
+      <Footer />
     </div>
   );
 }
