@@ -136,7 +136,7 @@ export default function UserProfile() {
         </div>
       </div>
 
-      <div className="flex grow items-end">
+      <div className="flex grow items-end mt-8">
         <Footer />
       </div>
     </div>
