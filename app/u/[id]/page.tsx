@@ -59,7 +59,7 @@ export default function UserProfile() {
           <p className="text-accent text-center">
             An error occured while trying to fetch this profile.
             <br></br>
-            {error?.message}
+            {error?.name === "404" ? "User not found." : ""}
           </p>
 
           <button
