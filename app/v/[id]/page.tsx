@@ -10,7 +10,7 @@ import Navbar from "@/components/navigation/Navbar";
 import { GetVowResponse } from "@/types/GetVowRespsonse";
 import type { Vow } from "@/types/Vow";
 import { useQuery } from "@tanstack/react-query";
-import { Check, Dot, Eye, MessageCircle, X } from "lucide-react";
+import { AlertCircle, Check, Dot, Eye, MessageCircle, X } from "lucide-react";
 import { useParams } from "next/navigation";
 import { GenericModal } from "@/components/generic/GenericModal";
 import Link from "next/link";
@@ -23,6 +23,7 @@ export default function Vow() {
     isLoading,
     isError,
     error,
+    refetch,
   } = useQuery({
     queryKey: [`vow-${params.id}`],
     queryFn: async () => {
@@ -51,7 +52,33 @@ export default function Vow() {
   }
 
   if (isError || !vowResponse) {
-    return; // TO DO: Show error component
+    return (
+      <div className="w-screen h-screen flex flex-col">
+        <Navbar />
+
+        <div className="flex flex-col flex-1 font-body items-center justify-center paddingContainer w-screen">
+          <p className="flex items-center gap-2 text-xl">
+            <AlertCircle size={20} className="text-error" /> Something went
+            wrong.
+          </p>
+
+          <p className="text-accent text-center">
+            An error occured while trying to fetch this vow.
+            <br></br>
+            {error?.name === "404" ? "Vow does not exist." : ""}
+          </p>
+
+          <button
+            className="btn btn-primary mt-4"
+            onClick={() => {
+              refetch();
+            }}
+          >
+            Retry
+          </button>
+        </div>
+      </div>
+    );
   }
 
   const vowStatus = vowResponse.vowStatus;
