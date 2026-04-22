@@ -70,6 +70,7 @@ export const CreateVowForm = () => {
       const data = await res.json();
       setVowId(data.vowId);
     } catch (error) {
+      // TO DO: handle error message
       console.error(error);
     } finally {
       setLoading(false);
