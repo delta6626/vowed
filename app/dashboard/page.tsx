@@ -84,7 +84,7 @@ export default function Dashboard() {
           </p>
 
           <button
-            className="btn btn-primary mt-2"
+            className="btn btn-primary mt-4"
             onClick={() => {
               refetch();
             }}
