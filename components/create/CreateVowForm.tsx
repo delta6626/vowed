@@ -12,10 +12,15 @@ import { motion } from "motion/react";
 import { useRouter } from "next/navigation";
 import { useQueryClient } from "@tanstack/react-query";
 import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
+import { useModalStore } from "@/store/modalStore";
+import { closeModal, openModal } from "@/utils/functions/modalActions";
+import { MODALS } from "@/constants/MODALS";
 
 export const CreateVowForm = () => {
   const router = useRouter();
   const queryClient = useQueryClient();
+
+  const { setModalInformation } = useModalStore();
 
   const [vowTitle, setVowTitle] = useState<string>("");
   const [vowDescription, setVowDescription] = useState<string>("");
@@ -70,8 +75,19 @@ export const CreateVowForm = () => {
       const data = await res.json();
       setVowId(data.vowId);
     } catch (error) {
-      // TO DO: handle error message
+      setModalInformation({
+        modalType: "error",
+        modalTitle: "Failed to create vow",
+        modalText:
+          "We could not create your vow at this moment. Please try again later.",
+        primaryButtonText: "Okay",
+        onPrimaryButtonClick: () => {
+          closeModal(MODALS.GENERIC_MODAL.ID);
+        },
+      });
+      openModal(MODALS.GENERIC_MODAL.ID);
       console.error(error);
+      return;
     } finally {
       setLoading(false);
       queryClient.invalidateQueries({
