@@ -6,6 +6,7 @@ import Footer from "@/components/navigation/Footer";
 import Navbar from "@/components/navigation/Navbar";
 import { GetRequestedUserResponse } from "@/types/GetRequestedUserResponse";
 import { useQuery } from "@tanstack/react-query";
+import { AlertCircle } from "lucide-react";
 import { useParams } from "next/navigation";
 
 export default function UserProfile() {
@@ -16,6 +17,7 @@ export default function UserProfile() {
     isLoading,
     isError,
     error,
+    refetch,
   } = useQuery({
     queryKey: [`user-${params.id}`],
     queryFn: async () => {
@@ -45,10 +47,30 @@ export default function UserProfile() {
 
   if (isError || !requestedUserResponse) {
     return (
-      <div className="">
-        {
-          // TO DO
-        }
+      <div className="w-screen h-screen flex flex-col">
+        <Navbar />
+
+        <div className="flex flex-col flex-1 font-body items-center justify-center paddingContainer w-screen">
+          <p className="flex items-center gap-2 text-xl">
+            <AlertCircle size={20} className="text-error" /> Something went
+            wrong.
+          </p>
+
+          <p className="text-accent text-center">
+            An error occured while trying to fetch this profile.
+            <br></br>
+            {error?.message}
+          </p>
+
+          <button
+            className="btn btn-primary mt-4"
+            onClick={() => {
+              refetch();
+            }}
+          >
+            Retry
+          </button>
+        </div>
       </div>
     );
   }
