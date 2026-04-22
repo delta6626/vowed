@@ -41,13 +41,26 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
       return data;
     },
 
+    retry: 3,
+
     onSuccess: () => {
       setComment("");
       queryClient.refetchQueries({ queryKey: [`vow-${vowId}`] });
     },
 
     onError: () => {
-      // TO DO
+      setModalInformation({
+        modalType: "error",
+        modalTitle: "Failed to comment",
+        modalText: "We could not publish your comment. Please try again later.",
+        primaryButtonText: "Okay",
+        onPrimaryButtonClick: () => {
+          closeModal(MODALS.GENERIC_MODAL.ID);
+        },
+      });
+
+      openModal(MODALS.GENERIC_MODAL.ID);
+      return;
     },
   });
 

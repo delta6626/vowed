@@ -24,12 +24,14 @@ export const GenericModal = () => {
         <p className="text-accent mt-2">{modalInformation?.modalText}</p>
 
         <div className="mt-4 flex items-center justify-end gap-2">
-          <button
-            className="btn"
-            onClick={modalInformation?.onSecondaryButtonClick}
-          >
-            {modalInformation?.secondaryButtonText}
-          </button>
+          {modalInformation?.secondaryButtonText && (
+            <button
+              className="btn"
+              onClick={modalInformation?.onSecondaryButtonClick}
+            >
+              {modalInformation.secondaryButtonText}
+            </button>
+          )}
 
           <button
             className="btn btn-primary"
