@@ -6,7 +6,8 @@ import Footer from "@/components/navigation/Footer";
 export default function Home() {
   return (
     <div className="flex flex-col w-screen h-screen">
-      <div className="flex flex-col flex-1 bg-radial-[circle_at_50%_-10%] from-primary/20 via-primary/15 to-transparent">
+      <div className="absolute inset-0 landingGradient"></div>
+      <div className="flex flex-col flex-1">
         <Navbar />
 
         <div className="w-full text-center paddingContainer">
