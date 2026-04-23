@@ -9,11 +9,11 @@ export const DashboardStats = ({
   return (
     <div className="flex gap-4 mt-8">
       <DashboardStatBox statBoxType={"waiting"} mainText={vowsWaiting} />
+      <DashboardStatBox statBoxType={"total"} mainText={vowsCreated} />
       <DashboardStatBox
         statBoxType={"fulfillment"}
         mainText={`${vowsCreated === 0 ? 0 : Math.round((vowsFulfilled / vowsCreated) * 100)}%`}
       />
-      <DashboardStatBox statBoxType={"total"} mainText={vowsCreated} />
     </div>
   );
 };
