@@ -75,11 +75,26 @@ export default function BasicVowContainer({
       <div className="text-base flex flex-col justify-between items-end gap-4">
         <div className="flex items-center gap-2">
           {vowVisibility === "public" ? (
-            <Globe className="text-accent" size={20} />
+            <div
+              className="tooltip tooltip-top tooltip-primary"
+              data-tip={"This vow is public"}
+            >
+              <Globe className="text-accent" size={20} />
+            </div>
           ) : vowVisibility === "unlisted" ? (
-            <LinkIcon className="text-accent" size={20} />
+            <div
+              className="tooltip tooltip-top tooltip-primary"
+              data-tip={"This vow is unlisted"}
+            >
+              <LinkIcon className="text-accent" size={20} />
+            </div>
           ) : vowVisibility === "private" ? (
-            <Lock className="text-accent" size={20} />
+            <div
+              className="tooltip tooltip-top tooltip-primary"
+              data-tip={"This vow is private"}
+            >
+              <Lock className="text-accent" size={20} />
+            </div>
           ) : null}
 
           <Pill
