@@ -1,8 +1,9 @@
 import { MODALS } from "@/constants/MODALS";
 import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
+import { useModalStore } from "@/store/modalStore";
 import { useSelectedVowStore } from "@/store/selectedVowStore";
 import { VowStatus } from "@/types/VowStatus";
-import { closeModal } from "@/utils/functions/modalActions";
+import { closeModal, openModal } from "@/utils/functions/modalActions";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { ArrowRight, Check, X } from "lucide-react";
 import { ChangeEvent, useState } from "react";
@@ -11,6 +12,8 @@ export const ResolveVowModal = () => {
   const queryClient = useQueryClient();
 
   const { vowDetails } = useSelectedVowStore();
+  const { setModalInformation } = useModalStore();
+
   const [vowResolutionOutcome, setVowResolutionOutcome] =
     useState<Extract<VowStatus, "fulfilled" | "not-fulfilled">>();
   const [vowResolutionNote, setVowResolutionNote] = useState<string>("");
@@ -56,7 +59,19 @@ export const ResolveVowModal = () => {
       closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
     },
     onError: () => {
-      // TO DO
+      setModalInformation({
+        modalType: "error",
+        modalTitle: "Failed to resolve vow",
+        modalText:
+          "We could not resolve this vow at this moment. Please try again later.",
+        primaryButtonText: "Okay",
+        onPrimaryButtonClick: () => {
+          closeModal(MODALS.GENERIC_MODAL.ID);
+        },
+      });
+
+      openModal(MODALS.GENERIC_MODAL.ID);
+      closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
     },
   });
 
