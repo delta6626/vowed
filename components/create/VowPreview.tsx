@@ -27,7 +27,7 @@ export const VowPreview = ({
   });
 
   return (
-    <div className="w-full p-4 bg-base-200 rounded-xl flex items-end justify-between">
+    <div className="w-full p-4 bg-base-200 rounded-xl flex items-end justify-between border border-base-300">
       <div className="flex flex-col gap-2 min-w-0">
         <Pill
           text="Waiting"
