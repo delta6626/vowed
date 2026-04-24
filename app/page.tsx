@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-screen h-screen">
       <div className="absolute inset-0 landingGradient pointer-events-none"></div>
-      <div className="flex flex-col flex-1">
+      <header className="flex flex-col flex-1">
         <Navbar />
 
         <div className="w-full text-center paddingContainer">
@@ -37,7 +37,7 @@ export default function Home() {
             <HeroCTA />
           </div>
         </div>
-      </div>
+      </header>
 
       <Footer />
     </div>
