@@ -153,9 +153,9 @@
 
 .landingGradient {
   background: radial-gradient(
-    circle at 50% 0%,
+    ellipse at 50% 50%,
     color-mix(in oklch, var(--color-primary) 30%, transparent),
-    color-mix(in oklch, var(--color-primary) 12%, transparent) 20%,
-    transparent 55%
+    color-mix(in oklch, var(--color-primary) 12%, transparent) 15%,
+    transparent 60%
   );
 }
