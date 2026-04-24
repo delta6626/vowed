@@ -9,13 +9,16 @@ export default function Logo({ className }: LogoProps) {
   return (
     <>
       <Show when={"signed-out"}>
-        <Link href={"/"} className={`font-display ${className}`}>
+        <Link href={"/"} className={`font-display italic ${className}`}>
           <span className="text-primary">Vowed</span>.cc
         </Link>
       </Show>
 
       <Show when={"signed-in"}>
-        <Link href={"/dashboard"} className={`font-display ${className}`}>
+        <Link
+          href={"/dashboard"}
+          className={`font-display italic ${className}`}
+        >
           <span className="text-primary">Vowed</span>.cc
         </Link>
       </Show>
