@@ -20,7 +20,16 @@ export default function HeroCTA() {
           Go to Dashboard
         </Link>
       </Show>
-      <button className="btn">See how it works</button>
+      <button
+        className="btn"
+        onClick={() => {
+          document
+            .getElementById("howItWorks")
+            ?.scrollIntoView({ behavior: "smooth" });
+        }}
+      >
+        See how it works
+      </button>
     </div>
   );
 }
