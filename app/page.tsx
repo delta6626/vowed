@@ -10,9 +10,8 @@ export default function Home() {
         <Navbar />
         <div className="flex flex-col flex-1 items-center justify-center text-center landingGradient">
           <Pill
-            variant="primary"
+            variant="generic"
             text={"Public commitment platform"}
-            className="uppercase"
             icon={
               <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
             }
