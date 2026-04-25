@@ -95,7 +95,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-16 flex gap-8 items-start justify-center">
+        <div className="mt-16 flex gap-4 items-start justify-center">
           <div className="p-4 border border-base-300 max-w-sm rounded-xl bg-base-200">
             <Pill
               className="w-fit"
