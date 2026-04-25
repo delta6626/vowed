@@ -2,7 +2,14 @@ import Navbar from "@/components/navigation/Navbar";
 import HeroCTA from "@/components/landing/HeroCTA";
 import Pill from "@/components/generic/Pill";
 import Footer from "@/components/navigation/Footer";
-import { Hourglass, Link, NotebookPen, PenIcon, Scale } from "lucide-react";
+import {
+  Check,
+  Hourglass,
+  Link,
+  NotebookPen,
+  PenIcon,
+  Scale,
+} from "lucide-react";
 
 export default function Home() {
   return (
@@ -84,6 +91,60 @@ export default function Home() {
             <h1 className="mt-2 font-medium">Time for the truth</h1>
             <p className="text-base-content/60 mt-2">
               Resolve your vow once the deadline has passed.
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-16 flex gap-8 items-start justify-center">
+          <div className="p-4 border border-base-300 max-w-sm rounded-xl bg-base-200">
+            <Pill
+              className="w-fit"
+              variant="primary"
+              text="Waiting"
+              icon={
+                <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+              }
+            />
+            <h1 className="mt-4 text-lg font-display font-medium text-base-content/80">
+              Countdown is live
+            </h1>
+            <p className="mt-2 text-base-content/60">
+              Your vow is out there. Viewers are watching. The clock doesn't
+              care.
+            </p>
+          </div>
+
+          <div className="p-4 border border-base-300 max-w-sm rounded-xl bg-base-200">
+            <Pill
+              className="w-fit"
+              variant="secondary"
+              text="Moment of truth"
+              icon={
+                <div className="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></div>
+              }
+            />
+            <h1 className="mt-4 text-lg font-display font-medium text-base-content/80">
+              Deadline has passed
+            </h1>
+            <p className="mt-2 text-base-content/60">
+              Your time's up. Now comes the part that matters — telling the
+              truth.
+            </p>
+          </div>
+
+          <div className="p-4 border border-base-300 max-w-sm rounded-xl bg-base-200">
+            <Pill
+              className="w-fit"
+              variant="success"
+              text="Resolved"
+              icon={<Check size={20} />}
+            />
+            <h1 className="mt-4 text-lg font-display font-medium text-base-content/80">
+              Vow resolved
+            </h1>
+            <p className="mt-2 text-base-content/60">
+              Perhaps you fulfilled it. Perhaps you didn't. Either way, it's on
+              record.
             </p>
           </div>
         </div>
