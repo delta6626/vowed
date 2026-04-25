@@ -39,7 +39,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="paddingContainer">
+      <div className="paddingContainer" id="howItWorks">
         <p className="text-center uppercase text-xs text-accent">
           How it works
         </p>
