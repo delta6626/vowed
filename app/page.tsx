@@ -8,7 +8,7 @@ export default function Home() {
     <div className="overflow-x-hidden">
       <div className="flex flex-col w-screen h-screen">
         <Navbar />
-        <div className="flex flex-col flex-1 items-center justify-center text-center landingGradient">
+        <div className="flex flex-col flex-1 items-center justify-center text-center landingGradient paddingContainer">
           <Pill
             variant="generic"
             text={"Public commitment platform"}
@@ -30,6 +30,20 @@ export default function Home() {
           <HeroCTA />
         </div>
       </div>
+
+      <div className="paddingContainer">
+        <p className="text-center uppercase text-xs text-accent">
+          How it works
+        </p>
+
+        <h1 className="text-base-content/90 text-4xl font-display text-center mt-4">
+          Simple. Public.{" "}
+          <span className="italic text-primary">Permanent.</span>
+        </h1>
+      </div>
+
+      <div className="mt-16"></div>
+
       <Footer />
     </div>
   );
