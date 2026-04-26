@@ -188,31 +188,36 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="p-4">
-          <div className="">
-            <h1></h1>
-            <div className="">
-              <h1></h1>
-              <p></p>
+
+        <div className="w-sm p-4 bg-base-200 rounded-xl border border-base-300">
+          <div className="flex items-center gap-4">
+            <h1 className="p-2 rounded-[50%] w-10 h-10 flex items-center justify-center border border-base-300">
+              TL
+            </h1>
+            <div className="flex flex-col">
+              <h1>Tanner Linsley</h1>
+              <p>90% fillment rate</p>
             </div>
           </div>
 
-          <div className="">
-            <div className="p2 w-full bg-base-100 flex justify-between items-center">
-              <p className="text-base-content/60"></p>
-              <Check size={20} />
+          <div className="flex flex-col gap-2 mt-4">
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">
+                Ship Tanstack Start to production
+              </p>
+              <Check className="text-success" size={20} />
             </div>
-            <div className="p2 w-full bg-base-100 flex justify-between items-center">
-              <p className="text-base-content/60"></p>
-              <Check size={20} />
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">Visit the Eiffel Tower</p>
+              <Check className="text-success" size={20} />
             </div>
-            <div className="p2 w-full bg-base-100 flex justify-between items-center">
-              <p className="text-base-content/60"></p>
-              <XIcon size={20} />
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">Read 12 books this year</p>
+              <XIcon className="text-error" size={20} />
             </div>
-            <div className="p2 w-full bg-base-100 flex justify-between items-center">
-              <p className="text-base-content/60"></p>
-              <Check size={20} />
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">Run a marathon</p>
+              <Check className="text-success" size={20} />
             </div>
           </div>
         </div>
