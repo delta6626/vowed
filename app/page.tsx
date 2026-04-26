@@ -188,7 +188,34 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=""></div>
+        <div className="p-4">
+          <div className="">
+            <h1></h1>
+            <div className="">
+              <h1></h1>
+              <p></p>
+            </div>
+          </div>
+
+          <div className="">
+            <div className="p2 w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60"></p>
+              <Check size={20} />
+            </div>
+            <div className="p2 w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60"></p>
+              <Check size={20} />
+            </div>
+            <div className="p2 w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60"></p>
+              <XIcon size={20} />
+            </div>
+            <div className="p2 w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60"></p>
+              <Check size={20} />
+            </div>
+          </div>
+        </div>
       </div>
 
       <Footer />
