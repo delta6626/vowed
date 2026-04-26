@@ -191,12 +191,14 @@ export default function Home() {
 
         <div className="w-sm p-4 bg-base-200 rounded-xl border border-base-300">
           <div className="flex items-center gap-4">
-            <h1 className="p-2 rounded-[50%] w-10 h-10 flex items-center justify-center border border-base-300">
+            <h1 className="font-display p-2 bg-primary/75 rounded-[50%] w-10 h-10 flex items-center justify-center border border-base-300">
               TL
             </h1>
             <div className="flex flex-col">
-              <h1>Tanner Linsley</h1>
-              <p>90% fillment rate</p>
+              <h1 className="text-lg font-display font-medium">
+                Tanner Linsley
+              </h1>
+              <p className="text-base-content/60">90% fillment rate</p>
             </div>
           </div>
 
