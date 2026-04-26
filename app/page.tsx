@@ -6,9 +6,11 @@ import {
   Check,
   Hourglass,
   Link,
+  Lock,
   NotebookPen,
   PenIcon,
   Scale,
+  XIcon,
 } from "lucide-react";
 
 export default function Home() {
@@ -150,8 +152,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-32 paddingContainer flex">
-        <div className="">
+      <div className="mt-32 paddingContainer flex items-center justify-center">
+        <div className="mt-4 max-w-lg">
           <p className="uppercase text-xs text-accent">Permanently recorded</p>
 
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
@@ -161,11 +163,28 @@ export default function Home() {
             Not excuses.
           </h1>
 
-          <p className="mt-4 max-w-sm text-base-content/60">
+          <p className="mt-4 text-base-content/60">
             Vowed isn't a goal tracker. It's a public record. Every vow you make
             is witnessed, every outcome is permanent, and silence is never an
             option.
           </p>
+
+          <div className="flex flex-col gap-2 mt-4">
+            <div className="flex gap-2 items-start">
+              <Lock size={20} />
+              <p className="text-base-content/60">
+                Once made, a vow can only be resolved — not deleted.
+              </p>
+            </div>
+
+            <div className="flex gap-2 items-start">
+              <Lock size={20} />
+              <p className="text-base-content/60">
+                Silence is a verdict. Every second past deadline is publicly
+                visible.
+              </p>
+            </div>
+          </div>
         </div>
         <div className=""></div>
       </div>
