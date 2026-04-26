@@ -150,7 +150,25 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-16"></div>
+      <div className="mt-32 paddingContainer flex">
+        <div className="">
+          <p className="uppercase text-xs text-accent">Permanently recorded</p>
+
+          <h1 className="text-base-content/90 text-4xl font-display mt-4">
+            Built for{" "}
+            <span className="italic text-primary">accountability.</span>
+            <br />
+            Not excuses.
+          </h1>
+
+          <p className="mt-4 max-w-sm text-base-content/60">
+            Vowed isn't a goal tracker. It's a public record. Every vow you make
+            is witnessed, every outcome is permanent, and silence is never an
+            option.
+          </p>
+        </div>
+        <div className=""></div>
+      </div>
 
       <Footer />
     </div>
