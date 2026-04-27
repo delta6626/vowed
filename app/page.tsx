@@ -5,10 +5,13 @@ import Footer from "@/components/navigation/Footer";
 import {
   ArrowRight,
   Check,
+  Globe,
   Handshake,
   Hourglass,
+  LayoutDashboard,
   Link,
   Lock,
+  MessageCircle,
   NotebookPen,
   PenIcon,
   Scale,
@@ -332,7 +335,7 @@ export default function Home() {
           </div>
 
           <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
-            <Scale size={20} />
+            <LayoutDashboard size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Creator Dashboard
             </h1>
@@ -367,7 +370,7 @@ export default function Home() {
           </div>
 
           <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
-            <Scale size={20} />
+            <Globe size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Public Profile Pages
             </h1>
@@ -401,7 +404,7 @@ export default function Home() {
           </div>
 
           <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
-            <Scale size={20} />
+            <MessageCircle size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Community Engagement
             </h1>
