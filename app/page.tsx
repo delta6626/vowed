@@ -153,7 +153,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-32 paddingContainer flex flex-col items-center justify-center">
+      <div className="w-full mt-32 paddingContainer flex flex-col items-center justify-center">
         <div className="text-center">
           <p className="uppercase text-xs text-accent">Permanently recorded</p>
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
@@ -164,8 +164,8 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="flex items-center mt-16 gap-16">
-          <div className="max-w-sm">
+        <div className="w-full flex items-center justify-center mt-16 gap-16">
+          <div className="max-w-lg">
             <p className="mt-8 text-base-content/60">
               Vowed isn't a goal tracker. It's a public record. Every vow you
               make is witnessed, every outcome is permanent, and silence is
