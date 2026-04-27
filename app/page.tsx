@@ -192,7 +192,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="w-sm p-4 bg-base-200 rounded-xl border border-base-300">
+          <div className="w-sm p-8 bg-base-200 rounded-xl border border-base-300">
             <div className="flex items-center gap-4">
               <h1 className="font-display p-2 bg-primary/75 rounded-[50%] w-10 h-10 flex items-center justify-center border border-base-300">
                 TL
