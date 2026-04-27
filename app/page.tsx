@@ -12,6 +12,7 @@ import {
   NotebookPen,
   PenIcon,
   Scale,
+  Timer,
   XIcon,
 } from "lucide-react";
 
@@ -269,6 +270,33 @@ export default function Home() {
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
                 Minimum 15-minute deadline enforced
+              </p>
+            </div>
+          </div>
+
+          <div className="p-8 rounded-xl w-xs border border-base-300">
+            <Timer size={20} />
+            <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
+              Live Countdown Timer
+            </h1>
+            <div className="mt-4 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Real-time second-by-second countdown
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Shows elapsed time after deadline passes
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Clock synced live for all viewers
               </p>
             </div>
           </div>
