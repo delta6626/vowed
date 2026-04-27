@@ -330,6 +330,102 @@ export default function Home() {
               </p>
             </div>
           </div>
+
+          <div className="p-8 rounded-xl w-xs border border-base-300">
+            <Scale size={20} />
+            <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
+              Creator Dashboard
+            </h1>
+
+            <div className="mt-4 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                See all your vows at a glance — active, pending, resolved
+              </p>
+            </div>
+
+            <div className="mt-4 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Your fulfillment rate front and center, always
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                One-click resolution when the Moment of Truth arrives
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Real-time counts so nothing slips through
+              </p>
+            </div>
+          </div>
+
+          <div className="p-8 rounded-xl w-xs border border-base-300">
+            <Scale size={20} />
+            <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
+              Public Profile Pages
+            </h1>
+            <div className="mt-4 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                A permanent page at vowed.cc/u/[id] — yours to share
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Every public vow you've ever made, all in one place
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Visitors see your fulfillment rate before they read a word
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Your record, building in public, over time
+              </p>
+            </div>
+          </div>
+
+          <div className="p-8 rounded-xl w-xs border border-base-300">
+            <Scale size={20} />
+            <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
+              Community Engagement
+            </h1>
+            <div className="mt-4 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Anyone can comment on a vow — before and after resolution
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Encouragement, skepticism, reactions — all part of the record
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                View counts show exactly how many people are watching
+              </p>
+            </div>
+          </div>
         </div>
       </div>
 
