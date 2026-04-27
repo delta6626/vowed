@@ -250,21 +250,22 @@ export default function Home() {
             <div className="mt-4 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Real-time second-by-second countdown
+                A live clock ticking down to your deadline — second by second
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Shows elapsed time after deadline passes
+                Every viewer sees the same countdown in real time
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Clock synced live for all viewers
+                When time's up, the Moment of Truth begins and every second past
+                the deadline is recorded.
               </p>
             </div>
           </div>
@@ -277,28 +278,28 @@ export default function Home() {
             <div className="mt-4 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Time-bound vows with title and description
+                State your vow clearly — title, description, deadline
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Specific deadline — date and time
+                The moment you publish, the world can see it
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Published instantly and visible to the world
+                Every vow is timestamped and permanently tied to your name
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Minimum 15-minute deadline enforced
+                Deadlines must be real — minimum 15 minutes enforced
               </p>
             </div>
           </div>
@@ -311,21 +312,21 @@ export default function Home() {
             <div className="mt-4 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Resolve vows as Fulfilled or Not Fulfilled
+                When the deadline passes, you resolve: fulfilled or not
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Optional resolution note for context
+                Say what happened — an optional note for context
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Every resolution is permanent
+                Every resolution is timestamped and locked to the record
               </p>
             </div>
           </div>
