@@ -12,7 +12,9 @@ import {
   NotebookPen,
   PenIcon,
   Scale,
+  Scale3D,
   Timer,
+  Weight,
   XIcon,
 } from "lucide-react";
 
@@ -241,6 +243,33 @@ export default function Home() {
 
         <div className="mt-16 w-full flex flex-wrap gap-4">
           <div className="p-8 rounded-xl w-xs border border-base-300">
+            <Timer size={20} />
+            <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
+              Live Countdown Timer
+            </h1>
+            <div className="mt-4 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Real-time second-by-second countdown
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Shows elapsed time after deadline passes
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Clock synced live for all viewers
+              </p>
+            </div>
+          </div>
+
+          <div className="p-8 rounded-xl w-xs border border-base-300">
             <Handshake size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Public Commitment System
@@ -275,28 +304,28 @@ export default function Home() {
           </div>
 
           <div className="p-8 rounded-xl w-xs border border-base-300">
-            <Timer size={20} />
+            <Scale size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
-              Live Countdown Timer
+              Vow Resolution System
             </h1>
             <div className="mt-4 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Real-time second-by-second countdown
+                Resolve vows as Fulfilled or Not Fulfilled
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Shows elapsed time after deadline passes
+                Optional resolution note for context
               </p>
             </div>
 
             <div className="mt-2 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                Clock synced live for all viewers
+                Every resolution is permanent
               </p>
             </div>
           </div>
