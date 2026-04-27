@@ -5,6 +5,7 @@ import Footer from "@/components/navigation/Footer";
 import {
   ArrowRight,
   Check,
+  Handshake,
   Hourglass,
   Link,
   Lock,
@@ -223,6 +224,52 @@ export default function Home() {
                 <p className="text-base-content/60">Run a marathon</p>
                 <Check className="text-success" size={20} />
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="w-full mt-32 doublePaddingContainer flex flex-col items-center justify-center">
+        <div className="text-center">
+          <p className="uppercase text-xs text-accent">Everything you need</p>
+          <h1 className="text-base-content/90 text-4xl font-display mt-4">
+            Built to keep you{" "}
+            <span className="italic text-primary">honest.</span>
+          </h1>
+        </div>
+
+        <div className="mt-16 w-full flex flex-wrap gap-4">
+          <div className="p-8 rounded-xl w-xs border border-base-300">
+            <Handshake size={20} />
+            <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
+              Public Commitment System
+            </h1>
+            <div className="mt-4 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Time-bound vows with title and description
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Specific deadline — date and time
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Published instantly and visible to the world
+              </p>
+            </div>
+
+            <div className="mt-2 flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0" size={20} />
+              <p className="text-base-content/60">
+                Minimum 15-minute deadline enforced
+              </p>
             </div>
           </div>
         </div>
