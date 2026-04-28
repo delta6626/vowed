@@ -9,17 +9,14 @@ import {
   Handshake,
   Hourglass,
   LayoutDashboard,
-  Link,
-  Lock,
+  LinkIcon,
   MessageCircle,
   NotebookPen,
-  PenIcon,
   Scale,
-  Scale3D,
   Timer,
-  Weight,
   XIcon,
 } from "lucide-react";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -75,7 +72,7 @@ export default function Home() {
             <h1 className="font-display aspect-square p-2 bg-base-200 border border-base-300 rounded-[50%]">
               II
             </h1>
-            <Link className="mt-8 text-base-content/80" size={20} />
+            <LinkIcon className="mt-8 text-base-content/80" size={20} />
             <h1 className="mt-2 font-medium">Share the link</h1>
             <p className="text-base-content/60 mt-2">
               A public link is generated instantly. Share it.
@@ -478,6 +475,10 @@ export default function Home() {
         <p className="text-base-content/60 mt-4">
           Make a vow today. The clock starts the moment you hit publish.
         </p>
+
+        <Link className="btn btn-primary mt-8" href={"/create"}>
+          Make a vow - it's free
+        </Link>
       </div>
 
       <div className="mt-32"></div>
