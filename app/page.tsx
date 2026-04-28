@@ -160,8 +160,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full mt-32 doublePaddingContainer flex flex-col items-center justify-center">
-        <div className="text-center">
+      <div className="w-full mt-32 doublePaddingContainer flex items-center justify-between">
+        <div className="max-w-lg">
           <p className="uppercase text-xs text-accent">Permanently recorded</p>
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
             Built for{" "}
@@ -169,67 +169,62 @@ export default function Home() {
             <br />
             Not excuses.
           </h1>
+          <p className="mt-8 text-base-content/60">
+            Vowed isn't a goal tracker. It's a public record. Every vow you make
+            is witnessed, every outcome is permanent, and silence is never an
+            option.
+          </p>
+
+          <div className="flex flex-col gap-2 mt-4">
+            <div className="flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0 text-primary" size={20} />
+              <p className="text-base-content/60">
+                No cancellation of vows. Once made, a vow can only be resolved —
+                not deleted.
+              </p>
+            </div>
+
+            <div className="flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0 text-primary" size={20} />
+              <p className="text-base-content/60">
+                Silence is a verdict. Every second past the deadline is visible
+                to your viewers.
+              </p>
+            </div>
+          </div>
         </div>
 
-        <div className="w-full flex items-center justify-between mt-16">
-          <div className="max-w-lg">
-            <p className="mt-8 text-base-content/60">
-              Vowed isn't a goal tracker. It's a public record. Every vow you
-              make is witnessed, every outcome is permanent, and silence is
-              never an option.
-            </p>
-
-            <div className="flex flex-col gap-2 mt-4">
-              <div className="flex gap-2 items-start">
-                <ArrowRight className="flex shrink-0 text-primary" size={20} />
-                <p className="text-base-content/60">
-                  No cancellation of vows. Once made, a vow can only be resolved
-                  — not deleted.
-                </p>
-              </div>
-
-              <div className="flex gap-2 items-start">
-                <ArrowRight className="flex shrink-0 text-primary" size={20} />
-                <p className="text-base-content/60">
-                  Silence is a verdict. Every second past the deadline is
-                  visible to your viewers.
-                </p>
-              </div>
+        <div className="w-sm p-8 bg-base-200 rounded-xl border border-base-300">
+          <div className="flex items-center gap-4">
+            <h1 className="font-display p-2 bg-primary/75 rounded-[50%] w-10 h-10 flex items-center justify-center border border-base-300">
+              TL
+            </h1>
+            <div className="flex flex-col">
+              <h1 className="text-lg font-display font-medium">
+                Tanner Linsley
+              </h1>
+              <p className="text-base-content/60">90% fillment rate</p>
             </div>
           </div>
 
-          <div className="w-sm p-8 bg-base-200 rounded-xl border border-base-300">
-            <div className="flex items-center gap-4">
-              <h1 className="font-display p-2 bg-primary/75 rounded-[50%] w-10 h-10 flex items-center justify-center border border-base-300">
-                TL
-              </h1>
-              <div className="flex flex-col">
-                <h1 className="text-lg font-display font-medium">
-                  Tanner Linsley
-                </h1>
-                <p className="text-base-content/60">90% fillment rate</p>
-              </div>
+          <div className="flex flex-col gap-2 mt-4">
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">
+                Ship Tanstack Start to production
+              </p>
+              <Check className="text-success" size={20} />
             </div>
-
-            <div className="flex flex-col gap-2 mt-4">
-              <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
-                <p className="text-base-content/60">
-                  Ship Tanstack Start to production
-                </p>
-                <Check className="text-success" size={20} />
-              </div>
-              <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
-                <p className="text-base-content/60">Visit the Eiffel Tower</p>
-                <Check className="text-success" size={20} />
-              </div>
-              <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
-                <p className="text-base-content/60">Read 12 books this year</p>
-                <XIcon className="text-error" size={20} />
-              </div>
-              <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
-                <p className="text-base-content/60">Run a marathon</p>
-                <Check className="text-success" size={20} />
-              </div>
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">Visit the Eiffel Tower</p>
+              <Check className="text-success" size={20} />
+            </div>
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">Read 12 books this year</p>
+              <XIcon className="text-error" size={20} />
+            </div>
+            <div className="px-4 py-2 rounded-xl w-full bg-base-100 flex justify-between items-center">
+              <p className="text-base-content/60">Run a marathon</p>
+              <Check className="text-success" size={20} />
             </div>
           </div>
         </div>
