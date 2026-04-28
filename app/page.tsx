@@ -49,7 +49,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="paddingContainer" id="howItWorks">
+      <div className="doublePaddingContainer" id="howItWorks">
         <p className="text-center uppercase text-xs text-accent">
           How it works
         </p>
@@ -60,7 +60,7 @@ export default function Home() {
         </h1>
 
         <div className="w-full flex flex-wrap gap-8 items-start justify-center mt-16">
-          <div className="flex flex-col items-center max-w-60 text-center">
+          <div className="flex flex-col items-center max-w-50 text-center">
             <h1 className="font-display aspect-square p-2 bg-primary border border-base-300 rounded-[50%]">
               I
             </h1>
@@ -71,7 +71,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center max-w-60 text-center">
+          <div className="flex flex-col items-center max-w-50 text-center">
             <h1 className="font-display aspect-square p-2 bg-base-200 border border-base-300 rounded-[50%]">
               II
             </h1>
@@ -82,7 +82,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center max-w-60 text-center">
+          <div className="flex flex-col items-center max-w-50 text-center">
             <h1 className="font-display aspect-square p-2 bg-base-200 border border-base-300 rounded-[50%]">
               III
             </h1>
@@ -93,7 +93,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="flex flex-col items-center max-w-60 text-center">
+          <div className="flex flex-col items-center max-w-50 text-center">
             <h1 className="font-display aspect-square p-2 bg-base-200 border border-base-300 rounded-[50%]">
               IV
             </h1>
@@ -160,7 +160,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full mt-32 paddingContainer flex flex-col items-center justify-center">
+      <div className="w-full mt-32 doublePaddingContainer flex flex-col items-center justify-center">
         <div className="text-center">
           <p className="uppercase text-xs text-accent">Permanently recorded</p>
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
@@ -171,7 +171,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="w-full flex items-center justify-center mt-16 gap-16">
+        <div className="w-full flex items-center justify-between mt-16">
           <div className="max-w-lg">
             <p className="mt-8 text-base-content/60">
               Vowed isn't a goal tracker. It's a public record. Every vow you
