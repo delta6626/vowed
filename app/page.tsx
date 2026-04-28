@@ -427,6 +427,48 @@ export default function Home() {
         </div>
       </div>
 
+      <div className="mt-32 doublePaddingContainer">
+        <div className="max-w-lg">
+          <p className="uppercase text-xs text-accent">Visibility levels</p>
+          <h1 className="text-base-content/90 text-4xl font-display mt-4">
+            Your vow, your <br />
+            <span className="italic text-primary">audience.</span>
+          </h1>
+
+          <p className="mt-8 text-base-content/60">
+            Not every commitment needs the whole internet. Choose exactly who
+            witnesses your vow — from fully public to completely private.
+          </p>
+
+          <div className="flex flex-col gap-2 mt-4">
+            <div className="flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0 text-primary" size={20} />
+              <p className="text-base-content/60">
+                Public vows build the most credibility. They are listed on your
+                public profile - anyone can find and witness them.
+              </p>
+            </div>
+
+            <div className="flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0 text-primary" size={20} />
+              <p className="text-base-content/60">
+                Unlisted vows are perfect for sharing with a specific group
+                without full exposure.
+              </p>
+            </div>
+
+            <div className="flex gap-2 items-start">
+              <ArrowRight className="flex shrink-0 text-primary" size={20} />
+              <p className="text-base-content/60">
+                Private vows are for personal accountability - only you can see
+                them.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className=""></div>
+      </div>
+
       <Footer />
     </div>
   );
