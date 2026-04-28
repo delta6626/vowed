@@ -469,6 +469,17 @@ export default function Home() {
         <div className=""></div>
       </div>
 
+      <div className="mt-32 text-center landingGradient doublePaddingContainer">
+        <h1 className="font-display text-5xl">Your word.</h1>
+        <h1 className="font-display text-5xl text-primary italic">
+          On the record.
+        </h1>
+
+        <p className="text-base-content/60 mt-4">
+          Make a vow today. The clock starts the moment you hit publish.
+        </p>
+      </div>
+
       <div className="mt-32"></div>
       <Footer />
     </div>
