@@ -36,7 +36,7 @@ export default function Pill({ text, icon, className, variant }: PillProps) {
       break;
     case "generic":
       style =
-        "uppercase px-4 py-2 bg-base-200 border border-base-300 text-base-content/60 rounded-full text-sm font-semibold w-fit";
+        "px-4 py-2 bg-base-200 border border-base-300 text-base-content/60 rounded-full text-sm font-semibold w-fit";
       break;
   }
 
