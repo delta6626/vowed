@@ -464,7 +464,12 @@ export default function Home() {
           </div>
         </div>
         <div className="">
-          <div className=""></div>
+          <div className="flex items-center gap-2">
+            <Pill text="Public" variant={"success"} className="w-fit"></Pill>
+            <p className="text-base-content/60">
+              Anyone with or without the link. Appears on your profile.
+            </p>
+          </div>
           <div className=""></div>
           <div className=""></div>
         </div>
