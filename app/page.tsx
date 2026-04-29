@@ -463,7 +463,11 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className=""></div>
+        <div className="">
+          <div className=""></div>
+          <div className=""></div>
+          <div className=""></div>
+        </div>
       </div>
 
       <div className="mt-32 text-center landingGradient doublePaddingContainer">
