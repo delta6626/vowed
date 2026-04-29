@@ -470,8 +470,20 @@ export default function Home() {
               Anyone with or without the link. Appears on your profile.
             </p>
           </div>
-          <div className=""></div>
-          <div className=""></div>
+
+          <div className="flex items-center gap-2">
+            <Pill text="Public" variant={"secondary"} className="w-fit"></Pill>
+            <p className="text-base-content/60">
+              Anyone with or without the link. Appears on your profile.
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <Pill text="Public" variant={"generic"} className="w-fit"></Pill>
+            <p className="text-base-content/60">
+              Anyone with or without the link. Appears on your profile.
+            </p>
+          </div>
         </div>
       </div>
 
