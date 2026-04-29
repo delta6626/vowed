@@ -25,6 +25,7 @@ export default function Home() {
         <Navbar />
         <div className="flex flex-col flex-1 items-center justify-center text-center landingGradient paddingContainer">
           <Pill
+            className="uppercase"
             variant="generic"
             text={"Public commitment platform"}
             icon={
