@@ -475,14 +475,15 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <Pill text="Public" variant={"secondary"} className="w-fit"></Pill>
             <p className="text-base-content/60">
-              Anyone with or without the link. Appears on your profile.
+              Anyone with the direct link. Hidden from your profile and search
+              engines.
             </p>
           </div>
 
           <div className="flex items-center gap-2">
             <Pill text="Public" variant={"generic"} className="w-fit"></Pill>
             <p className="text-base-content/60">
-              Anyone with or without the link. Appears on your profile.
+              Only you. Full accountability with zero public pressure.
             </p>
           </div>
         </div>
