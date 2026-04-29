@@ -465,7 +465,7 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-sm flex flex-col gap-4">
-          <div className="flex items-center gap-2 p-4 bg-base-200 rounded-xl">
+          <div className="flex items-center justify-between gap-2 p-4 bg-base-200 rounded-xl">
             <Pill text="Public" variant={"success"} className="w-fit"></Pill>
             <p className="text-base-content/60">
               Anyone with or without the link. Appears on your profile.
@@ -473,14 +473,18 @@ export default function Home() {
           </div>
 
           <div className="flex items-center gap-2 p-4 bg-base-200 rounded-xl">
-            <Pill text="Public" variant={"secondary"} className="w-fit"></Pill>
+            <Pill
+              text="Unlisted"
+              variant={"secondary"}
+              className="w-fit"
+            ></Pill>
             <p className="text-base-content/60">
               Anyone with the direct link. Hidden from your profile.
             </p>
           </div>
 
           <div className="flex items-center gap-2 p-4 bg-base-200 rounded-xl">
-            <Pill text="Public" variant={"generic"} className="w-fit"></Pill>
+            <Pill text="Private" variant={"generic"} className="w-fit"></Pill>
             <p className="text-base-content/60">
               Only you. Full accountability with zero public pressure.
             </p>
