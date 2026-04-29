@@ -425,7 +425,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="mt-32 doublePaddingContainer">
+      <div className="mt-32 doublePaddingContainer flex items-center justify-between">
         <div className="max-w-lg">
           <p className="uppercase text-xs text-accent">Visibility levels</p>
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
@@ -464,7 +464,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="">
+        <div className="max-w-sm">
           <div className="flex items-center gap-2">
             <Pill text="Public" variant={"success"} className="w-fit"></Pill>
             <p className="text-base-content/60">
