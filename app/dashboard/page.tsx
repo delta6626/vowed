@@ -111,7 +111,7 @@ export default function Dashboard() {
                 </span>
               </h1>
 
-              <p className="font-body text-accent text-xl mt-2">
+              <p className="font-body text-base-content/60 text-xl mt-2">
                 {" Here's where your vows stand today."}
               </p>
             </div>
