@@ -17,7 +17,7 @@ export const VowManagerTabs = ({
         onClick={() => {
           setActiveTab("active");
         }}
-        className={`btn ${activeTab === "active" ? "btn-primary" : "text-accent"}`}
+        className={`btn ${activeTab === "active" ? "btn-primary" : "text-base-content/60"}`}
       >
         Active
       </button>
@@ -25,7 +25,7 @@ export const VowManagerTabs = ({
         onClick={() => {
           setActiveTab("moment-of-truth");
         }}
-        className={`btn ${activeTab === "moment-of-truth" ? "btn-primary" : "text-accent"}`}
+        className={`btn ${activeTab === "moment-of-truth" ? "btn-primary" : "text-base-content/60"}`}
       >
         Moment of truth
       </button>
@@ -33,7 +33,7 @@ export const VowManagerTabs = ({
         onClick={() => {
           setActiveTab("resolved");
         }}
-        className={`btn ${activeTab === "resolved" ? "btn-primary" : "text-accent"}`}
+        className={`btn ${activeTab === "resolved" ? "btn-primary" : "text-base-content/60"}`}
       >
         Resolved
       </button>
