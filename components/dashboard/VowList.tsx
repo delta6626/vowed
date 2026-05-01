@@ -50,7 +50,7 @@ export const VowList = ({
           })}
 
         {activeVows.length === 0 && (
-          <p className="w-full text-accent text-center">
+          <p className="w-full text-base-content/60 text-center">
             No vows to show here.
           </p>
         )}
@@ -80,7 +80,7 @@ export const VowList = ({
           })}
 
         {momentOfTruthVows.length === 0 && (
-          <p className="w-full text-accent text-center">
+          <p className="w-full text-base-content/60 text-center">
             No vows to show here.
           </p>
         )}
@@ -111,7 +111,7 @@ export const VowList = ({
           })}
 
         {resolvedVows.length === 0 && (
-          <p className="w-full text-accent text-center">
+          <p className="w-full text-base-content/60 text-center">
             No vows to show here.
           </p>
         )}
