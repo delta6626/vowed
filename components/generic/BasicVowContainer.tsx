@@ -52,14 +52,14 @@ export default function BasicVowContainer({
     >
       <div className="flex flex-col gap-4 justify-between">
         {vowId ? (
-          <Link href={`/v/${vowId}`} className="text-base-content/80">
+          <Link href={`/v/${vowId}`} className="text-base-content/90">
             {vowTitle}
           </Link>
         ) : (
           <span className="text-base-content/80">{vowTitle}</span>
         )}
 
-        <div className="text-base flex gap-4 items-center text-accent">
+        <div className="text-base flex gap-4 items-center text-base-content/60">
           <div className="flex gap-2 items-center">
             <Eye size={20} />
             <p>{vowViewCount ?? 0}</p>
@@ -72,28 +72,28 @@ export default function BasicVowContainer({
         </div>
       </div>
 
-      <div className="text-base flex flex-col justify-between items-end gap-4">
+      <div className="text-base flex flex-col justify-between items-end gap-2">
         <div className="flex items-center gap-2">
           {vowVisibility === "public" ? (
             <div
               className="tooltip tooltip-top tooltip-primary"
               data-tip={"This vow is public"}
             >
-              <Globe className="text-accent" size={20} />
+              <Globe className="text-base-content/60" size={20} />
             </div>
           ) : vowVisibility === "unlisted" ? (
             <div
               className="tooltip tooltip-top tooltip-primary"
               data-tip={"This vow is unlisted"}
             >
-              <LinkIcon className="text-accent" size={20} />
+              <LinkIcon className="text-base-content/60" size={20} />
             </div>
           ) : vowVisibility === "private" ? (
             <div
               className="tooltip tooltip-top tooltip-primary"
               data-tip={"This vow is private"}
             >
-              <Lock className="text-accent" size={20} />
+              <Lock className="text-base-content/60" size={20} />
             </div>
           ) : null}
 
@@ -167,7 +167,7 @@ export default function BasicVowContainer({
           vowDeadlineTimestampUTC &&
           currentTimestampUTC &&
           vowResolution && (
-            <p className="text-accent">{`Resolved on ${new Date(
+            <p className="text-base-content/60">{`Resolved on ${new Date(
               vowResolution.resolutionTimestamp,
             ).toLocaleString("en-US", {
               month: "long",
