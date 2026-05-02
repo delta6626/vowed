@@ -10,7 +10,7 @@ import { User } from "@/types/User";
 import { Vow } from "@/types/Vow";
 import { getGreeting } from "@/utils/functions/getGreeting";
 import { useQuery } from "@tanstack/react-query";
-import { AlertCircle, Plus } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/navigation/Footer";
 
@@ -117,8 +117,7 @@ export default function Dashboard() {
             </div>
 
             <Link className="btn btn-primary" href={"/create"}>
-              <Plus size={20} />
-              New vow
+              Make a vow
             </Link>
           </div>
 
