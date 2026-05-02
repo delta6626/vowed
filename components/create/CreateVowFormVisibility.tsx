@@ -12,8 +12,8 @@ export const CreateVowFormVisibility = ({
 }: CreateVowFormVisibilityProps) => {
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-base-content/80">Visibility</p>
-      <div className="flex gap-2">
+      <p className="text-base-content/60">Visibility</p>
+      <div className="flex gap-2 text-base-content/90">
         <button
           type={"button"}
           className={`flex items-center gap-4 px-4 py-8 rounded-xl w-full border border-base-300 text-left hover:border hover:border-primary/20 ${vowVisibility === "public" ? "bg-primary/20 border border-primary/20" : "bg-base-200"}`}
@@ -25,7 +25,7 @@ export const CreateVowFormVisibility = ({
           <p>
             Public
             <br />
-            <span className="text-accent">Visible to all</span>
+            <span className="text-base-content/60">Visible to all</span>
           </p>
         </button>
 
@@ -40,7 +40,7 @@ export const CreateVowFormVisibility = ({
           <p>
             Unlisted
             <br />
-            <span className="text-accent">Link access only</span>
+            <span className="text-base-content/60">Link access only</span>
           </p>
         </button>
 
@@ -55,7 +55,7 @@ export const CreateVowFormVisibility = ({
           <p>
             Private
             <br />
-            <span className="text-accent">Only you</span>
+            <span className="text-base-content/60">Only you</span>
           </p>
         </button>
       </div>
