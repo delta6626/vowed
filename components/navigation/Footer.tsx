@@ -7,23 +7,28 @@ export default function Footer() {
     <footer className="flex items-center justify-between w-full paddingContainer py-4 border-t border-base-300">
       <div className="">
         <Logo className="text-xl" />
-        <p className="text-accent text-sm">Vow it. Mean it. Prove it.</p>
+        <p className="text-base-content/60 text-sm">
+          Vow it. Mean it. Prove it.
+        </p>
       </div>
 
       <div className="flex gap-4">
-        <Link className="text-sm text-accent" href={"/privacy-policy"}>
+        <Link className="text-sm text-base-content/60" href={"/privacy-policy"}>
           Privacy
         </Link>
 
-        <Dot className="text-accent" size={20} />
+        <Dot className="text-base-content/60" size={20} />
 
-        <Link className="text-sm text-accent" href={"/terms-of-service"}>
+        <Link
+          className="text-sm text-base-content/60"
+          href={"/terms-of-service"}
+        >
           Terms
         </Link>
 
-        <Dot className="text-accent" size={20} />
+        <Dot className="text-base-content/60" size={20} />
 
-        <Link className="text-sm text-accent" href={"/contact"}>
+        <Link className="text-sm text-base-content/60" href={"/contact"}>
           Contact
         </Link>
       </div>
