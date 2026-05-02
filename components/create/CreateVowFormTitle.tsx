@@ -12,7 +12,7 @@ export const CreateVowFormTitle = ({
 }: CreateVowFormTitleProps) => {
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-base-content/80">What do you vow?</p>
+      <p className="text-base-content/60">What do you vow?</p>
       <input
         required={true}
         value={vowTitle}

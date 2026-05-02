@@ -12,7 +12,7 @@ export const CreateVowFormDescription = ({
 }: CreateVowFormDescriptionProps) => {
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-base-content/80">
+      <p className="text-base-content/60">
         Description <span className="text-accent">- Optional</span>
       </p>
       <textarea

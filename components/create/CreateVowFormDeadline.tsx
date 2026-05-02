@@ -33,7 +33,7 @@ export const CreateVowFormDeadline = ({
 
   return (
     <div className="flex flex-col gap-2">
-      <p className="text-base-content/80">
+      <p className="text-base-content/60">
         Deadline
         <span className="text-accent">
           {" "}
