@@ -100,7 +100,7 @@
 .gradientBottomLeft {
   background: radial-gradient(
     ellipse 120% 100% at 20% 80%,
-    rgba(196, 98, 45, 0.2) 0%,
+    rgba(247, 114, 42, 0.2) 0%,
     transparent 65%
   );
 }
@@ -108,7 +108,7 @@
 .gradientBottomRight {
   background: radial-gradient(
     ellipse 120% 100% at 80% 80%,
-    rgba(196, 98, 45, 0.2) 0%,
+    rgba(247, 114, 42, 0.2) 0%,
     transparent 65%
   );
 }
@@ -116,7 +116,7 @@
 .gradientTopLeft {
   background: radial-gradient(
     ellipse 120% 100% at 20% 20%,
-    rgba(196, 98, 45, 0.2) 0%,
+    rgba(247, 114, 42, 0.2) 0%,
     transparent 65%
   );
 }
@@ -124,7 +124,7 @@
 .gradientTopRight {
   background: radial-gradient(
     ellipse 120% 100% at 80% 20%,
-    rgba(196, 98, 45, 0.2) 0%,
+    rgba(247, 114, 42, 0.2) 0%,
     transparent 65%
   );
 }
