@@ -160,7 +160,7 @@ export const CreateVowForm = () => {
           <div className="border-b border-base-300"></div>
 
           <div>
-            <p className="text-accent mb-4">Preview</p>
+            <p className="text-base-content/60 mb-4">Preview</p>
 
             <VowPreview
               title={vowTitle}
@@ -169,9 +169,9 @@ export const CreateVowForm = () => {
             />
 
             <div className="flex w-full items-center justify-between mt-8">
-              <p className="text-accent">
+              <p className="text-base-content/60">
                 Once submitted, this vow is{" "}
-                <span className="text-base-content/80">permanent.</span>
+                <span className="text-base-content/90">permanent.</span>
                 <br />
                 There is no delete - only resolution.
               </p>

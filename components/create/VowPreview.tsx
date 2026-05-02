@@ -39,7 +39,7 @@ export const VowPreview = ({
         ></Pill>
 
         <h1
-          className={`font-display text-lg italic line-clamp-2 wrap-break-word ${!title ? "text-accent" : ""}`}
+          className={`font-display text-lg italic line-clamp-2 wrap-break-word ${!title ? "text-base-content/60" : ""}`}
         >
           {title ? title : "Your vow will appear here.."}
         </h1>
@@ -48,7 +48,7 @@ export const VowPreview = ({
           {deadlineDate && deadlineTime && (
             <>
               Due{" "}
-              <span className="font-semibold text-base-content/80">{`${formattedDate} at ${formattedTime}`}</span>
+              <span className="font-semibold text-base-content/90">{`${formattedDate} at ${formattedTime}`}</span>
             </>
           )}
 
