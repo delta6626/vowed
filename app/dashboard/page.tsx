@@ -99,7 +99,7 @@ export default function Dashboard() {
   return (
     <>
       <ResolveVowModal />
-      <div className="w-screen h-screen flex flex-col overflow-x-hidden">
+      <div className="w-screen h-screen flex flex-col overflow-x-hidden gradientBottomRight">
         <Navbar />
         <div className="doublePaddingContainer">
           <div className="flex items-center justify-between mt-16">
