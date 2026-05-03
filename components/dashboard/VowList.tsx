@@ -13,20 +13,30 @@ export const VowList = ({
   activeTab,
   currentTimestampUTC,
 }: VowListProps) => {
-  const activeVows = vows.filter(
-    (vow) =>
-      vow.status === "waiting" &&
-      vow.deadlineTimestampUTC - currentTimestampUTC >= 0,
-  );
+  const activeVows = vows
+    .filter(
+      (vow) =>
+        vow.status === "waiting" &&
+        vow.deadlineTimestampUTC - currentTimestampUTC >= 0,
+    )
+    .sort((a, b) => a.deadlineTimestampUTC - b.deadlineTimestampUTC);
 
-  const momentOfTruthVows = vows.filter(
-    (vow) =>
-      vow.deadlineTimestampUTC - currentTimestampUTC < 0 &&
-      vow.status === "waiting",
-  );
-  const resolvedVows = vows.filter(
-    (vow) => vow.status === "fulfilled" || vow.status == "not-fulfilled",
-  );
+  const momentOfTruthVows = vows
+    .filter(
+      (vow) =>
+        vow.deadlineTimestampUTC - currentTimestampUTC < 0 &&
+        vow.status === "waiting",
+    )
+    .sort((a, b) => a.deadlineTimestampUTC - b.deadlineTimestampUTC);
+
+  const resolvedVows = vows
+    .filter(
+      (vow) => vow.status === "fulfilled" || vow.status === "not-fulfilled",
+    )
+    .sort(
+      (a, b) =>
+        b.resolution!.resolutionTimestamp - a.resolution!.resolutionTimestamp,
+    );
 
   if (activeTab === "active") {
     return (
