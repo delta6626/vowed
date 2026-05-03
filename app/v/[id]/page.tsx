@@ -193,7 +193,9 @@ export default function Vow() {
 
         <div className="flex flex-col gap-8 mt-8 pb-8">
           <h1 className="font-medium text-lg text-accent">Comments</h1>
-          <VowCommentForm vowId={vowResponse.vowId} />
+          {vowStatus === "waiting" && (
+            <VowCommentForm vowId={vowResponse.vowId} />
+          )}
           <VowCommentsCollection commentsCollection={vowResponse.vowComments} />
         </div>
       </div>
