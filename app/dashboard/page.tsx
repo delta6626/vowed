@@ -57,7 +57,7 @@ export default function Dashboard() {
     return (
       <>
         <Navbar />
-        <div className="doublePaddingContainer py-16">
+        <div className="doublePaddingContainer h-screen py-16">
           <div className="skeleton w-full h-20 rounded-xl"></div>
           <DashboardStatsLoading />
           <VowManagerLoading />
@@ -99,7 +99,7 @@ export default function Dashboard() {
   return (
     <>
       <ResolveVowModal />
-      <div className="w-screen h-screen flex flex-col overflow-x-hidden gradientBottomRight">
+      <div className="w-screen h-screen flex flex-col overflow-x-hidden">
         <Navbar />
         <div className="doublePaddingContainer">
           <div className="flex items-center justify-between mt-16">
