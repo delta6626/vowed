@@ -228,7 +228,7 @@ export const CreateVowForm = () => {
             }
           </p>
 
-          <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between">
+          <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between border border-base-300">
             <kbd className="text-accent">{`vowed.cc/v/${vowId}`}</kbd>
             <button
               disabled={codeCopied}
