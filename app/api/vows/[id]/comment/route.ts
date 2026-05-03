@@ -29,7 +29,7 @@ export async function POST(
 
   const vowComment = {
     commenterId: userId,
-    commenterName: sessionClaims.fullName, // Fetch froms session token. `fullName` is not a default property of the sessionClaims object. Set up required in Clerk dashboard.
+    commenterName: sessionClaims.fullName, // Fetch from session token. `fullName` is not a default property of the sessionClaims object. Set up required in Clerk dashboard.
     commentText: commentText,
     commentCreationTimestamp: Date.now(),
   };
