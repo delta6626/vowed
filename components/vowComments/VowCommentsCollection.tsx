@@ -8,9 +8,13 @@ export interface VowCommentsCollectionProps {
 export const VowCommentsCollection = ({
   commentsCollection,
 }: VowCommentsCollectionProps) => {
+  const sortedComments = commentsCollection.sort(
+    (a, b) => b.commentCreationTimestamp - a.commentCreationTimestamp,
+  );
+
   return (
     <div className="flex flex-col gap-2">
-      {commentsCollection.map((comment) => {
+      {sortedComments.map((comment) => {
         return (
           <VowCommentContainer key={comment.commentId} comment={comment} />
         );
