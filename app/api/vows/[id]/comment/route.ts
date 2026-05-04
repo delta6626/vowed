@@ -1,3 +1,4 @@
+import { Vow } from "@/types/Vow";
 import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
 import { FieldValue } from "firebase-admin/firestore";
@@ -24,6 +25,15 @@ export async function POST(
     return NextResponse.json(
       { error: "This vow does not exist." },
       { status: 404 },
+    );
+  }
+
+  const vowData = vowSnapshot.data() as Vow;
+
+  if (vowData.status != "waiting") {
+    return NextResponse.json(
+      { error: "Cannot comment on resolved vows." },
+      { status: 400 },
     );
   }
 
