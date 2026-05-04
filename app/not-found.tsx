@@ -26,7 +26,7 @@ export default function NotFound() {
         </Show>
 
         <Show when={"signed-in"}>
-          <Link href={"/"} className="mt-8 btn btn-primary">
+          <Link href={"/dashboard"} className="mt-8 btn btn-primary">
             Go to Dashboard
           </Link>
         </Show>
