@@ -141,19 +141,21 @@ export default function UserProfile() {
           <h1 className="text-xl text-base-content/80">Public vows</h1>
 
           <div className="flex flex-col gap-2 mt-4">
-            {requestedUserResponse.publicVows.map((publicVow) => {
-              return (
-                <PublicVowContainer
-                  key={publicVow.vowId}
-                  vowId={publicVow.vowId}
-                  statusFormatted={publicVow.statusFormatted}
-                  title={publicVow.title}
-                  commentCount={publicVow.commentCount}
-                  viewCount={publicVow.viewCount}
-                  createdAt={publicVow.createdAt}
-                />
-              );
-            })}
+            {requestedUserResponse.publicVows
+              .sort((a, b) => b.createdAt - a.createdAt)
+              .map((publicVow) => {
+                return (
+                  <PublicVowContainer
+                    key={publicVow.vowId}
+                    vowId={publicVow.vowId}
+                    statusFormatted={publicVow.statusFormatted}
+                    title={publicVow.title}
+                    commentCount={publicVow.commentCount}
+                    viewCount={publicVow.viewCount}
+                    createdAt={publicVow.createdAt}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>
