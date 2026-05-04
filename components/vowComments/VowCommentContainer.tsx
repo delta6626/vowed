@@ -7,7 +7,7 @@ export interface VowCommentContainerProps {
 
 export const VowCommentContainer = ({ comment }: VowCommentContainerProps) => {
   return (
-    <div className="bg-base-200 p-4 rounded-xl">
+    <div className="bg-base-200 border border-base-300 p-4 rounded-xl">
       <div className="flex items-center w-full justify-between">
         <Link
           href={`../u/${comment.commenterId}`}
