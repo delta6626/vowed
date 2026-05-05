@@ -102,10 +102,10 @@ export const ResolveVowModal = () => {
     >
       <div className="modal-box border border-base-300 rounded-xl">
         <div className="">
-          <h1 className="text-xl font-display text-base-content/80">
+          <h1 className="text-xl font-display text-base-content/90">
             {MODALS.RESOLVE_VOW_MODAL.TITLE}
           </h1>
-          <p className="text-accent italic">{`"${vowDetails.vowTitle}"`}</p>
+          <p className="text-base-content/60 italic">{`"${vowDetails.vowTitle}"`}</p>
         </div>
 
         <div className="mt-4 flex flex-col gap-2">
@@ -118,7 +118,7 @@ export const ResolveVowModal = () => {
             <Check className="text-success" />
             <div className="flex flex-col items-start">
               <h1>Fulfilled</h1>
-              <p className="text-sm text-accent">
+              <p className="text-sm text-base-content/60">
                 This event happened as vowed.
               </p>
             </div>
@@ -133,7 +133,9 @@ export const ResolveVowModal = () => {
             <X className="text-error" />
             <div className="flex flex-col items-start">
               <h1>Not fulfilled</h1>
-              <p className="text-sm text-accent">This event did not happen.</p>
+              <p className="text-sm text-base-content/60">
+                This event did not happen.
+              </p>
             </div>
           </button>
         </div>
