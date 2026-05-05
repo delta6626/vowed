@@ -1,3 +1,4 @@
+import { Vow } from "@/types/Vow";
 import { VowResolution } from "@/types/VowResolution";
 import { adminDb } from "@/utils/firebase/admin";
 import { auth } from "@clerk/nextjs/server";
@@ -34,13 +35,27 @@ export async function POST(req: NextRequest) {
     const userSnapshot = adminDb.collection("users").doc(userId);
     const vowSnapshot = adminDb.collection("vows").doc(vowId);
     const vowDocument = await vowSnapshot.get();
+    const vowData = vowDocument.data() as Vow;
+    const now = Date.now();
+
     const updateData: any = {};
 
-    if (!vowDocument.exists)
+    if (!vowDocument.exists) {
       return NextResponse.json(
         { error: "Vow does not exist." },
         { status: 404 },
       );
+    }
+
+    if (now < vowData.deadlineTimestampUTC) {
+      return NextResponse.json(
+        {
+          error:
+            "Vow cannot be resolved yet as the deadline has not been reached.",
+        },
+        { status: 409 },
+      );
+    }
 
     if (vowResolutionOutcome === "fulfilled") {
       updateData.vowsFulfilled = FieldValue.increment(1);
