@@ -13,6 +13,7 @@ import { useQuery } from "@tanstack/react-query";
 import { AlertCircle } from "lucide-react";
 import Link from "next/link";
 import Footer from "@/components/navigation/Footer";
+import { GenericModal } from "@/components/generic/GenericModal";
 
 export default function Dashboard() {
   const {
@@ -98,6 +99,7 @@ export default function Dashboard() {
 
   return (
     <>
+      <GenericModal />
       <ResolveVowModal />
       <div className="w-screen h-screen flex flex-col overflow-x-hidden">
         <Navbar />
