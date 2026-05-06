@@ -1,7 +1,7 @@
 export const PRIVACY_POLICY_CONTENT_MARKDOWN = `
 # Privacy Policy
 
-**Last Updated: May 6, 2026**
+#### Last Updated: May 6, 2026
 
 ## 1. Introduction
 
@@ -199,11 +199,7 @@ If you have questions about this Privacy Policy or our data practices, please co
 **Address:** [Your Business Address]  
 **Phone:** [Your Phone Number]
 
-## 14. Data Protection Officer
-
-For EU users, our Data Protection Officer can be contacted at [dpo@vowed.com]
-
-## 15. Complaints
+## 14. Complaints
 
 If you believe we have not complied with applicable data protection laws, you have the right to lodge a complaint with the relevant supervisory authority.
 `;
