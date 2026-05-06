@@ -1,4 +1,4 @@
-# Privacy Policy for Vowed
+# Privacy Policy
 
 **Last Updated: May 6, 2026**
 
