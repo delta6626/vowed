@@ -1,4 +1,4 @@
-# Terms of Service for Vowed
+# Terms of Service
 
 **Last Updated: May 6, 2026**
 
