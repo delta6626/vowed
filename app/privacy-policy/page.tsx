@@ -14,11 +14,11 @@ export default function PrivacyPolicy() {
             },
 
             h2: ({ children }) => {
-              return <h2 className="text-2xl mt-8">{children}</h2>;
+              return <h2 className="text-2xl mt-12">{children}</h2>;
             },
 
             h3: ({ children }) => {
-              return <h3 className="text-xl mt-4">{children}</h3>;
+              return <h3 className="text-xl mt-6">{children}</h3>;
             },
 
             h4: ({ children }) => {
@@ -29,6 +29,14 @@ export default function PrivacyPolicy() {
               return (
                 <p className="text-lg text-base-content/90 mt-2">{children}</p>
               );
+            },
+
+            strong: ({ children }) => {
+              return <p>{children}</p>;
+            },
+
+            li: ({ children }) => {
+              return <li className="list-disc ml-8">{children}</li>;
             },
           }}
         >
