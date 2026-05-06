@@ -30,15 +30,12 @@ Vowed ("we," "us," or "our") respects your privacy and is committed to protectin
 
 **Usage Data:**
 
-- Vow view counts and engagement metrics
-- Page views and navigation patterns
-- Device information and browser type
-- IP addresses and location data
+- Vow view counts and engagement metrics (collected for service functionality)
+- Basic server logs including IP addresses and device information (used for security and troubleshooting)
 
 **Cookies and Tracking:**
 
-- Session cookies for authentication
-- Analytics cookies for service improvement
+- Session cookies for authentication (provided by Clerk)
 - Preference cookies for theme settings
 
 ### 2.3 Information from Third Parties
@@ -47,11 +44,6 @@ Vowed ("we," "us," or "our") respects your privacy and is committed to protectin
 
 - We use Clerk for user authentication
 - We receive basic profile information from authentication providers
-
-**Analytics Services:**
-
-- We may use analytics tools to understand service usage
-- These tools may collect anonymous usage statistics
 
 ## 3. How We Use Your Information
 
@@ -64,8 +56,7 @@ Vowed ("we," "us," or "our") respects your privacy and is committed to protectin
 
 ### 3.2 Service Improvement
 
-- To analyze usage patterns and improve functionality
-- To develop new features and services
+- To develop new features and services based on user feedback
 - To troubleshoot technical issues
 
 ### 3.3 Communication
@@ -183,9 +174,8 @@ Vowed ("we," "us," or "our") respects your privacy and is committed to protectin
 
 ### 11.1 Types of Cookies
 
-- **Essential Cookies:** Required for basic service functionality
-- **Analytics Cookies:** Help us understand how users interact with our service
-- **Preference Cookies:** Remember your settings and preferences
+- **Essential Cookies:** Required for basic service functionality (authentication, session management)
+- **Preference Cookies:** Remember your settings and preferences (theme selection)
 
 ### 11.2 Cookie Management
 
