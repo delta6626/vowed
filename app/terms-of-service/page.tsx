@@ -1,3 +1,4 @@
+import Footer from "@/components/navigation/Footer";
 import Navbar from "@/components/navigation/Navbar";
 import { TERMS_OF_SERVICE_MARKDOWN_CONTENT } from "@/constants/TERMS_OF_SERVICE";
 import Markdown from "react-markdown";
@@ -42,6 +43,10 @@ export default function TermsOfService() {
         >
           {TERMS_OF_SERVICE_MARKDOWN_CONTENT}
         </Markdown>
+      </div>
+
+      <div className="mt-16">
+        <Footer />
       </div>
     </div>
   );

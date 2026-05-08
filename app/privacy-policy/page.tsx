@@ -1,3 +1,4 @@
+import Footer from "@/components/navigation/Footer";
 import Navbar from "@/components/navigation/Navbar";
 import { PRIVACY_POLICY_CONTENT_MARKDOWN } from "@/constants/PRIVACY_POLICY";
 import Markdown from "react-markdown";
@@ -42,6 +43,10 @@ export default function PrivacyPolicy() {
         >
           {PRIVACY_POLICY_CONTENT_MARKDOWN}
         </Markdown>
+      </div>
+
+      <div className="mt-16">
+        <Footer />
       </div>
     </div>
   );
