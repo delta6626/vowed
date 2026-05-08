@@ -33,7 +33,7 @@ export default function TermsOfService() {
             },
 
             strong: ({ children }) => {
-              return <p>{children}</p>;
+              return <strong className="font-normal">{children}</strong>;
             },
 
             li: ({ children }) => {

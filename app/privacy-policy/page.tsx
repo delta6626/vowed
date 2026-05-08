@@ -33,7 +33,7 @@ export default function PrivacyPolicy() {
             },
 
             strong: ({ children }) => {
-              return <p>{children}</p>;
+              return <strong className="font-normal">{children}</strong>;
             },
 
             li: ({ children }) => {
