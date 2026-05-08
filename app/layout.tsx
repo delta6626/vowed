@@ -1,8 +1,7 @@
 import { ReactNode } from "react";
 import { Playfair_Display, DM_Sans } from "next/font/google";
-import "./globals.css";
-import Script from "next/script";
 import Providers from "./providers";
+import "./globals.css";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -22,13 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${playfair.variable} ${dmSans.variable}`}>
-      <head>
-        <Script
-          src="//unpkg.com/react-scan/dist/auto.global.js"
-          crossOrigin="anonymous"
-          strategy="beforeInteractive"
-        />
-      </head>
+      <head></head>
       <body className="font-body">
         <Providers>{children}</Providers>
       </body>
