@@ -184,7 +184,7 @@ Vowed ("we," "us," or "our") respects your privacy and is committed to protectin
 
 ## 13. Contact Us
 
-If you have questions about this Privacy Policy or our data practices, please contact us at: hasan04.asm@gmail.com  
+If you have questions about this Privacy Policy or our data practices, please contact us at: **hasan04.asm@gmail.com**  
 
 ## 14. Complaints
 
