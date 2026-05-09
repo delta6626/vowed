@@ -77,21 +77,21 @@ export default function BasicVowContainer({
           {vowVisibility === "public" ? (
             <div
               className="tooltip tooltip-top tooltip-primary"
-              data-tip={"This vow is public"}
+              data-tip={"Public vow"}
             >
               <Globe className="text-base-content/60" size={20} />
             </div>
           ) : vowVisibility === "unlisted" ? (
             <div
               className="tooltip tooltip-top tooltip-primary"
-              data-tip={"This vow is unlisted"}
+              data-tip={"Unlisted vow"}
             >
               <LinkIcon className="text-base-content/60" size={20} />
             </div>
           ) : vowVisibility === "private" ? (
             <div
               className="tooltip tooltip-top tooltip-primary"
-              data-tip={"This vow is private"}
+              data-tip={"Private vow"}
             >
               <Lock className="text-base-content/60" size={20} />
             </div>
