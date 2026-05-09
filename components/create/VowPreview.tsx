@@ -1,5 +1,6 @@
 import { Vow } from "@/types/Vow";
 import Pill from "../generic/Pill";
+import { PRODUCT } from "@/constants/PRODUCT";
 
 export type VowPreviewProps = Pick<Vow, "title"> & {
   deadlineDate: string;
@@ -56,7 +57,7 @@ export const VowPreview = ({
         </p>
       </div>
 
-      <kbd className="text-accent">vowed.cc/v/..</kbd>
+      <kbd className="text-accent">{`${PRODUCT.BASE_URL}/v/..`}</kbd>
     </div>
   );
 };

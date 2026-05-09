@@ -15,6 +15,7 @@ import { QUERY_KEYS } from "@/constants/QUERY_KEYS";
 import { useModalStore } from "@/store/modalStore";
 import { closeModal, openModal } from "@/utils/functions/modalActions";
 import { MODALS } from "@/constants/MODALS";
+import { PRODUCT } from "@/constants/PRODUCT";
 
 export const CreateVowForm = () => {
   const router = useRouter();
@@ -103,7 +104,7 @@ export const CreateVowForm = () => {
 
   const handleCopyButtonClick = async () => {
     try {
-      await navigator.clipboard.writeText(`vowed.cc/v/${vowId}`);
+      await navigator.clipboard.writeText(`${PRODUCT.BASE_URL}/v/${vowId}`);
       setCodeCopied(true);
       setTimeout(() => {
         setCodeCopied(false);
@@ -229,7 +230,7 @@ export const CreateVowForm = () => {
           </p>
 
           <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between border border-base-300">
-            <kbd className="text-accent">{`vowed.cc/v/${vowId}`}</kbd>
+            <kbd className="text-accent">{`${PRODUCT.BASE_URL}/v/${vowId}`}</kbd>
             <button
               disabled={codeCopied}
               type={"button"}

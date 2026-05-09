@@ -17,6 +17,7 @@ import {
   XIcon,
 } from "lucide-react";
 import Link from "next/link";
+import { PRODUCT } from "@/constants/PRODUCT";
 
 export default function Home() {
   return (
@@ -370,7 +371,7 @@ export default function Home() {
             <div className="mt-4 flex gap-2 items-start">
               <ArrowRight className="flex shrink-0" size={20} />
               <p className="text-base-content/60">
-                A permanent page at vowed.cc/u/[id] — yours to share
+                {`A permanent page at ${PRODUCT.BASE_URL}/u/[id] — yours to share`}
               </p>
             </div>
 
