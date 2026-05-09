@@ -118,12 +118,16 @@ export default function Vow() {
           />
 
           {vowStatus != "waiting" && (
-            <p className="text-accent">{`Resolved on ${new Date(
-              vowResponse.vowResolution!.resolutionTimestamp,
+            <p className="text-accent">{`Was due ${new Date(
+              vowResponse.vowDeadlineTimestampUTC,
             ).toLocaleString("en-US", {
+              weekday: "long",
+              year: "numeric",
               month: "long",
               day: "numeric",
-              year: "numeric",
+              hour: "numeric",
+              minute: "2-digit",
+              hour12: true,
             })}`}</p>
           )}
         </div>
