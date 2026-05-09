@@ -159,6 +159,7 @@ export const ResolveVowModal = () => {
         <div className="mt-4 w-full flex justify-end gap-2">
           <button
             className="btn"
+            disabled={isPending}
             onClick={() => {
               closeModal(MODALS.RESOLVE_VOW_MODAL.ID);
             }}
