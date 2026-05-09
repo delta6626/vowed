@@ -29,9 +29,12 @@ export default function Welcome() {
       <Navbar />
 
       <div className="w-full flex flex-col flex-1 items-center justify-center">
-        <h1 className="font-display text-4xl">Hi, welcome to Vowed.</h1>
+        <h1 className="font-display text-4xl">
+          <span className="italic text-primary">Hi, </span>
+          welcome to Vowed.
+        </h1>
         <div className="font-body flex items-center gap-2 mt-2">
-          <p className="text-accent text-xl">
+          <p className="text-base-content/60 text-xl">
             We're setting things up for you.
           </p>
 
