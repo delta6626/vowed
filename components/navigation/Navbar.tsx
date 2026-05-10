@@ -20,10 +20,10 @@ export default function Navbar() {
           </SignUpButton>
         </Show>
 
-        <Link className="btn btn-primary" href={"/create"}>
-          Make a vow
-        </Link>
         <Show when={"signed-in"}>
+          <Link className="btn btn-primary" href={"/create"}>
+            Make a vow
+          </Link>
           <UserButton />
         </Show>
       </div>
