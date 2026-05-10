@@ -21,7 +21,7 @@ export default function Navbar() {
         </Show>
 
         <Show when={"signed-in"}>
-          <Link className="btn btn-primary" href={"/create"}>
+          <Link className="hidden xs:flex btn btn-primary" href={"/create"}>
             Make a vow
           </Link>
           <UserButton />
