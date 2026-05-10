@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
 @theme {
+  --breakpoint-xs: 420px;
   --font-display: var(--font-playfair);
   --font-body: var(--font-dm-sans);
 }
