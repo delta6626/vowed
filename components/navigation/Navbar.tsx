@@ -1,6 +1,7 @@
 import { Show, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import ThemeChanger from "../theme/ThemeChanger";
 import Logo from "./Logo";
+import Link from "next/link";
 
 export default function Navbar() {
   return (
@@ -19,10 +20,12 @@ export default function Navbar() {
           </SignUpButton>
         </Show>
 
+        <Link className="btn btn-primary" href={"/create"}>
+          Make a vow
+        </Link>
         <Show when={"signed-in"}>
           <UserButton />
         </Show>
-        <ThemeChanger />
       </div>
     </header>
   );
