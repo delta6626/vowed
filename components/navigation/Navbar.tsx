@@ -9,7 +9,7 @@ export default function Navbar() {
     >
       <Logo className="text-3xl" />
 
-      <div className="flex">
+      <div className="flex items-center gap-2 w-full justify-end">
         <Show when={"signed-out"}>
           <SignInButton>
             <button className="btn btn-ghost">Sign in</button>
