@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Logo from "./Logo";
 import { Dot } from "lucide-react";
+import ThemeChanger from "../theme/ThemeChanger";
 
 export default function Footer() {
   return (
@@ -12,7 +13,11 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex items-center gap-4">
+        <ThemeChanger />
+
+        <Dot className="text-base-content/60" size={20} />
+
         <Link className="text-sm text-base-content/60" href={"/privacy-policy"}>
           Privacy
         </Link>
