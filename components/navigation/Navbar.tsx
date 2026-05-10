@@ -6,9 +6,9 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <header
-      className={`flex w-full justify-between py-4 paddingContainer border-b border-base-300`}
+      className={`flex w-full items-center justify-between py-4 paddingContainer border-b border-base-300`}
     >
-      <Logo className="text-3xl" />
+      <Logo className="text-2xl md:text-3xl" />
 
       <div className="flex items-center gap-2 w-full justify-end">
         <Show when={"signed-out"}>
