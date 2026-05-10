@@ -104,23 +104,17 @@ export default function Dashboard() {
       <div className="w-screen h-screen flex flex-col overflow-x-hidden">
         <Navbar />
         <div className="doublePaddingContainer">
-          <div className="flex items-center justify-between mt-16">
-            <div>
-              <h1 className="font-display text-4xl">
-                {getGreeting() + ", "}
-                <span className="text-primary italic">
-                  {user.displayName.split(" ")[0]}.
-                </span>
-              </h1>
+          <div className="flex flex-col mt-16">
+            <h1 className="font-display text-4xl">
+              {getGreeting() + ", "}
+              <span className="text-primary italic">
+                {user.displayName.split(" ")[0]}.
+              </span>
+            </h1>
 
-              <p className="font-body text-base-content/60 text-xl mt-2">
-                {" Here's where your vows stand today."}
-              </p>
-            </div>
-
-            <Link className="btn btn-primary" href={"/create"}>
-              Make a vow
-            </Link>
+            <p className="font-body text-base-content/60 text-xl mt-2">
+              {" Here's where your vows stand today."}
+            </p>
           </div>
 
           <DashboardStats
