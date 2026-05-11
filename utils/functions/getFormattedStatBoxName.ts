@@ -3,10 +3,10 @@ import type { StatBoxType } from "@/types/StatBoxType";
 export const getFormattedStatBoxName = (statBoxType: StatBoxType) => {
   switch (statBoxType) {
     case "total":
-      return "Total vows";
+      return "Total";
     case "fulfillment":
-      return "Fulfillment rate";
+      return "Fulfillment";
     case "waiting":
-      return "Open vows";
+      return "Open";
   }
 };
