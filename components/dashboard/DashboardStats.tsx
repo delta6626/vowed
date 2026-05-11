@@ -7,7 +7,7 @@ export const DashboardStats = ({
   vowsCreated,
 }: Pick<User, "vowsWaiting" | "vowsFulfilled" | "vowsCreated">) => {
   return (
-    <div className="flex gap-4 mt-8">
+    <div className="flex flex-wrap sm:flex-nowrap gap-4 mt-8">
       <DashboardStatBox statBoxType={"waiting"} mainText={vowsWaiting} />
       <DashboardStatBox statBoxType={"total"} mainText={vowsCreated} />
       <DashboardStatBox
