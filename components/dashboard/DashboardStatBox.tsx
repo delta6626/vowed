@@ -25,10 +25,10 @@ export default function DashboardStatBox({
   }
 
   return (
-    <div className="w-60 min-h-28 p-4 rounded-xl border border-base-300 bg-base-200 flex flex-col items-center justify-between">
+    <div className="w-full xs:w-40 sm:w-60 min-h-22 sm:min-h-28 p-4 rounded-xl border border-base-300 bg-base-200 flex flex-col items-center justify-between">
       <div className="flex flex-1 items-center justify-center">
         <h1
-          className={`text-3xl font-display font-semibold ${mainTextClassName}`}
+          className={`text-2xl sm:text-3xl font-display font-semibold ${mainTextClassName}`}
         >
           {mainText}
         </h1>
