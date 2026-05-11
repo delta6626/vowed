@@ -33,7 +33,7 @@ export default function DashboardStatBox({
           {mainText}
         </h1>
       </div>
-      <p className="text-base-content/60">
+      <p className="text-base-content/60 text-center">
         {getFormattedStatBoxName(statBoxType)}
       </p>
     </div>
