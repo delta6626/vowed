@@ -12,7 +12,7 @@ export const VowManagerTabs = ({
   setActiveTab,
 }: VowManagerTabsProps) => {
   return (
-    <div className="bg-base-200 rounded-xl border border-base-300 w-fit p-2 flex gap-2">
+    <div className="bg-base-200 rounded-xl border border-base-300 w-full xs:w-fit overflow-x-scroll xs:overflow-x-hidden p-2 flex gap-2">
       <button
         onClick={() => {
           setActiveTab("active");
