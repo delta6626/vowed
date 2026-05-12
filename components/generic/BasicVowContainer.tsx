@@ -48,7 +48,7 @@ export default function BasicVowContainer({
 
   return (
     <div
-      className={`flex flex-col gap-2 justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
+      className={`flex flex-col gap-4 justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
       <div className="flex flex-col-reverse sm:flex-row items-start gap-2 sm:gap-8 justify-between">
         {vowId ? (
