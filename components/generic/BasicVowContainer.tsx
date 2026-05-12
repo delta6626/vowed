@@ -48,9 +48,9 @@ export default function BasicVowContainer({
 
   return (
     <div
-      className={`flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
+      className={`flex flex-col gap-2 justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200 ${className}`}
     >
-      <div className="flex flex-col gap-4 justify-between">
+      <div className="flex items-start gap-4 justify-between">
         {vowId ? (
           <Link href={`/v/${vowId}`} className="text-base-content/90">
             {vowTitle}
@@ -59,20 +59,6 @@ export default function BasicVowContainer({
           <span className="text-base-content/80">{vowTitle}</span>
         )}
 
-        <div className="text-base flex gap-4 items-center text-base-content/60">
-          <div className="flex gap-2 items-center">
-            <Eye size={20} />
-            <p>{vowViewCount ?? 0}</p>
-          </div>
-
-          <div className="flex gap-2 items-center">
-            <MessageCircle size={20} />
-            <p>{vowCommentCount ?? 0}</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="text-base flex flex-col justify-between items-end gap-2">
         <div className="flex items-center gap-2">
           {vowVisibility === "public" ? (
             <div
@@ -133,6 +119,20 @@ export default function BasicVowContainer({
               ) : null
             }
           />
+        </div>
+      </div>
+
+      <div className="text-base flex justify-between items-end gap-2">
+        <div className="text-base flex gap-4 items-center text-base-content/60">
+          <div className="flex gap-2 items-center">
+            <Eye size={20} />
+            <p>{vowViewCount ?? 0}</p>
+          </div>
+
+          <div className="flex gap-2 items-center">
+            <MessageCircle size={20} />
+            <p>{vowCommentCount ?? 0}</p>
+          </div>
         </div>
 
         {typeof countdown !== "string" &&
