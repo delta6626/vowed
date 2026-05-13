@@ -122,7 +122,7 @@ export default function BasicVowContainer({
         </div>
       </div>
 
-      <div className="text-base flex justify-between items-end gap-2">
+      <div className="text-base flex flex-wrap justify-between items-end gap-2">
         <div className="text-base flex gap-4 items-center text-base-content/60">
           <div className="flex gap-2 items-center">
             <Eye size={20} />
@@ -138,7 +138,7 @@ export default function BasicVowContainer({
         {typeof countdown !== "string" &&
           countdown &&
           vowStatus === "waiting" && (
-            <p className="flex items-center justify-end gap-2 w-full text-base-content/70 font-mono tabular-nums">
+            <p className="flex items-center justify-end gap-2 text-base-content/70 font-mono tabular-nums">
               {countdown.years !== 0 && (
                 <>
                   <span>{countdown.years}y</span>
