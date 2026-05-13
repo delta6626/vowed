@@ -59,7 +59,7 @@ export default function BasicVowContainer({
           <span className="text-base-content/80">{vowTitle}</span>
         )}
 
-        <div className="flex items-center gap-2">
+        <div className="flex shrink-0 items-center gap-2">
           {vowVisibility === "public" ? (
             <div
               className="tooltip tooltip-top tooltip-primary"
