@@ -118,7 +118,7 @@ export const ResolveVowModal = () => {
             <Check className="text-success" />
             <div className="flex flex-col items-start">
               <h1>Fulfilled</h1>
-              <p className="text-sm text-base-content/60">
+              <p className="text-left text-sm text-base-content/60">
                 This event happened as vowed.
               </p>
             </div>
@@ -133,7 +133,7 @@ export const ResolveVowModal = () => {
             <X className="text-error" />
             <div className="flex flex-col items-start">
               <h1>Not fulfilled</h1>
-              <p className="text-sm text-base-content/60">
+              <p className="text-left texts-sm text-base-content/60">
                 This event did not happen.
               </p>
             </div>
