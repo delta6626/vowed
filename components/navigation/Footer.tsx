@@ -13,7 +13,7 @@ export default function Footer() {
         </p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap xs:flex-nowrap items-center gap-4">
         <ThemeChanger />
 
         <Dot className="hidden xs:block text-base-content/60" size={20} />
