@@ -7,7 +7,7 @@ export default function ThemeChanger() {
   const { setTheme } = useTheme();
 
   return (
-    <div className="dropdown dropdown-hover dropdown-top dropdown-center">
+    <div className="dropdown dropdown-hover dropdown-top dropdown-start xs:dropdown-center">
       <button tabIndex={0} className="text-sm text-base-content/60">
         Theme
       </button>
