@@ -16,13 +16,13 @@ export default function Footer() {
       <div className="flex items-center gap-4">
         <ThemeChanger />
 
-        <Dot className="text-base-content/60" size={20} />
+        <Dot className="hidden xs:block text-base-content/60" size={20} />
 
         <Link className="text-sm text-base-content/60" href={"/privacy-policy"}>
           Privacy
         </Link>
 
-        <Dot className="text-base-content/60" size={20} />
+        <Dot className="hidden xs:block text-base-content/60" size={20} />
 
         <Link
           className="text-sm text-base-content/60"
@@ -31,7 +31,7 @@ export default function Footer() {
           Terms
         </Link>
 
-        <Dot className="text-base-content/60" size={20} />
+        <Dot className="hidden xs:block text-base-content/60" size={20} />
 
         <Link className="text-sm text-base-content/60" href={"/contact"}>
           Contact
