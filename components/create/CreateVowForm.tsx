@@ -133,7 +133,7 @@ export const CreateVowForm = () => {
       <>
         <CreateVowHeader />
         <form
-          className="mt-16 w-2xl flex flex-col gap-12"
+          className="mt-16 w-full sm:w-lg md:w-xl lg:w-2xl flex flex-col gap-12"
           onSubmit={handleFormSubmit}
         >
           <CreateVowFormTitle
