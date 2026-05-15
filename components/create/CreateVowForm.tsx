@@ -169,8 +169,8 @@ export const CreateVowForm = () => {
               deadlineTime={vowDeadlineTime}
             />
 
-            <div className="flex w-full items-center justify-between mt-8">
-              <p className="text-base-content/60">
+            <div className="flex flex-col sm:flex-row w-full items-center justify-between mt-8">
+              <p className="text-base-content/60 text-center sm:text-left">
                 Once submitted, this vow is{" "}
                 <span className="text-base-content/90">permanent.</span>
                 <br />
@@ -179,7 +179,7 @@ export const CreateVowForm = () => {
 
               <button
                 type={"submit"}
-                className="btn btn-primary flex shrink-0"
+                className="btn btn-primary flex shrink-0 mt-4 sm:mt-0"
                 disabled={loading}
               >
                 Publish vow
