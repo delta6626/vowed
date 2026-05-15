@@ -28,7 +28,7 @@ export const VowPreview = ({
   });
 
   return (
-    <div className="w-full p-4 bg-base-200 rounded-xl flex items-end justify-between border border-base-300">
+    <div className="w-full p-4 bg-base-200 rounded-xl flex flex-col border border-base-300">
       <div className="flex flex-col gap-2 min-w-0">
         <Pill
           text="Waiting"
@@ -44,7 +44,9 @@ export const VowPreview = ({
         >
           {title ? title : "Your vow will appear here.."}
         </h1>
+      </div>
 
+      <div className="flex items-center justify-between mt-4">
         <p className="text-accent text-sm">
           {deadlineDate && deadlineTime && (
             <>
@@ -55,9 +57,8 @@ export const VowPreview = ({
 
           {(!deadlineDate || !deadlineTime) && "Set a deadline above"}
         </p>
+        <kbd className="text-accent">{`${PRODUCT.BASE_URL}/v/..`}</kbd>
       </div>
-
-      <kbd className="text-accent">{`${PRODUCT.BASE_URL}/v/..`}</kbd>
     </div>
   );
 };
