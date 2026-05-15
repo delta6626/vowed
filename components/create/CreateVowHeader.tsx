@@ -1,6 +1,6 @@
 export const CreateVowHeader = () => {
   return (
-    <div className="w-2xl">
+    <div className="w-full sm:w-lg md:w-xl lg:w-2xl">
       <h1 className="font-display text-4xl">
         Make your <span className="text-primary italic">vow.</span>
       </h1>
