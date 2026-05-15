@@ -46,7 +46,7 @@ export const VowPreview = ({
         </h1>
       </div>
 
-      <div className="flex items-center justify-between mt-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mt-4">
         <p className="text-accent text-sm">
           {deadlineDate && deadlineTime && (
             <>
