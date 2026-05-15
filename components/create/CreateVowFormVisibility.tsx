@@ -13,7 +13,7 @@ export const CreateVowFormVisibility = ({
   return (
     <div className="flex flex-col gap-2">
       <p className="text-base-content/60">Visibility</p>
-      <div className="flex gap-2 text-base-content/90">
+      <div className="flex flex-wrap sm:flex-nowrap gap-2 text-base-content/90">
         <button
           type={"button"}
           className={`flex items-center gap-4 px-4 py-8 rounded-xl w-full border border-base-300 text-left hover:border hover:border-primary/20 ${vowVisibility === "public" ? "bg-primary/20 border border-primary/20" : "bg-base-200"}`}
