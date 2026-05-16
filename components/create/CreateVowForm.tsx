@@ -229,7 +229,7 @@ export const CreateVowForm = () => {
             }
           </p>
 
-          <div className="mt-8 w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between border border-base-300">
+          <div className="mt-8 w-full max-w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between border border-base-300">
             <kbd className="text-accent">{`${PRODUCT.BASE_URL}/v/${vowId}`}</kbd>
             <button
               disabled={codeCopied}
@@ -241,7 +241,7 @@ export const CreateVowForm = () => {
             </button>
           </div>
 
-          <div className="flex gap-2 mt-4">
+          <div className="w-full max-w-lg justify-center flex flex-col xs:flex-row gap-2 mt-4">
             <button
               className="btn btn-primary"
               onClick={handleDashboardButtonClick}
