@@ -229,8 +229,8 @@ export const CreateVowForm = () => {
             }
           </p>
 
-          <div className="mt-8 w-full max-w-lg rounded-xl bg-base-200 p-4 flex items-center justify-between border border-base-300">
-            <kbd className="text-accent">{`${PRODUCT.BASE_URL}/v/${vowId}`}</kbd>
+          <div className="mt-8 w-full max-w-md sm:max-w-lg rounded-xl bg-base-200 p-4 flex flex-col sm:flex-row items-center justify-between border border-base-300 gap-4 sm:gap-0">
+            <kbd className="text-accent text-center w-full max-w-md sm:max-w-lg wrap-break-word">{`${PRODUCT.BASE_URL}/v/${vowId}`}</kbd>
             <button
               disabled={codeCopied}
               type={"button"}
