@@ -207,7 +207,7 @@ export const CreateVowForm = () => {
           ease: "easeOut",
         }}
       >
-        <div className="w-full h-full flex flex-col items-center justify-center">
+        <div className="w-full paddingContainer h-full flex flex-col items-center justify-center">
           <motion.div
             initial={{ scale: 0 }}
             animate={{ scale: [0, 1.2, 1] }}
