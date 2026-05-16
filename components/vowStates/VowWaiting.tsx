@@ -101,7 +101,7 @@ export const VowWaiting = ({
         Time remaining
       </h1>
 
-      <p className="mt-4 flex items-center gap-4 w-full justify-center text-5xl font-mono tabular-nums">
+      <p className="mt-4 flex flex-wrap items-center gap-2 md:gap-4 w-full justify-center text-4xl md:text-5xl font-mono tabular-nums">
         {countdown.years !== 0 && (
           <>
             <span>{countdown.years}y</span>
