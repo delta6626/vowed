@@ -101,7 +101,7 @@ export default function UserProfile() {
           </div>
         </div>
 
-        <div className="flex gap-4 mt-8">
+        <div className="flex flex-nowrap xs:flex-wrap flex-col xs:flex-row gap-4 mt-8">
           <div className="rounded-xl border border-base-300 bg-base-200 p-4 min-w-40 flex flex-col items-center justify-center">
             <h1 className="text-xl font-medium">
               {requestedUserResponse.totalVows}
