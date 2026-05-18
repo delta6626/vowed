@@ -82,13 +82,13 @@ export default function UserProfile() {
       <div className="flex-1 w-full doublePaddingContainer mt-16">
         <div className="flex items-center gap-4">
           <img
-            className="w-20 h-20 rounded-full"
+            className="w-10 h-10 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full"
             src={requestedUserResponse.profilePhotoURL}
             alt="User's profile photo"
           />
 
           <div className="">
-            <h1 className="text-3xl font-display">
+            <h1 className="text-lg xs:text-2xl md:text-3xl font-display">
               {requestedUserResponse.displayName}
             </h1>
             <p className="text-accent">{`Member since ${new Date(
