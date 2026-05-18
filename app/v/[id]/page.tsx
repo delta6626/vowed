@@ -141,7 +141,7 @@ export default function Vow() {
 
         <Link
           href={`../u/${vowResponse.vowCreatorId}`}
-          className="flex gap-2 mt-8"
+          className="w-full flex gap-2 mt-8"
         >
           <img
             className="w-7 h-7 rounded-full"
@@ -149,10 +149,10 @@ export default function Vow() {
             alt="Vow creator's profile photo"
           />
 
-          <p className="font-medium flex items-center">
+          <p className="font-medium flex flex-wrap items-center">
             {vowResponse.vowCreatorName}{" "}
             <Dot className="text-accent" size={20} />
-            <span className="text-accent">
+            <span className="text-accent ">
               {`${vowResponse.vowCreatorFulfillmentRate}% Fulfillment rate`}
             </span>
           </p>
