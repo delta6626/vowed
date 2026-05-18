@@ -41,7 +41,7 @@ export default function Pill({ text, icon, className, variant }: PillProps) {
   }
 
   return (
-    <div className={`flex items-center gap-2 ${style} ${className}`}>
+    <div className={`flex items-center gap-2 shrink-0 ${style} ${className}`}>
       {icon}
       {text}
     </div>
