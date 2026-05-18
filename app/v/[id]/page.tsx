@@ -109,7 +109,7 @@ export default function Vow() {
       </div>
 
       <div className="w-full h-full doublePaddingContainer mt-16">
-        <div className="flex items-center gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-4">
           <Pill
             variant={pillVariant}
             text={vowResponse.vowStatusFormatted}
