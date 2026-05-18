@@ -76,12 +76,10 @@ export default function UserProfile() {
   }
 
   return (
-    <div className="flex flex-col w-screen h-screen overflow-x-hidden">
-      <div className="flex flex-col flex-1">
-        <Navbar />
-      </div>
+    <div className="flex flex-col w-screen min-h-screen overflow-x-hidden">
+      <Navbar />
 
-      <div className="w-full h-full doublePaddingContainer mt-16">
+      <div className="flex-1 w-full doublePaddingContainer mt-16">
         <div className="flex items-center gap-4">
           <img
             className="w-20 h-20 rounded-full"
@@ -160,7 +158,7 @@ export default function UserProfile() {
         </div>
       </div>
 
-      <div className="flex grow items-end mt-8">
+      <div className="mt-16">
         <Footer />
       </div>
     </div>
