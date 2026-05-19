@@ -12,26 +12,12 @@ export const PublicVowContainer = ({
   createdAt,
 }: PublicVowResponse) => {
   return (
-    <div className="flex justify-between font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200">
-      <div className="flex flex-col gap-4 justify-between">
-        <Link href={`/v/${vowId}`} className="text-base-content/80">
+    <div className="font-body px-8 py-4 rounded-2xl border border-base-300 bg-base-200">
+      <div className="flex gap-4 justify-between">
+        <Link href={`/v/${vowId}`} className="text-base-content/80 max-w-lg">
           {title}
         </Link>
 
-        <div className="text-base flex gap-4 items-center text-accent">
-          <div className="flex gap-2 items-center">
-            <Eye size={20} />
-            <p>{viewCount ?? 0}</p>
-          </div>
-
-          <div className="flex gap-2 items-center">
-            <MessageCircle size={20} />
-            <p>{commentCount ?? 0}</p>
-          </div>
-        </div>
-      </div>
-
-      <div className="flex flex-col items-end gap-2">
         <Pill
           className="w-fit h-fit"
           text={statusFormatted}
@@ -56,6 +42,20 @@ export const PublicVowContainer = ({
             )
           }
         />
+      </div>
+
+      <div className="mt-4 flex text-base justify-between text-accent">
+        <div className="flex items-center gap-4">
+          <div className="flex gap-2 items-center">
+            <Eye size={20} />
+            <p>{viewCount ?? 0}</p>
+          </div>
+
+          <div className="flex gap-2 items-center">
+            <MessageCircle size={20} />
+            <p>{commentCount ?? 0}</p>
+          </div>
+        </div>
 
         <p className="text-accent">{`Vowed on ${new Date(
           createdAt,
