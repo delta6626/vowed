@@ -175,7 +175,7 @@ export default function Vow() {
           )}
         </div>
 
-        <div className="flex items-center gap-8 justify-center rounded-2xl mt-4 bg-base-200 border border-base-300 w-full p-4">
+        <div className="flex flex-col sm:flex-row items-center gap-8 justify-center rounded-2xl mt-4 bg-base-200 border border-base-300 w-full p-4">
           <div className="text-accent flex items-center gap-2">
             <Eye size={20} />
             <span className="text-base-content/80 font-medium">
@@ -184,7 +184,7 @@ export default function Vow() {
             viewers
           </div>
 
-          <div className="h-6 border-[0.5px] border-base-300"></div>
+          <div className="hidden sm:block h-6 border-[0.5px] border-base-300"></div>
 
           <div className="text-accent flex items-center gap-2">
             <MessageCircle size={20} />
