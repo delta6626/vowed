@@ -187,7 +187,7 @@ export default function Vow() {
             <span className="text-base-content/80 font-medium">
               {vowResponse.vowViewCount}
             </span>
-            viewers
+            views
           </div>
 
           <div className="h-6 border-[0.5px] border-base-300"></div>
