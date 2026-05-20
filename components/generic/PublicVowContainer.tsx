@@ -44,7 +44,7 @@ export const PublicVowContainer = ({
         />
       </div>
 
-      <div className="mt-4 flex text-base justify-between text-accent">
+      <div className="mt-4 flex flex-wrap gap-x-4 text-base justify-between text-accent">
         <div className="flex items-center gap-4">
           <div className="flex gap-2 items-center">
             <Eye size={20} />
