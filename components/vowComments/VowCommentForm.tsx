@@ -105,7 +105,7 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
 
         <div className="mt-2 gap-x-4 flex flex-col-reverse sm:flex-row items-center justify-between">
           <p className="text-accent w-full sm:max-w-[60%]">
-            Comments must follow our community guidelines. Please be respectful.
+            Comments must follow our community guidelines. Be respectful.
           </p>
           <button
             type={"submit"}
