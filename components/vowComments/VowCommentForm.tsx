@@ -103,13 +103,13 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
           placeholder={"Leave a comment"}
         />
 
-        <div className="mt-2 gap-x-4 flex items-center justify-between">
-          <p className="text-accent max-w-[60%]">
+        <div className="mt-2 gap-x-4 flex flex-col-reverse sm:flex-row items-center justify-between">
+          <p className="text-accent w-full sm:max-w-[60%]">
             Comments must follow our community guidelines. Please be respectful.
           </p>
           <button
             type={"submit"}
-            className="btn btn-primary flex shrink-0"
+            className="btn btn-primary flex shrink-0 w-full sm:w-fit"
             disabled={!comment || isPending}
           >
             Post comment
