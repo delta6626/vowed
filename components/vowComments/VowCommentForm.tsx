@@ -103,7 +103,7 @@ export const VowCommentForm = ({ vowId }: VowCommentFormProps) => {
           placeholder={"Leave a comment"}
         />
 
-        <div className="mt-2 flex items-center justify-between">
+        <div className="mt-2 gap-x-4 flex items-center justify-between">
           <p className="text-accent max-w-[60%]">
             Comments must follow our community guidelines. Please be respectful.
           </p>
