@@ -76,7 +76,7 @@ export default function UserProfile() {
   }
 
   return (
-    <div className="flex flex-col w-screen min-h-screen overflow-x-hidden">
+    <div className="flex flex-col w-full min-h-screen overflow-x-hidden">
       <Navbar />
 
       <div className="flex-1 w-full doublePaddingContainer mt-16">
