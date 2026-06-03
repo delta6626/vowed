@@ -33,8 +33,8 @@ export default function Footer() {
 
         <Dot className="hidden xs:block text-base-content/60" size={20} />
 
-        <Link className="text-sm text-base-content/60" href={"/contact"}>
-          Contact
+        <Link className="text-sm text-base-content/60" href={"/about"}>
+          About
         </Link>
       </div>
     </footer>
