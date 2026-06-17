@@ -34,7 +34,7 @@ export default function Home() {
             }
           />
 
-          <h1 className="text-8xl leading-[0.9] font-display mt-4">
+          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] font-display mt-4">
             You <span className="text-primary italic">vowed</span> it.
             <br />
             Now prove it.
