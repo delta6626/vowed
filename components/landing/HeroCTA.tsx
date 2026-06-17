@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function HeroCTA() {
   return (
-    <div className="w-full flex justify-center gap-4">
+    <div className="w-fit sm:w-full flex flex-col sm:flex-row justify-center gap-4">
       <Show when={"signed-out"}>
         <SignUpButton>
           <button className="btn btn-primary">
