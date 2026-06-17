@@ -53,7 +53,7 @@ export default function Home() {
           How it works
         </p>
 
-        <h1 className="text-base-content/90 text-4xl font-display text-center mt-4">
+        <h1 className="text-base-content/90 text-2xl xs:text-3xl sm:text-4xl font-display text-center mt-4">
           Simple. Public.{" "}
           <span className="italic text-primary">Permanent.</span>
         </h1>
