@@ -39,7 +39,7 @@ export default function Home() {
             <br />
             Now prove it.
           </h1>
-          <h3 className="text-xl sm:text-2xl text-base-content/60 font-display mt-8 mb-8">
+          <h3 className="text-lg xs:text-xl sm:text-2xl text-base-content/60 font-display mt-8 mb-8">
             Set a deadline. Share the link. <br />
             The world is watching.
           </h3>
