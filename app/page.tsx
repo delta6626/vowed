@@ -34,12 +34,12 @@ export default function Home() {
             }
           />
 
-          <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] font-display mt-4">
+          <h1 className="text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl leading-[0.9] font-display mt-4">
             You <span className="text-primary italic">vowed</span> it.
             <br />
             Now prove it.
           </h1>
-          <h3 className="text-2xl text-base-content/60 font-display mt-8 mb-8">
+          <h3 className="text-xl sm:text-2xl text-base-content/60 font-display mt-8 mb-8">
             Set a deadline. Share the link. <br />
             The world is watching.
           </h3>
