@@ -159,8 +159,8 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full mt-32 doublePaddingContainer flex items-center justify-between">
-        <div className="max-w-lg">
+      <div className="w-full mt-32 doublePaddingContainer flex flex-row items-center justify-between">
+        <div className="max-w-md">
           <p className="uppercase text-xs text-accent">Permanently recorded</p>
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
             Built for{" "}
@@ -427,7 +427,7 @@ export default function Home() {
       </div>
 
       <div className="mt-32 doublePaddingContainer flex items-center justify-between">
-        <div className="max-w-lg">
+        <div className="max-w-md">
           <p className="uppercase text-xs text-accent">Visibility levels</p>
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
             Your vow, your <br />
