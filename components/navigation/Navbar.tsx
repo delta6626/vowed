@@ -12,14 +12,12 @@ export default function Navbar() {
 
       <div className="flex items-center gap-2 w-full justify-end">
         <Show when={"signed-out"}>
-          <div>
-            <SignInButton>
-              <button className="btn btn-ghost">Sign in</button>
-            </SignInButton>
-            <SignUpButton>
-              <button className="btn btn-primary">Make a vow</button>
-            </SignUpButton>
-          </div>
+          <SignInButton>
+            <button className="btn btn-ghost">Sign in</button>
+          </SignInButton>
+          <SignUpButton>
+            <button className="btn btn-primary">Make a vow</button>
+          </SignUpButton>
         </Show>
 
         <Show when={"signed-in"}>
