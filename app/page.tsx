@@ -104,8 +104,8 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mt-16 flex gap-4 justify-center items-stretch">
-          <div className="p-4 border border-base-300 max-w-sm rounded-xl bg-base-200">
+        <div className="mt-16 flex flex-col md:flex-row gap-4 justify-center items-stretch">
+          <div className="p-4 border border-base-300 w-full md:max-w-sm rounded-xl bg-base-200">
             <Pill
               className="w-fit"
               variant="primary"
@@ -123,7 +123,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="p-4 border border-base-300 max-w-sm rounded-xl bg-base-200">
+          <div className="p-4 border border-base-300 w-full md:max-w-sm rounded-xl bg-base-200">
             <Pill
               className="w-fit"
               variant="secondary"
@@ -141,7 +141,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="p-4 border border-base-300 max-w-sm rounded-xl bg-base-200">
+          <div className="p-4 border border-base-300 w-full md:max-w-sm rounded-xl bg-base-200">
             <Pill
               className="w-fit"
               variant="success"
