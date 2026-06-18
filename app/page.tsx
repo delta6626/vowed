@@ -159,7 +159,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full mt-32 doublePaddingContainer flex flex-col 3xl:flex-row items-center justify-between">
+      <div className="w-full mt-32 doublePaddingContainer flex gap-4 3xl:gap-0 flex-col 3xl:flex-row items-start 3xl:items-center justify-between">
         <div className="max-w-md">
           <p className="uppercase text-xs text-accent">Permanently recorded</p>
           <h1 className="text-base-content/90 text-4xl font-display mt-4">
@@ -193,7 +193,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="w-sm p-8 bg-base-200 rounded-xl border border-base-300">
+        <div className="w-full 3xl:w-sm p-8 bg-base-200 rounded-xl border border-base-300">
           <div className="flex items-center gap-4">
             <h1 className="font-display p-2 bg-primary/75 rounded-[50%] w-10 h-10 flex items-center justify-center border border-base-300">
               TL
