@@ -238,7 +238,7 @@ export default function Home() {
           </h1>
         </div>
 
-        <div className="mt-16 w-full flex flex-wrap gap-4">
+        <div className="mt-16 w-full grid xl:grid-cols-2 3xl:grid-cols-3 gap-4">
           <div className="bg-base-200 p-8 rounded-xl w-full border border-base-300">
             <Timer className={"text-primary"} size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
