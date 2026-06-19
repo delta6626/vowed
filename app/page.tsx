@@ -239,7 +239,7 @@ export default function Home() {
         </div>
 
         <div className="mt-16 w-full flex flex-wrap gap-4">
-          <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
+          <div className="bg-base-200 p-8 rounded-xl w-full border border-base-300">
             <Timer className={"text-primary"} size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Live Countdown Timer
@@ -267,7 +267,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
+          <div className="bg-base-200 p-8 rounded-xl w-full border border-base-300">
             <Handshake className={"text-primary"} size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Public Commitment System
@@ -301,7 +301,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
+          <div className="bg-base-200 p-8 rounded-xl w-full border border-base-300">
             <Scale className={"text-primary"} size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Vow Resolution System
@@ -328,7 +328,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
+          <div className="bg-base-200 p-8 rounded-xl w-full border border-base-300">
             <LayoutDashboard className={"text-primary"} size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Creator Dashboard
@@ -363,7 +363,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
+          <div className="bg-base-200 p-8 rounded-xl w-full border border-base-300">
             <Globe className={"text-primary"} size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Public Profile Pages
@@ -397,7 +397,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="bg-base-200 p-8 rounded-xl w-xs border border-base-300">
+          <div className="bg-base-200 p-8 rounded-xl w-full border border-base-300">
             <MessageCircle className={"text-primary"} size={20} />
             <h1 className="text-lg font-medium font-display mt-4 text-base-content/90">
               Community Engagement
