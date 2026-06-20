@@ -502,8 +502,8 @@ export default function Home() {
       </div>
 
       <div className="min-h-180 flex flex-col items-center justify-center mt-32 text-center landingGradient doublePaddingContainer">
-        <h1 className="font-display text-5xl">Your word.</h1>
-        <h1 className="font-display text-5xl text-primary italic">
+        <h1 className="font-display text-4xl md:text-5xl">Your word.</h1>
+        <h1 className="font-display text-4xl md:text-5xl text-primary italic">
           On the record.
         </h1>
 
