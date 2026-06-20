@@ -466,7 +466,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-full 3xl:max-w-sm flex flex-col gap-4">
-          <div className="border border-base-300 flex items-center gap-4 p-4 bg-base-200 rounded-xl">
+          <div className="border border-base-300 flex flex-col xs:flex-row items-start xs:items-center gap-4 p-4 bg-base-200 rounded-xl">
             <Pill
               text="Public"
               variant={"success"}
@@ -477,7 +477,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="border border-base-300 flex items-center gap-4 p-4 bg-base-200 rounded-xl">
+          <div className="border border-base-300 flex flex-col xs:flex-row items-start xs:items-center gap-4 p-4 bg-base-200 rounded-xl">
             <Pill
               text="Unlisted"
               variant={"secondary"}
@@ -488,7 +488,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="border border-base-300 flex items-center gap-4 p-4 bg-base-200 rounded-xl">
+          <div className="border border-base-300 flex flex-col xs:flex-row items-start xs:items-center gap-4 p-4 bg-base-200 rounded-xl">
             <Pill
               text="Private"
               variant={"generic"}
