@@ -465,8 +465,8 @@ export default function Home() {
             </div>
           </div>
         </div>
-        <div className="max-w-sm flex flex-col gap-4">
-          <div className="border border-base-300 flex items-center justify-between gap-4 p-4 bg-base-200 rounded-xl">
+        <div className="w-full 3xl:max-w-sm flex flex-col gap-4">
+          <div className="border border-base-300 flex items-center gap-4 p-4 bg-base-200 rounded-xl">
             <Pill
               text="Public"
               variant={"success"}
