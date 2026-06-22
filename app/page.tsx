@@ -232,7 +232,7 @@ export default function Home() {
       <div className="w-full mt-32 doublePaddingContainer flex flex-col items-center justify-center">
         <div className="text-center">
           <p className="uppercase text-xs text-accent">Everything you need</p>
-          <h1 className="text-base-content/90 text-4xl font-display mt-4">
+          <h1 className="text-base-content/90 text-2xl xs:text-3xl sm:text-4xl font-display mt-4">
             Built to keep you{" "}
             <span className="italic text-primary">honest.</span>
           </h1>
