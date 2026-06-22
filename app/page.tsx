@@ -429,7 +429,7 @@ export default function Home() {
       <div className="w-full mt-32 doublePaddingContainer flex gap-8 3xl:gap-0 flex-col 3xl:flex-row items-start 3xl:items-center justify-between">
         <div className="max-w-md">
           <p className="uppercase text-xs text-accent">Visibility levels</p>
-          <h1 className="text-base-content/90 text-4xl font-display mt-4">
+          <h1 className="text-base-content/90 text-2xl xs:text-3xl sm:text-4xl font-display mt-4">
             Your vow, your <br />
             <span className="italic text-primary">audience.</span>
           </h1>
