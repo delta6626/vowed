@@ -17,7 +17,7 @@ export default function SideSectionContent() {
           vowId=""
           vowTitle={"Ship our MVP before the Series A"}
           vowStatus={"waiting"}
-          className="w-xl bg-base-200/60"
+          className="w-sm bg-base-200/60"
           vowViewCount={12000}
           vowCommentCount={120}
         />
@@ -25,7 +25,7 @@ export default function SideSectionContent() {
           vowId=""
           vowTitle={"Run a marathon before turning 30"}
           vowStatus={"fulfilled"}
-          className="w-xl bg-base-200/60"
+          className="w-sm bg-base-200/60"
           vowViewCount={9000}
           vowCommentCount={70}
         />
@@ -33,7 +33,7 @@ export default function SideSectionContent() {
           vowId=""
           vowTitle={"Finish my essay before its due"}
           vowStatus={"not-fulfilled"}
-          className="w-xl bg-base-200/60"
+          className="w-sm bg-base-200/60"
           vowViewCount={1200}
           vowCommentCount={40}
         />
