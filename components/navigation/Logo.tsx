@@ -10,7 +10,7 @@ export default function Logo({ className }: LogoProps) {
     <>
       <Show when={"signed-out"}>
         <Link href={"/"} className={`font-display italic ${className}`}>
-          <span className="text-primary">Vowed</span>.cc
+          <span className="text-primary">Vowed</span>
         </Link>
       </Show>
 
@@ -19,7 +19,7 @@ export default function Logo({ className }: LogoProps) {
           href={"/dashboard"}
           className={`font-display italic ${className}`}
         >
-          <span className="text-primary">Vowed</span>.cc
+          <span className="text-primary">Vowed</span>
         </Link>
       </Show>
     </>
