@@ -4,42 +4,33 @@ A platform for public commitments. You make a promise to yourself. You put it so
 
 Most promises to ourselves dissolve quietly. No one sees. No one cares. Nothing stops them from fading away.
 
-Vowed exists because that bothered me enough to build it.
+## The problem
 
-## What you do here
+You make promises to yourself and they disappear. Nothing makes them stick. You need something that makes them real. Public. That you can't just abandon.
 
-You create a vow. You pick a deadline. You decide who can see it. Public, unlisted, or private. That's it.
-
-Once the deadline passes, you resolve it. You say whether you kept the promise or not. That resolution stays there forever. People see it. Your fulfillment rate becomes visible. You build a reputation for keeping your word.
-
-The mechanism is simple: visibility. Comments from others. A permanent record. The knowledge that you said it out loud.
+Vowed does that.
 
 ## How it works
 
-**Create**: Write what you're committing to. Set a deadline. Choose who sees it.
+You create a vow. You pick a deadline. You choose who sees it. Public, unlisted, or private.
 
-**Live countdown**: Watch the timer. Everyone can see how much time is left.
+When the deadline arrives, you resolve it. You say whether you kept it or didn't. That stays there forever. Your fulfillment rate becomes visible. People see whether you keep your word.
 
-**Resolve**: After the deadline, you resolve it. Fulfilled or not fulfilled. You can explain why if you want.
+## What this is not
 
-**Reputation**: Your fulfillment rate becomes part of your profile. People see whether you keep your promises.
+This is not a productivity tool. No streaks, no gamification, no tricks. This is just commitment and visibility and a permanent record.
 
-## Why this way
+It works if you care about your reputation. It works if your word means something to you.
 
-Accountability doesn't work through willpower alone. It works when other people are watching. When your word is tied to your identity. When there's a record.
+## Why build this
 
-This platform doesn't have streaks or gamification or leaderboards. It's not trying to trick you into habit formation. It's just making your commitments real. Public. Permanent.
+Most accountability platforms try to manipulate you through points and badges. They're designed to keep you addicted, not to help you actually change.
 
-If you're here, you probably already know that matters.
+Vowed is different. It's just visibility and honesty. You put your word out there. People see if you kept it. That's the mechanism. Nothing else.
 
-## Running locally
+No pseudo-science. No psychological manipulation. Just the fact that you don't want to look like someone who doesn't keep their promises.
 
-```bash
-npm install
-npm run dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+## Built with
 
 ## Built with
 
@@ -47,6 +38,8 @@ Next.js, React, Firebase, Clerk, Tailwind CSS
 
 ## The person behind this
 
-I'm Hasan. I work on things I think should exist. You can find me:
+I'm Hasan. I work on things I think should exist. I wanted somewhere to put my promises that made them real. So I built it.
+
+You can find me here:
 
 [GitHub](https://github.com/delta6626) / [X](https://x.com/delta6626) / [Email](mailto:hasan04.asm@gmail.com)
