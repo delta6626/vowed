@@ -1,5 +1,7 @@
 # Vowed
 
+![Landing Page](demo/vowedLandingPage.png)
+
 A platform for public commitments. You make a promise to yourself. You put it somewhere people can see it. That changes things.
 
 Most promises to ourselves dissolve quietly. No one sees. No one cares. Nothing stops them from fading away.
