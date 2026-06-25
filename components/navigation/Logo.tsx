@@ -1,13 +1,22 @@
 import { Show } from "@clerk/nextjs";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface LogoProps {
   className?: string;
+  forFooter?: boolean;
 }
 
-export default function Logo({ className }: LogoProps) {
+export default function Logo({ className, forFooter }: LogoProps) {
   return (
     <>
+      <Image
+        className="mr-2"
+        src={"/logo.svg"}
+        width={forFooter ? 20 : 30}
+        height={forFooter ? 20 : 30}
+        alt={"Vowed logo"}
+      />
       <Show when={"signed-out"}>
         <Link href={"/"} className={`font-display italic ${className}`}>
           <span className="text-primary">Vowed</span>
