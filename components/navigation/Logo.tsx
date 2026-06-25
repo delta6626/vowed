@@ -9,9 +9,8 @@ export interface LogoProps {
 
 export default function Logo({ className, forFooter }: LogoProps) {
   return (
-    <>
+    <div className="flex items-center gap-2">
       <Image
-        className="mr-2"
         src={"/logo.svg"}
         width={forFooter ? 20 : 30}
         height={forFooter ? 20 : 30}
@@ -31,6 +30,6 @@ export default function Logo({ className, forFooter }: LogoProps) {
           <span className="text-primary">Vowed</span>
         </Link>
       </Show>
-    </>
+    </div>
   );
 }
