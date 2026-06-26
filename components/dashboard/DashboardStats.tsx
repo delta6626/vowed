@@ -8,6 +8,9 @@ export const DashboardStats = ({
 }: Pick<User, "vowsWaiting" | "vowsFulfilled" | "vowsCreated">) => {
   return (
     <div className="flex flex-wrap sm:flex-nowrap gap-4 mt-8">
+      <button className="block xs:hidden btn btn-primary w-full">
+        Make a vow
+      </button>
       <DashboardStatBox statBoxType={"waiting"} mainText={vowsWaiting} />
       <DashboardStatBox statBoxType={"total"} mainText={vowsCreated} />
       <DashboardStatBox
