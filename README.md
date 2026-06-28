@@ -34,8 +34,6 @@ No pseudo-science. No psychological manipulation. Just the fact that you don't w
 
 ## Built with
 
-## Built with
-
 Next.js, React, Firebase, Clerk, Tailwind CSS
 
 ## The person behind this
