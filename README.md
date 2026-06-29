@@ -34,7 +34,17 @@ No pseudo-science. No psychological manipulation. Just the fact that you don't w
 
 ## Built with
 
-Next.js, React, Firebase, Clerk, Tailwind CSS, DaisyUI
+- Next.js for app routing and server rendering
+- React for building UI
+- Clerk for authentication
+- Firebase Admin for backend access
+- Tailwind CSS for styling
+- DaisyUI for pre-styled UI components
+- TanStack Query for data fetching
+- Zustand for global state
+- Lucide React for icons
+- Motion for animations
+- Svix for webhooks
 
 ## The person behind this
 
