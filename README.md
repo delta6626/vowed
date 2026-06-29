@@ -34,7 +34,7 @@ No pseudo-science. No psychological manipulation. Just the fact that you don't w
 
 ## Built with
 
-Next.js, React, Firebase, Clerk, Tailwind CSS
+Next.js, React, Firebase, Clerk, Tailwind CSS, DaisyUI
 
 ## The person behind this
 
